@@ -1,0 +1,177 @@
+﻿@*@model Tuple<IEnumerable<Modeloe.BusinessEntity.Admin.UserModels>, IEnumerable<Modeloe.BusinessEntity.Admin.UserModels>, Modeloe.BusinessEntity.Admin.UserModels>*@
+@using StratasFair.Business.CommonHelper;
+@{
+    ViewBag.Title = "Manage Admin";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+@section Styles
+{
+    <link href="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.css")" rel="stylesheet" type="text/css" />
+}
+<section class="content-header">
+    <h1>
+        Manage Admin User
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage User</li>
+    </ol>
+    <div class="top-buttons-container">
+        @*<a href="@Url.Content("~/securehost/rootlogin/user/list")" class="btn btn-success">View</a>*@
+        <a href="@Url.Content("~/securehost/rootlogin/user/add")" class="btn btn-info">
+            Add
+        </a>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab_1-1" data-toggle="tab">Active User</a></li>
+                    <li><a href="#tab_2-2" data-toggle="tab">Inactive User</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1-1">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                @*<div class="box-header">
+                                        <h3 class="box-title">
+                                            Active User
+                                        </h3>
+                                    </div>*@
+                                <div class="box-body table-responsive">
+                                    @{
+        var activeGrid = new ASPRazorWebGrid(source: Model.Item1, maintainState: false);
+                                    }
+                                    @activeGrid.GetHtml(columns: new ASPRazorWebGridColumn[]{
+                                                //activeGrid.CreateColumn(dataField:"SerialNumber",headerText:"S.No.", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center"),
+
+                                                activeGrid.CreateColumn(headerText:"Name", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+                                                    @Html.Raw(item.FirstName + " " + item.LastName)
+                                                 
+
+                                                </text>),
+                                                activeGrid.CreateColumn(dataField: "LoginId", headerText:"Login ID", canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                activeGrid.CreateColumn(dataField: "EmailId", headerText:"Email ID",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                activeGrid.CreateColumn(dataField: "RoleName", headerText:"Role", canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                activeGrid.CreateColumn(dataField: "CreatedOn", headerText:"Created On",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                               
+                                                activeGrid.CreateColumn(headerText:"Action", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center", width:"70px",
+                                                dataFieldFormat:
+                                                @<text> <a title="Edit" href="@Url.Action("Edit", "User", new { @userId = @item.UserId })" class="fa fa-fw fa-edit">
+                                                    </a>
+                                                    @if (item.IsSuper != 1)
+                                                    { <span>&nbsp;|&nbsp;</span>
+                                                        <a title="Delete" onclick="javascript:return ConfirmDelete();" href="@Url.Action("Delete", "User", new { @userId = @item.UserId })" class="fa fa-fw fa-trash-o">
+                                                        </a><span>&nbsp;|&nbsp;</span>
+                                                        <a title="In-Activate" class="fa fa-fw fa-ban" onclick="javascript:return confirm('Are you sure to in-activate this record?')" href="@Url.Action("InActivate", "User", new { @userId = @item.UserId })">
+                                                        </a>  }
+                                                </text>)
+
+                                                },
+       tableStyle: "table table-bordered table-hover",
+       headerStyle: "head",
+       alternatingRowStyle: "alt",
+       tableId: "activeTable")
+                                    <script type="text/javascript">
+            function ConfirmDelete() {
+            return confirm("Are you sure you want to delete this record?");
+            }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_2-2">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                @*<div class="box-header">
+                                        <h3 class="box-title">
+                                            Inactive User
+                                        </h3>
+                                    </div>*@
+                                <div class="box-body table-responsive">
+                                    @{
+        var inActiveGrid = new ASPRazorWebGrid(source: Model.Item2, maintainState: false);
+                                    }
+                                    @inActiveGrid.GetHtml(columns: new ASPRazorWebGridColumn[]{
+                                                //inActiveGrid.CreateColumn(dataField:"SerialNumber",headerText:"S.No.", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center"),
+
+                                                inActiveGrid.CreateColumn(headerText:"Name", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+                                                    @Html.Raw(item.FirstName + " " + item.LastName)
+
+                                                </text>),
+                                                inActiveGrid.CreateColumn(dataField: "LoginId", headerText:"Login ID", canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                inActiveGrid.CreateColumn(dataField: "EmailId", headerText:"Email ID",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                inActiveGrid.CreateColumn(dataField: "RoleName", headerText:"Role", canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                inActiveGrid.CreateColumn(dataField: "CreatedOn", headerText:"Created On",canSort: false,headerHorizontalAlignment: "center", itemHorizontalAlignment: "center"),
+                                             
+                                                inActiveGrid.CreateColumn(headerText:"Action", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center",dataFieldFormat:@<text>
+                                        <a title="Edit" href="@Url.Action("Edit", "User", new { @userId = @item.UserId })" class="fa fa-fw fa-edit">
+                                        </a><span>&nbsp;|&nbsp;</span>
+                                        <a title="Delete" onclick="javascript:return ConfirmDelete();" href="@Url.Action("Delete", "User", new { @userId = @item.UserId })" class="fa fa-fw fa-trash-o">
+                                        </a><span>
+                                            &nbsp;|&nbsp;
+                                        </span>
+                                        <a title="Activate" onclick="javascript: return confirm('Are you sure to activate this record?')" href="@Url.Action("Activate", "User", new { @UserId = @item.UserId })" class="fa fa-fw fa-undo"></a></text>)
+                                                },
+                                        tableStyle: "table table-bordered table-hover",
+                                        headerStyle: "head",
+                                        alternatingRowStyle: "alt",
+                                        tableId: "in-activeTable")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cl">
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section scripts{
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+           
+        });
+
+
+    $(function () {
+        var pagesize = '@CommonData.FetchSettingValue("Admin.PageSize.Small")';
+        var activeCount = "@Model.Item1.Count";
+        var deactiveCount = "@Model.Item2.Count";
+        $('#activeTable').DataTable({
+            "paging": activeCount > 0 ? true : false,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": activeCount > 0 ? true : false,
+            "info": false,
+            "pageLength": parseInt(pagesize)
+
+        });
+        $('#in-activeTable').DataTable({
+            "paging": deactiveCount > 0 ? true : false,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": deactiveCount > 0 ? true : false,
+            "info": false,
+            "pageLength": parseInt(pagesize)
+
+        });
+    });
+    </script>
+}

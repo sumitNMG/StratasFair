@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StratasFair.Business</RootNamespace>
+    <AssemblyName>StratasFair.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\StratasFair.Web\Resources\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\StratasFair.Web\Resources\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\StratasFair.Web\Resources\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\StratasFair.Web\Resources\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StratasFair.Web\Resources\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StratasFair.Web\SharedBin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminSessionData.cs" />
+    <Compile Include="Admin\AdminUserHelper.cs" />
+    <Compile Include="Admin\CMSHelper.cs" />
+    <Compile Include="Admin\EmailNotificationHelper.cs" />
+    <Compile Include="Admin\EmailServerHelper.cs" />
+    <Compile Include="Admin\FAQHelper.cs" />
+    <Compile Include="Admin\LoginHelper.cs" />
+    <Compile Include="Admin\MenuHelper.cs" />
+    <Compile Include="Admin\ReportsHelper.cs" />
+    <Compile Include="Admin\RoleHelper.cs" />
+    <Compile Include="Admin\SettingHelper.cs" />
+    <Compile Include="Admin\VendorHelper.cs" />
+    <Compile Include="AdvertisementHelper.cs" />
+    <Compile Include="CommonHelper\AppError.cs" />
+    <Compile Include="CommonHelper\AppLogic.cs" />
+    <Compile Include="CommonHelper\ASPRazorWebGrid.cs" />
+    <Compile Include="CommonHelper\CommonData.cs" />
+    <Compile Include="CommonHelper\ConvertToCSV.cs" />
+    <Compile Include="CommonHelper\ConvertToPdf.cs" />
+    <Compile Include="CommonHelper\EmailSender.cs" />
+    <Compile Include="CommonHelper\Encrypt64.cs" />
+    <Compile Include="CommonHelper\SqlHelper.cs" />
+    <Compile Include="DisciplineHelper.cs" />
+    <Compile Include="Front\BillHelper.cs" />
+    <Compile Include="Front\BookingRequestHelper.cs" />
+    <Compile Include="Front\ClientLoginHelper.cs" />
+    <Compile Include="Front\CommonAreaHelper.cs" />
+    <Compile Include="Front\ForumHelper.cs" />
+    <Compile Include="Front\MyReminderHelper.cs" />
+    <Compile Include="Front\MyRequestHelper.cs" />
+    <Compile Include="Front\NoticeBoardHelper.cs" />
+    <Compile Include="Front\PMBHelper.cs" />
+    <Compile Include="Front\PollHelper.cs" />
+    <Compile Include="Front\UserCalendarHelper.cs" />
+    <Compile Include="Front\VendorQuotationHelper.cs" />
+    <Compile Include="Front\VendorSessionData.cs" />
+    <Compile Include="Front\ClientSessionData.cs" />
+    <Compile Include="Front\HomePageHelper.cs" />
+    <Compile Include="Front\EmailServerClientHelper.cs" />
+    <Compile Include="Front\StrataOwnerHelper.cs" />
+    <Compile Include="Front\SubAdminHelper.cs" />
+    <Compile Include="Front\VendorHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrataBoardHelper.cs" />
+    <Compile Include="SubscriptionHelper.cs" />
+    <Compile Include="TestimonialHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StratasFair.BusinessEntity\StratasFair.BusinessEntity.csproj">
+      <Project>{c9639688-010f-4538-848e-622ebf32c337}</Project>
+      <Name>StratasFair.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StratasFair.Common\StratasFair.Common.csproj">
+      <Project>{8845d12b-7369-4a96-bf26-fb82dbf6d66b}</Project>
+      <Name>StratasFair.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StratasFair.Data\StratasFair.Data.csproj">
+      <Project>{f1b842b9-c7eb-4e7a-8e55-ffe4eb07378f}</Project>
+      <Name>StratasFair.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,48 @@
+﻿@model StratasFair.BusinessEntity.ForumReplyModel
+@using StratasFair.Business.Front
+
+@{
+    ForumHelper helper = new ForumHelper();
+    var forumReplyList = helper.GetForumReplyListing(Model.TopicId);
+    var totalCounter = forumReplyList.ToList().Count;
+    var count = 0;
+}
+
+@foreach (var replyItem in forumReplyList)
+{
+    count = count + 1;
+    <div class="comment-cnt">
+        <div class="icon-lft">
+            @if (@replyItem.IsFlagged)
+            {
+                if (ClientSessionData.ClientRoleName == "Admin" || ClientSessionData.ClientRoleName == "admin")
+                {
+                    <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal" data-target="#red-flag-popup" onclick="SetValueForFlagView(@replyItem.ReplyId,'reply');"></i>
+                }
+                else
+                {
+                    <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal"></i>
+                }
+            }
+            else
+            {
+                <i id="iflagReply_@replyItem.ReplyId" class="fa fa-flag" aria-hidden="true" data-toggle="modal" data-target="#flag-popup" onclick="SetValueForFlag(@replyItem.ReplyId,'reply');"></i>
+            }
+
+        </div>
+        <div class="cnt">
+            <p>@replyItem.Message</p>
+        </div>
+        <div class="mail-by"><small>by</small> @replyItem.CreatedByName</div>
+
+        @if (count == totalCounter)
+        {
+            <div class="btn-group">
+                <a id="ancReply_@replyItem.TopicId" onclick="FnViewReplyForm(this);" href="javascript:void(0);" class="reply" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Reply">
+                    <i lass="reply" class="fa fa-reply" aria-hidden="true"></i>
+                </a>
+            </div>
+        }
+
+    </div>
+}

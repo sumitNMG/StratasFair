@@ -1,0 +1,29 @@
+﻿@model List<StratasFair.BusinessEntity.Front.PollQuestionModel>
+
+@foreach(var item in Model)
+{
+    <li id="div-@item.PollId">
+        <div class="row vertical-align">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="poll-heading">
+                    <h4>@item.PollHeader</h4>
+                    <span class="date">
+                        ( @string.Format("{0:dd MMM yyyy}", item.CreatedOn)
+                        &nbsp; - &nbsp;
+                        @string.Format("{0:dd MMM yyyy}", item.EndDate) )
+                    </span>
+                </div>
+                <ul class="polling-list">
+                    @foreach (var option in item.pollOptionList)
+                    {
+                        <ol>@option.OptionText</ol>
+                    }
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-10 view-section poll-view">
+                <a href="javascript:void(0);" class="yellow-btn-round " data-toggle="modal" data-target="#graphical-view" onclick="showChart('@item.PollHeader', @item.PollId);">Graphical View</a>
+                <a class="delete-btn" href="javascript:void(0);" onclick="deletePoll(@item.PollId);"><img src="@Url.Content("~/Content/images/poll-trash-icon.png")"></a>
+            </div>
+        </div>
+    </li>
+}

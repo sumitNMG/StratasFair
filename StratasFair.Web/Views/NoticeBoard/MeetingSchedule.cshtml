@@ -1,0 +1,314 @@
+﻿@{
+    ViewBag.Title = "Meeting Schedule";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+@model StratasFair.BusinessEntity.Front.NoticeBoardModel
+@section scripts{
+
+    <script src="~/Content/js/bootstrap-multiselect.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        debugger;
+        var BlockNumber = 2;  //Infinate Scroll starts from second block
+        var NoMoreData = false;
+        var inProgress = false;
+
+
+        var MeetingCount = $("#hdnScheduleMeeting").val();
+        if (MeetingCount > 9) {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() -
+                $(window).height() && !NoMoreData && !inProgress) {
+
+                    inProgress = true;
+                    $("#dvLoaderIndex").show();
+                    $.post("@Url.Action("MeetingInfinateScroll", "NoticeBoard")",
+                            { "BlockNumber": BlockNumber },
+                            function (data) {
+                                BlockNumber = BlockNumber + 1;
+                                NoMoreData = data.NoMoreData;
+                                $("#ListScheduleMeetingBody").append(data.HTMLString);
+                                $("#dvLoaderIndex").hide();
+                                inProgress = false;
+                            });
+                }
+            });
+        }
+
+        var InformationCount = $("#hdnGeneralInformation").val();
+        if (InformationCount > 9) {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() -
+                $(window).height() && !NoMoreData && !inProgress) {
+
+                    inProgress = true;
+                    $("#dvLoaderIndex").show();
+                    $.post("@Url.Action("InformationInfinateScroll", "NoticeBoard")",
+                            { "BlockNumber": BlockNumber },
+                            function (data) {
+                                BlockNumber = BlockNumber + 1;
+                                NoMoreData = data.NoMoreData;
+                                $("#ListGeneralInformationBody").append(data.HTMLString);
+                                $("#dvLoaderIndex").hide();
+                                inProgress = false;
+                            });
+                }
+            });
+        }
+
+    })
+
+    function DeleteScheduleMeetingDetails(MeetingId) {
+
+        var checkstr = confirm('Are you sure you want to delete this Schedule Meeting ?');
+        if (checkstr == true) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/DeleteScheduleMeeting")',
+                dataType: 'json',
+                data: { MeetingId: MeetingId },
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        }
+    }
+
+    function EditScheduleMeetingDetails(MeetingId) {
+
+        $('#EditScheduleMeetingDiv').html('');
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/EditScheduleMeeting")',
+            dataType: 'html',
+            data: { MeetingId: MeetingId },
+            success: function (result) {
+                $('#EditScheduleMeetingDiv').html(result);
+                $.validator.unobtrusive.parse('#frmEditScheduleMeeting');         /////////////// For apply validation on Edit Modal pop up
+            }
+        });
+
+    }
+
+    function ViewScheduleMeetingDetails(MeetingId) {
+
+        $('#ViewScheduleMeetingDiv').html('');
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/ViewScheduleMeeting")',
+            dataType: 'html',
+            data: { MeetingId: MeetingId },
+            success: function (result) {
+                $('#ViewScheduleMeetingDiv').html(result);
+                $.validator.unobtrusive.parse('#frmViewScheduleMeeting');         /////////////// For apply validation on Edit Modal pop up
+            }
+        });
+
+    }
+
+
+    $(function () {
+        $('#StrataOwnersDD').multiselect({
+            maxHeight: 200,
+            includeSelectAllOption: true,
+            buttonText: function (options, select) {
+                if (options.length === 0) {
+                    return 'Select';
+                }
+                if (options.length === select[0].length) {
+                    return 'All selected (' + select[0].length + ')';
+                }
+                else if (options.length >= 6) {
+                    return options.length + ' selected';
+                }
+                else {
+                    var labels = [];
+                    options.each(function () {
+                        labels.push($(this).text());
+                    });
+                    return labels.join(', ') + '';
+                }
+            },
+            onChange: function (option, checked, select) {
+                $(this).toggleClass("checked");
+            }
+
+        });
+    });
+
+    $("#StrataOwnersDD").change(function () {
+        var selMulti = $.map($("#StrataOwnersDD option:selected"), function (el, i) {
+            return $(el).val();
+        });
+        $("#SelectedMeetingInvite").val(selMulti.join(", "));
+        if (selMulti.length > 0) {
+            $("span[data-valmsg-for='ScheduleMeetingInviteIds']").text("");
+        }
+    });
+
+    </script>
+}
+
+@section styles{
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-multiselect.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    <style>
+        .checkbox input[type="checkbox"] {
+            display: block;
+        }
+    </style>
+
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Notice Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 tab-menu">
+            <div class="tabs-menu">
+                <ul>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard")" class="showSingle">Latest Alerts</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MeetingSchedule")" target="2" id="first-anchor" class="showSingle">Meeting Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MaintenanceSchedule")" class="showSingle">Maintenance Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/GeneralInformation")" class="showSingle">General Information</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row admin-dashboard">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="div2" class="targetDiv table-section admin-notice-meeting">
+                <div class="row sub-heading">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <h2>Meeting Scheduled</h2>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-6 pull-right text-right">
+                        <div class="add-btn pull-right">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#add-meeting">Add Meeting</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <td class="subject">Subject</td>
+                            <td class="message">Message</td>
+                            <td class="meeting">Meeting Time</td>
+                            <td class="added-on">Added On</td>
+                            <td class="action">Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id="ListScheduleMeetingBody">
+                        @if (Model.ScheduleMeetingModelList != null)
+                        {
+                            if (Model.ScheduleMeetingModelList.Count() > 0)
+                            {
+                                { Html.RenderAction("ListScheduleMeeting", "NoticeBoard", new { Model = Model.ScheduleMeetingModelList }); }
+                                <input id="hdnScheduleMeeting" value=@Model.ScheduleMeetingModelList.Count() type="hidden" />
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                        <span class="text-orange">No Record Found</span>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                    <span class="text-orange">No Record Found</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tbody>
+                        <tr></tr>
+                    </tbody>
+                </table>
+
+            </div><!-- Meeting Scheduled End -->
+            <div id="dvLoaderIndex" style="display:none; text-align:center">
+                <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- page content End -->
+<!-- Modal Add Meeting -->
+<div class="modal fade" id="add-meeting" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            @{
+                NoticeBoardHelper noticeBoardHelper = new NoticeBoardHelper();
+                ScheduleMeetingModel scheduleMeetingModel = new ScheduleMeetingModel();
+                scheduleMeetingModel.StrataOwners = noticeBoardHelper.GetAllStrataOwners();
+            }
+            <div id="AddScheduleMeetingDiv">
+                @{Html.RenderPartial("AddScheduleMeeting", scheduleMeetingModel);}
+            </div>
+        </div>
+    </div>
+</div><!-- modal Add Meeting End -->
+<!-- Modal Edit Meeting -->
+<div class="modal fade" id="edit-meeting" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="EditScheduleMeetingDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- modal Edit Meeting End -->
+<!-- Modal View Meeting -->
+<div class="modal fade" id="view-meeting" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="ViewScheduleMeetingDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- modal View Meeting End -->

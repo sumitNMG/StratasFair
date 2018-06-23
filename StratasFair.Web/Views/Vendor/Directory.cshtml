@@ -1,0 +1,98 @@
+﻿@using StratasFair.Business.Front;
+@model StratasFair.BusinessEntity.VendorSearchModel
+@{
+    ViewBag.Title = "Directory";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@section styles
+{
+    <!-- Custom styling plus plugins -->
+    <link href="@Url.Content("~/Content/css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/bootstrap-select.min.css")" />
+
+    <style>
+        .vendor-directory ul.vendor li {
+            padding: 10px;
+        }
+    </style>
+}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="back-btn">
+        <a href="@Url.Content("~/"+ClientSessionData.ClientPortalLink+"/vendor/quotation")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Vendor Directory</h1>
+        </div>
+        <div class="title_right pull-right">
+            @using (Html.BeginForm("directory", Url.Content("~/" + ClientSessionData.ClientPortalLink + "/vendor"), FormMethod.Post))
+            {
+                <div class="vendor-search">
+                    @Html.TextBoxFor(m => m.keyword, new { maxlength = "100", placeholder = "Keyword" })
+                    @Html.ValidationMessageFor(m => m.keyword)
+                    <div class="select-discipline">
+                        @Html.DropDownListFor(m => m.disciplineid, new SelectList(StratasFair.Business.CommonHelper.CommonData.GetDisciplineList().Where(x => x.Text.ToLower() != "others").ToList(), "Value", "Text"), "Select", new { @class = "selectpicker" })
+                    </div>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <div class="clearfix"></div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 vendor-directory">
+            <ul class="vendor">
+                @foreach (var item in ViewBag.VendorList)
+                {
+                    <li>
+                        <figure class="vendor-pic">
+                            <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/vendor/@item.VendorId/ProfilePicture/@item.ImageFile" alt="" title="Vendor" />
+                        </figure>
+                        <span class="name">@item.VendorName</span>
+                        <span class="designation">@item.DisciplineName</span>
+                        <div class="email-id">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:@item.EmailId">@item.EmailId</a>
+                        </div>
+                        <div class="phone-no">
+                            <i class="fa fa-mobile-phone"></i> @item.MobileNumber
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div><!-- vendor-directory End -->
+    </div>
+</div><!-- page content End -->
+<!-- footer content -->
+@section scripts
+{
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <!-- select option-->
+    <script src="@Url.Content("~/Content/js/bootstrap-select.min.js")"></script>
+    <script>
+        var pageNo = 1;
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                var urlToLoad = '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/vendor/search")';
+                $.ajax({
+                    url: urlToLoad,
+                    data: { page: (pageNo + 1), keyword: $("#keyword").val(), disciplineid: $("#disciplineid").val() },
+                    success: function (result) {
+                        if (result != "-1") {
+                            $("ul.vendor").append(result);
+                            pageNo = pageNo + 1;
+                        }
+                    }
+                });
+            }
+        });
+
+        $(function () {
+            $("ul.nav a[href='/stratasfair/@ClientSessionData.ClientPortalLink/Vendor/Quotation']").parent().addClass('current-page');
+        });
+    </script>
+}

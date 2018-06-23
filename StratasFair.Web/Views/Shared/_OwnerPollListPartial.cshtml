@@ -1,0 +1,35 @@
+﻿@model Tuple<List<StratasFair.BusinessEntity.Front.PollQuestionModel>, int>
+@foreach (var poll in Model.Item1)
+{
+    <li>
+        @if (poll.EndDate < DateTime.UtcNow)
+        {
+            @Html.Raw("<div class='expired'>expired</div>")
+        }
+        <div class="row vertical-align">
+            <div class="col-md-10 col-sm-9 col-xs-12" id="div-@poll.PollId">
+                <div class="poll-heading">
+                    <h4>@poll.PollHeader</h4>
+                    <span class="date">(@string.Format("{0:dd MMM yyyy}", poll.CreatedOn) - @string.Format("{0:dd MMM yyyy}", poll.EndDate))</span>
+                </div>
+                @foreach (var option in poll.pollOptionList)
+                {
+                    <div class="radiobox @if(poll.IsAnswered || poll.EndDate<DateTime.UtcNow){@Html.Raw("disabled")}">
+                        @if (poll.IsAnswered || poll.EndDate < DateTime.UtcNow)
+                        {
+                            <input type="radio" id="option-@option.PollOptionId" name="rdoOption-@poll.PollId" @if (option.IsSelected) { @Html.Raw("checked")              } onclick="submitOpinion(@option.PollOptionId, @poll.PollId);" disabled />
+                        }
+                        else
+                        {
+                            <input type="radio" id="option-@option.PollOptionId" name="rdoOption-@poll.PollId" onclick="submitOpinion(@option.PollOptionId, @poll.PollId);" />
+                        }
+                        <label for="option-@option.PollOptionId">@option.OptionText</label>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-2  col-md-3 col-sm-3 col-xs-3 view-section">
+                <a href="" class="yellow-btn-round" data-toggle="modal" data-target="#graphical-view" onclick="showChart('@poll.PollHeader',@poll.PollId);">View Results</a>
+            </div>
+        </div>
+    </li>
+}

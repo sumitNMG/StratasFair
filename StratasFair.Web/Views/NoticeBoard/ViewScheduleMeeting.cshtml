@@ -1,0 +1,52 @@
+﻿@model StratasFair.BusinessEntity.Front.ScheduleMeetingModel
+
+<div class="modal-body">
+    <h5 class="text-center">View Meeting Scheduled</h5>
+    <form class="form-section">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.MeetingId)
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Subject</label>
+                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @readonly = true })
+                    @Html.ValidationMessageFor(m => m.Subject)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Message</label>
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @maxlength = "250", @readonly = true })
+                    @Html.ValidationMessageFor(m => m.Message)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Meeting Date Time</label>
+                    @Html.TextBoxFor(m => m.MeetingDate, new { @class = "form-control", @readonly = true })
+                    @Html.ValidationMessageFor(m => m.MeetingDate)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="detal">
+                <ul>
+                    @{
+                        if (!string.IsNullOrEmpty(@Model.ScheduleMeetingInviteIds))
+                        {
+                            int[] ScheduleMeetingInviteIdArray = Model.ScheduleMeetingInviteIds.Split(",".ToCharArray()).Select(x => int.Parse(x.ToString())).ToArray();
+                            foreach (var item in ScheduleMeetingInviteIdArray)
+                            {
+                                <li>@Model.StrataOwners.Where(x => x.UserClientId == item).FirstOrDefault().Name</li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </form><!-- Form End -->
+</div>

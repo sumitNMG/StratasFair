@@ -1,0 +1,57 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.StrataOwnerModel>
+
+@{
+    if (Model != null)
+    {
+        if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td data-title="First Name" class="f-name">
+                        <a href="javascript:void(0)" onclick="ViewUserDetails(@item.UserClientId)" class="text-orange" data-toggle="modal" data-target="#view-owner">
+                            @item.FirstName
+                        </a>
+                    </td>
+                    <td data-title="Last Name" class="l-name">@item.LastName</td>
+                    <td data-title="Email Address" class="email-id">
+                        @item.Email
+                    </td>
+                    <td data-title="Unit Number" class="unit-number">@item.UnitNumber</td>
+                    <td data-title="Added On" class="added-on">@item.CreatedOn</td>
+                    <td data-title="Action" class="action">
+                        <a href="javascript:void(0);" onclick="EditUserDetails(@item.UserClientId)" data-toggle="modal" data-target="#edit-owner">
+                            <i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="DeleteUserDetails(@item.UserClientId)">
+                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="ResendCredentialsMail(@item.UserClientId)">
+                            <i class="fa fa-reply" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Reply"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="ViewUserDetails(@item.UserClientId)" data-toggle="modal" data-target="#view-owner">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <div class="switch-box small-switch">
+                            <div class="switch">
+
+                                @if (@item.Status == 1)
+                                {
+                                    <input id="cmn-toggle-@item.UserClientId" class="cmn-toggle cmn-toggle-round" type="checkbox" checked onchange="ActivateDeactivateClick(this, @item.UserClientId)">
+                                    <label for="cmn-toggle-@item.UserClientId"></label>
+                                }
+                                else
+                                {
+                                    <input id="cmn-toggle-@item.UserClientId" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="ActivateDeactivateClick(this, @item.UserClientId)">
+                                    <label for="cmn-toggle-@item.UserClientId"></label>
+                                }
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    }
+}
+

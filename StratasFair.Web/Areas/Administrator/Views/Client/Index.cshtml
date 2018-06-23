@@ -1,0 +1,597 @@
+﻿@using StratasFair.Business.Admin;
+@using StratasFair.Business.CommonHelper;
+
+
+
+@{
+    ViewBag.Title = "Manage StratasBoard";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <link href="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Areas/Administrator/Content/plugins/datepicker/datepicker3.css")" />
+    <link href="@Url.Content("~/Content/css/DevStyle.css")" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/sweetalert.css")" />
+}
+<section class="content-header">
+    <h1>
+        Manage StratasBoard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashboard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage StratasBoard</li>
+    </ol>
+    <div class="top-buttons-container">
+        <a href="@Url.Content("~/securehost/rootlogin/client/add")" class="btn btn-info">Add</a>
+    </div>
+
+</section>
+@*<section class="content-header">
+    <ul class="visible-breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashboard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage StratasBoard</li>
+    </ul>
+</section>*@
+
+
+<!-- Main content -->
+<section class="content">
+    @using (Html.BeginForm())
+    {
+        <div class="box box-info">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Expiration Date (From)</label>
+                                @Html.TextBox("ExpiredOnFrom", "", new { @class = "form-control", @placeholder = "Expiration Date (MM/DD/YYYY)", @id = "datepickerFrom", @name = "txtExpiryDateFrom", @onpaste = "return false;", @ondragstart = "return false;", @ondrop = "return false;" })
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Expiration Date (To)</label>
+                                @Html.TextBox("ExpiredOnTo", "", new { @class = "form-control", @placeholder = "Expiration Date (MM/DD/YYYY)", @id = "datepickerTo", @name = "txtExpiryDateTo", @onpaste = "return false;", @ondragstart = "return false;", @ondrop = "return false;" })
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>Keyword</label>
+                                @Html.TextBox("Keyword", "", new { @class = "form-control", @placeholder = "Search by stratasboard name, unique name or emailId", @maxlength = "100", @id = "Keyword", @name = "Keyword", @ondragstart = "return false;", @ondrop = "return false;" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-sm-4">
+
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="javascript:void(0)" id="linkExportToPdf" class="btn btn-primary">
+                                    <i class="fa fa-download"> Generate PDF</i>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="javascript:void(0)" id="linkExportToCsv" class="btn btn-primary"><i class="fa fa-download"> Generate Excel</i></a>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <input type="submit" value="Search" class="btn btn-primary col-sm-10 col-xs-8" />
+                            </div>
+
+                            <div class="col-sm-2">
+                                <a href="@Url.Action("index", "client")" class="btn btn-warning col-sm-10 col-xs-8">View All</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab_1-1" data-toggle="tab">Active StratasBoard</a></li>
+                    <li><a href="#tab_2-2" data-toggle="tab">Inactive StratasBoard</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1-1">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    @{
+                                        var activeGrid = new ASPRazorWebGrid(source: Model.Item1, maintainState: false);
+                                    }
+                                    @activeGrid.GetHtml(columns: new ASPRazorWebGridColumn[]{
+                                                activeGrid.CreateColumn(dataField: "StratasBoardName", headerText:"Stratasboard name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+
+                                                  activeGrid.CreateColumn(headerText:"Unique name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:@<text> @item.PortalLink <br />
+                                                @if (!(string.IsNullOrEmpty(@item.RequestPortalLink) && string.IsNullOrEmpty(@item.RequestMessage)) && @item.RequestCounter == 0)
+                                                {
+                                                    <a title="Unique name change request" onclick="open_uniquename('@item.RequestPortalLink','@item.RequestMessage');" href="javascript:void(0);">Change Request</a>
+
+                                                }
+                                    
+                                     </text>),
+                                    
+                                    
+                                            
+
+                                                  activeGrid.CreateColumn(headerText:"Created On",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:@<text> @item.CreatedOn.ToString("dd MMM yyyy") </text>),
+
+                                                  activeGrid.CreateColumn(headerText:"StratasBoard Admin", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+
+                                                    <div class="">
+
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Name: </label></div>
+                                                            <div class="col-sm-9"><span>@Html.Raw(@item.FirstName + " " + @item.LastName)</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Email: </label></div>
+                                                            <div class="col-sm-9"><span>@item.EmailId</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Contact: </label></div>
+                                                            <div class="col-sm-9"><span>@item.ContactNumber</span></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </text>),
+                                    
+
+                                               
+                                                
+                                                 activeGrid.CreateColumn(headerText:"Subscription", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+
+                                                    <div class="">
+
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Name: </label></div>
+                                                            <div class="col-sm-9"><span>@item.SubscriptionName</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Validity: </label></div>
+                                                            <div class="col-sm-9"><span>@item.ValidityText</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Expiry: </label></div>
+                                                            <div class="col-sm-9"><span>@Convert.ToDateTime(@item.ExpiryDate).ToString("dd MMM yyyy")</span></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </text>),
+                                                activeGrid.CreateColumn(headerText:"Action", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center", width:"40px",
+                                                dataFieldFormat:
+                                                @<text>
+                                    <a title="Edit" class=" fa fa-fw fa-edit" href="@Url.Action("edit", "client", new { @Id = @item.StratasBoardId })"></a>
+                                    <span>&nbsp;|&nbsp;</span>
+                                    <a title="DeActivate" class="fa fa-fw fa-ban" onclick="javascript:return confirm('Are you sure to deactivate this record?')" href="@Url.Action("deactive", "client", new { @Id = @item.StratasBoardId })"></a>
+                                    <br />
+                                    <a title="Delete" class=" fa fa-fw fa-trash-o" onclick="javascript:return confirm('Are you sure to delete this record?')" href="@Url.Action("delete", "client", new { @Id = @item.StratasBoardId })"></a>
+                                                    @*
+                                                    <a title="Send Reminder" onclick="open_reminderwindow(@item.StratasBoardId,'@item.EmailId');" href="javascript:void(0);">Send Reminder</a>*@
+                                    <span>&nbsp;|&nbsp;</span>
+                                    <a title="Manage Subscription" class="fa fa-fw fa-dollar" href="@Url.Action("listsubscription", "client", new { @Id = @item.StratasBoardId })"></a>
+
+
+                                                   
+                                                </text>
+
+                                            )
+
+                                                },
+                                        tableStyle: "table table-bordered table-hover",
+                                        headerStyle: "head",
+                                        alternatingRowStyle: "alt",
+                                        tableId: "activeTable")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab_2-2">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    @{
+                                            var InactiveGrid = new ASPRazorWebGrid(source: Model.Item2, maintainState: false);
+                                    }
+                                    @InactiveGrid.GetHtml(columns: new ASPRazorWebGridColumn[]{
+                                     InactiveGrid.CreateColumn(dataField: "StratasBoardName", headerText:"Stratasboard name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                                                InactiveGrid.CreateColumn(dataField: "PortalLink", headerText:"Unique name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+
+                                                  InactiveGrid.CreateColumn(headerText:"Created On",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:@<text> @item.CreatedOn.ToString("dd MMM yyyy") </text>),
+
+                                                  InactiveGrid.CreateColumn(headerText:"StratasBoard Admin", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+
+                                                    <div class="">
+
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Name: </label></div>
+                                                            <div class="col-sm-9"><span>@Html.Raw(@item.FirstName + " " + @item.LastName)</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Email: </label></div>
+                                                            <div class="col-sm-9"><span>@item.EmailId</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Contact: </label></div>
+                                                            <div class="col-sm-9"><span>@item.ContactNumber</span></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </text>),
+
+
+
+
+                                                 InactiveGrid.CreateColumn(headerText:"Subscription", headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left",
+                                                dataFieldFormat:
+                                                @<text>
+
+
+                                                    <div class="">
+
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Name: </label></div>
+                                                            <div class="col-sm-9"><span>@item.SubscriptionName</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Validity: </label></div>
+                                                            <div class="col-sm-9"><span>@item.ValidityText</span></div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3" style="padding-left:0px"><label>Expiry: </label></div>
+                                                            <div class="col-sm-9"><span>@Convert.ToDateTime(@item.ExpiryDate).ToString("dd MMM yyyy")</span></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </text>),
+
+                                                InactiveGrid.CreateColumn(headerText:"Action", headerHorizontalAlignment: "center", itemHorizontalAlignment: "center", width:"40px",
+                                                dataFieldFormat:
+                                                @<text>
+                                    <a title="Edit" class=" fa fa-fw fa-edit" href="@Url.Action("edit", "client", new { @Id = @item.StratasBoardId })"></a>
+                                    <span>&nbsp;|&nbsp;</span>
+                                    <a title="Activate" class="fa fa-fw fa-undo" onclick="javascript:return confirm('Are you sure to activate this record?')" href="@Url.Action("active", "client", new { @Id = @item.StratasBoardId })"></a>
+
+                                                </text>
+                                    )
+
+                                                },
+                                        tableStyle: "table table-bordered table-hover",
+                                        headerStyle: "head",
+                                        alternatingRowStyle: "alt",
+                                        tableId: "in-activeTable")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Modal form for unique name-->
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog modal-title">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Unique name change request</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="txtRecipientEmail" class="form-control-label">Suggested Unique Name:</label>
+                            <input class="form-control" id="txtSuggestedUniqueName" type="text" readonly="readonly" />
+                          
+                        </div>
+                        <div class="form-group">
+                            <label for="txtMessage" class="form-control-label">Message:</label>
+                            <textarea class="form-control" id="txtMessageUniqueName" rows="8" readonly="readonly"></textarea>
+                           
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal ------------------------------>
+        
+        
+        
+    <!-- Modal form for sending reminder message-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-title">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Send Reminder</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            @Html.Hidden("StratasBoardId")
+                            @Html.Hidden("RecipientEmail")
+                            <div class="form-group">
+                                <label for="txtRecipientEmail" class="form-control-label">Recipient:</label>
+                                <input class="form-control" id="txtRecipientEmail" type="text" readonly="readonly" />
+                                <div><span id="RecipientEmailError"></span></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtMessage" class="form-control-label">Message:</label>
+                                <textarea class="form-control" id="txtMessage" rows="8"></textarea>
+                                <div><span id="MessageError"></span></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnSendMessage">Send message</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <!-- end of modal ------------------------------>
+
+    }
+</section>
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $("#btnSendMessage").click(function () {
+                if (Validate() == false) {
+                    ChangeClassOnBegin();
+                    var rEmailId = $("#RecipientEmail").val();
+                    var compId = $("#StratasBoardId").val();
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("/SendMessage")',
+                        dataType: 'json',
+                        data: {
+                            ReceipientEmailId: rEmailId,
+                            StratasBoardId: compId,
+                            Message: $("#txtMessage").val()
+                        },
+                        success: function (result) {
+                            ChangeClassOnSuccess();
+                            if (result.msg == "Ok") {
+                                swal({
+                                    title: "Message sent successfully.",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonText: "OK",
+                                    closeOnConfirm: true
+                                }, function () {
+                                    location.reload();
+                                });
+                            }
+                            else {
+                                swal({
+                                    type: "warning",
+                                    title: "Failed",
+                                    showConfirmButton: true,
+                                    showCancelButton: false,
+                                    confirmButtonText: "Ok",
+                                    closeOnConfirm: true,
+                                    text: "<b>" + result.data + "</b>",
+                                    html: true
+                                });
+                            }
+
+                        }
+                    });
+                }
+            });
+
+
+            var max = 1000;
+            $("#txtMessage").keypress(function (e) {
+                if (e.which < 0x20) {
+                    return;
+                }
+                if (this.value.length == max) {
+                    e.preventDefault();
+                } else if (this.value.length > max) {
+                    this.value = this.value.substring(0, max);
+                }
+            });
+
+            $("#txtMessage").blur(function (e) {
+                if (this.value.length > max) {
+                    this.value = this.value.substring(0, max);
+                }
+            });
+        });
+
+        function ChangeClassOnBegin() {
+            $("#btnSendMessage").addClass("btn-loader");
+        }
+        function ChangeClassOnSuccess() {
+            $("#btnSendMessage").removeClass("btn-loader");
+        }
+
+        function Validate() {
+
+            var emailPattern = /^([a-zA-Z0-9_\.\-\+])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if ($("#txtRecipientEmail").val().length <= 0) {
+                $('#RecipientEmailError').empty();
+                $("#RecipientEmailError").append("<span id='RecipientEmail-error' class='field-validation-error error'>Receipient email is required</span>");
+                return true;
+            }
+            else if ($("#txtRecipientEmail").val().length > 0 && $("#txtRecipientEmail").val().length < 5) {
+                $('#RecipientEmailError').empty();
+                $("#RecipientEmailError").append("<span id='RecipientEmail-error' class='field-validation-error error'>Invalid email</span>");
+                return true;
+            }
+            else if (!emailPattern.test($('#txtRecipientEmail').val())) {
+                $('#RecipientEmailError').empty();
+                $("#RecipientEmailError").append("<span id='RecipientEmail-error' class='field-validation-error error'>Email is not valid</span>");
+                $('#txtRecipientEmail').focus();
+                return true;
+            }
+            else if ($("#txtRecipientEmail").val().length > 100) {
+                $('#RecipientEmailError').empty();
+                $("#RecipientEmailError").append("<span id='RecipientEmail-error' class='field-validation-error error'>Email should be max 100 characters long</span>");
+                return true;
+            }
+            else {
+                $('#RecipientEmailError').empty();
+            }
+
+
+            if ($("#txtMessage").val().length <= 0) {
+                $('#MessageError').empty();
+                $("#MessageError").append("<span id='Message-error' class='field-validation-error error'>Message is required</span>");
+                return true;
+            }
+            else if ($("#txtMessage").val().length > 0 && $("#txtMessage").val().length < 5) {
+                $('#MessageError').empty();
+                $("#MessageError").append("<span id='Message-error' class='field-validation-error error'>Invalid message</span>");
+                return true;
+            }
+            else if ($("#txtMessage").val().length > 1000) {
+                $('#MessageError').empty();
+                $("#MessageError").append("<span id='Message-error' class='field-validation-error error'>Message should be max 1000 characters long</span>");
+                return true;
+            }
+
+            $('#RecipientEmailError').empty();
+            $('#MessageError').empty();
+            return false;
+
+        }
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+
+
+        function open_uniquename(uname, message) {
+            $("#txtSuggestedUniqueName").val(uname);
+            $("#txtMessageUniqueName").val(message);
+            $('#myModal2').modal('show');
+        }
+
+
+
+        function open_reminderwindow(cid, mail) {
+            $("#StratasBoardId").val(cid);
+            $("#RecipientEmail").val(mail);
+            $("#txtRecipientEmail").val(mail);
+            $("#txtMessage").val('');
+            $('#myModal').modal('show');
+        }
+        //function setModalBox(title, content, footer, $size) {
+        //    document.getElementById('modal-bodyku').innerHTML = content;
+        //    document.getElementById('myModalLabel').innerHTML = title;
+        //    document.getElementById('modal-footerq').innerHTML = footer;
+
+        //    $('#myModal').attr('class', 'modal fade bs-example-modal-sm')
+        //                    .attr('aria-labelledby', 'mySmallModalLabel');
+
+        //    $('#myModal2').attr('class', 'modal fade bs-example-modal-sm')
+        //                 .attr('aria-labelledby', 'mySmallModalLabel');
+        //    $('.modal-dialog').attr('class', 'modal-dialog modal-sm');
+
+        //}
+    </script>
+
+
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.js")"></script>
+    <script src="~/Areas/Administrator/Content/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" language="javascript">
+
+    //Date picker
+    $('#datepickerTo').datepicker({
+        autoclose: true
+    });
+    $('#datepickerFrom').datepicker({
+        autoclose: true
+    });
+
+
+
+    $(function () {
+        var pagesize = '@CommonData.FetchSettingValue("Admin.PageSize.Long")';
+        var activeCount = "@Model.Item1.Count";
+        var deactiveCount = "@Model.Item2.Count";
+
+        $('#activeTable').DataTable({
+            "paging": activeCount > 0 ? true : false,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": activeCount > 0 ? true : false,
+            "info": false,
+            "pageLength": parseInt(pagesize),
+            "order": [[5, "desc"]]
+
+        });
+        $('#in-activeTable').DataTable({
+            "paging": deactiveCount > 0 ? true : false,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": deactiveCount > 0 ? true : false,
+            "info": false,
+            "pageLength": parseInt(pagesize)
+
+        });
+    });
+
+      
+    $(document).ready(function () {
+        var rootpath = "@System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"]";
+      
+      
+     
+       
+
+        $("#linkExportToCsv").click(function () {
+            var kw = $("#Keyword").val();
+            var dfrom = $("#datepickerFrom").val() == "" ? "@Model.Item3.ExpiredOnFrom" : $("#datepickerFrom").val();
+            var dto = $("#datepickerTo").val() == "" ? "@Model.Item3.ExpiredOnTo" : $("#datepickerTo").val();
+            window.location = rootpath + "securehost/rootlogin/client/clientexporttocsv?dfrom=" + dfrom + "&dto=" + dto + "&kw=" + kw;
+        });
+
+        $("#linkExportToPdf").click(function () {
+            var kw = $("#Keyword").val();
+            var dfrom = $("#datepickerFrom").val() == "" ? "@Model.Item3.ExpiredOnFrom" : $("#datepickerFrom").val();
+            var dto = $("#datepickerTo").val() == "" ? "@Model.Item3.ExpiredOnTo" : $("#datepickerTo").val();
+            window.location = rootpath + "securehost/rootlogin/client/clientexporttopdf?dfrom=" + dfrom + "&dto=" + dto + "&kw=" + kw;
+        });
+    });
+    </script>
+}

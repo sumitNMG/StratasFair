@@ -1,0 +1,76 @@
+﻿@using StratasFair.Business.Front;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1">*@
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styling plus plugins -->
+    <link href="~/Content/css/custom.min.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/css/responsive.css" rel="stylesheet">
+    <link href="~/Content/css/DevStyle.css" rel="stylesheet" />
+
+    @RenderSection("styles", required: false)
+</head>
+<body class="nav-md">
+    <div class="wrapper">
+        <div class="container body">
+            <header>
+                <!-- menu Btn -->
+                <div class="nav toggle">
+                    <a id="menu_toggle">
+                        <span class="menu-icon">Menu</span>
+                        <span class="close-icon">X</span>
+                    </a>
+                </div>
+                <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard")"><img src="~/Content/images/logo.png" class="logo"></a>
+                <div class="h-rgt">
+                    <ul>
+                        <li class="bell">
+                            <a href=""><img src="~/Content/images/h-bell-icon.png"><span></span></a>
+                        </li>
+                        <li class="reminder">
+                            <a href=""><img src="~/Content/images/h-reminder-icon.png"><span></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </header>
+            <div class="main_container">
+                @Html.Partial("DashBoard/DashBoardLinksPartial")
+                <div class="right_container">
+                    @RenderBody()
+                </div>
+                <!-- footer content -->
+                <div class="clearfix"></div>
+                <footer>
+                    <div class="copyright-text">
+                        &copy; Copyright @System.DateTime.Now.Year StratasFair
+                    </div>
+                    <div class="clearfix"></div>
+                </footer><!-- footer end -->
+            </div><!-- main_container end -->
+        </div><!-- container end -->
+        <div class="clearfix"></div>
+    </div><!-- wrapper End -->
+    <div class="clearfix"></div>
+    <!-- jQuery -->
+    @*<script src="~/Content/js/jquery.min.js"></script>*@
+    <!-- Bootstrap -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Content/js/custom.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/script.js"></script>
+</body>
+</html>

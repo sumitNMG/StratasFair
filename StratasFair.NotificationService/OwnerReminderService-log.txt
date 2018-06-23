@@ -1,0 +1,2340 @@
+5/18/2018 6:09:41 AM - -- START - OwnerReminderService  
+5/18/2018 6:09:42 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:42 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:43 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:43 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:44 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:44 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:45 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:45 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:45 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:45 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:46 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:46 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:09:47 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:09:47 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:17:59 AM - -- START - OwnerReminderService  
+5/18/2018 6:18:00 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:18:00 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:18:24 AM - -- START - OwnerReminderService  
+5/18/2018 6:18:25 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:18:25 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:28:46 AM - -- START - OwnerReminderService  
+5/18/2018 6:33:09 AM - -- START - OwnerReminderService  
+5/18/2018 6:33:12 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:13 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:16 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:16 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:19 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:19 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:22 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:22 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:25 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:25 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:28 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:28 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:31 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:31 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:33:49 AM - -- START - OwnerReminderService  
+5/18/2018 6:33:52 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:33:52 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:34:58 AM - -- START - OwnerReminderService  
+5/18/2018 6:35:59 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:35:59 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:36:08 AM - -- START - OwnerReminderService  
+5/18/2018 6:36:09 AM - -- Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 6:36:09 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 6:38:12 AM - -- START - OwnerReminderService  
+5/18/2018 10:45:29 AM - -- START - OwnerReminderService  
+5/18/2018 10:45:33 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:33 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:36 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:36 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:38 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:38 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:40 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:40 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:43 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:43 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:45 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:45 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:47 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:47 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:50 AM - -- Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:45:50 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:52 AM - -- Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:45:52 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:55 AM - -- Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:45:55 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:57 AM - -- Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:45:57 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:45:59 AM - -- Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:45:59 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:46:02 AM - -- Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:46:02 AM - -- Reminder Details Record added successfully - First Reminder - SubscriptionExpireReminderData 
+5/18/2018 10:49:45 AM - -- START - OwnerReminderService  
+5/18/2018 10:49:49 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:49:49 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:49:53 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:49:53 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:49:56 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:49:56 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:00 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:50:00 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:04 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:50:04 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:08 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:50:08 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:12 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:50:12 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:16 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 10:50:16 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:20 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:50:20 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:23 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:50:23 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:27 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:50:27 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:30 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:50:30 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:50:33 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 10:50:33 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 10:51:17 AM - -- START - OwnerReminderService  
+5/18/2018 11:47:21 AM - -- START - OwnerReminderService  
+5/18/2018 11:48:03 AM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 11:48:04 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 11:49:20 AM - -- START - OwnerReminderService  
+5/18/2018 11:49:54 AM - -- START - OwnerReminderService  
+5/18/2018 11:51:15 AM - -- START - OwnerReminderService  
+5/18/2018 11:53:26 AM - -- START - OwnerReminderService  
+5/18/2018 11:54:28 AM - -- START - OwnerReminderService  
+5/18/2018 11:54:53 AM - -- START - OwnerReminderService  
+5/18/2018 11:57:20 AM - -- START - OwnerReminderService  
+5/18/2018 11:58:55 AM - -- START - OwnerReminderService  
+5/18/2018 12:10:53 PM - -- START - OwnerReminderService  
+5/18/2018 12:11:01 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:01 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:02 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:02 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:02 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:02 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:03 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:03 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:04 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:04 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:05 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:05 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:05 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:05 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:06 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:11:06 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:07 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:11:07 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:07 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:11:07 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:11:08 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:11:09 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:11:09 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:12:29 PM - -- START - OwnerReminderService  
+5/18/2018 12:12:33 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:14:53 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:54 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:55 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:55 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:56 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:57 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:57 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:58 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:14:59 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:15:00 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:15:00 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:15:01 PM - -- Mail Error - OwnerReminderService Error in processing. The server response was: You've exceeded your messaging limits
+5/18/2018 12:15:28 PM - -- START - OwnerReminderService  
+5/18/2018 12:15:32 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:18:10 PM - -- START - OwnerReminderService  
+5/18/2018 12:18:24 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:24:36 PM - -- START - OwnerReminderService  
+5/18/2018 12:24:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:28:25 PM - -- START - OwnerReminderService  
+5/18/2018 12:28:34 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:22 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:22 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:30:23 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:23 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:37 PM - -- START - OwnerReminderService  
+5/18/2018 12:30:38 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:39 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:39 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:40 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:41 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:41 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:42 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:42 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:30:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:43 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:44 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:44 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:45 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:30:46 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:30:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:31:36 PM - -- START - OwnerReminderService  
+5/18/2018 12:31:40 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:31:59 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:34:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:34:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:34:33 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:34:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:34:41 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:34:45 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:34:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:35:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:35:14 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:35:36 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:35:37 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:35:45 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:35:50 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:35:58 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:37:20 PM - -- START - OwnerReminderService  
+5/18/2018 12:37:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:51 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'nmg1 owner
+5/18/2018 12:38:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:56 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:38:56 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:38:56 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:56 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:56 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:38:57 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:38:57 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:38:58 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:38:58 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:38:59 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:38:59 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'SANJEEVsdfd fgsdfg
+5/18/2018 12:39:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:01 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:01 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:02 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:02 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:03 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:03 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:03 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:03 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:04 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:04 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:39:05 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:39:05 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:26 PM - -- START - OwnerReminderService  
+5/18/2018 12:53:29 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:29 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:31 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:31 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:36 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:36 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:38 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:41 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:53:43 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:53:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:54:09 PM - -- START - OwnerReminderService  
+5/18/2018 12:54:09 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:54:11 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:54:11 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:54:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:54:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:54:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:54:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:54:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:56:28 PM - -- START - OwnerReminderService  
+5/18/2018 12:56:28 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:56:28 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 12:56:31 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:56:31 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:56:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:56:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:56:37 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:56:37 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:56:40 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:56:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 12:56:43 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 12:56:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:46 PM - -- START - OwnerReminderService  
+5/18/2018 1:23:51 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:52 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:52 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:53 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:53 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:54 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:55 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:55 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:23:55 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:23:55 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:24:18 PM - -- START - OwnerReminderService  
+5/18/2018 1:24:25 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 1:27:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:27:28 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:33:12 PM - -- START - OwnerReminderService  
+5/18/2018 1:33:16 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 1:52:48 PM - -- START - OwnerReminderService  
+5/18/2018 1:52:55 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 1:53:57 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:53:57 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:53:58 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:53:58 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:53:58 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:53:58 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:53:59 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:53:59 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:54:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:54:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:54:01 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:54:01 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:57:11 PM - -- START - OwnerReminderService  
+5/18/2018 1:57:14 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 1:57:22 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:57:23 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:58:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:58:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:58:30 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:58:30 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:58:32 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:58:32 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:58:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:58:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:58:37 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 1:58:37 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 1:59:46 PM - -- START - OwnerReminderService  
+5/18/2018 1:59:54 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:00:01 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:00:02 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:31 PM - -- START - OwnerReminderService  
+5/18/2018 2:12:33 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:34 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:12:45 PM - -- START - OwnerReminderService  
+5/18/2018 2:12:49 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:12:57 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:12:59 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:13:07 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:13:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:13:14 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:13:17 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:13:21 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:25 PM - -- START - OwnerReminderService  
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:30:27 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:33:23 PM - -- START - OwnerReminderService  
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:25 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:25 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:33:40 PM - -- START - OwnerReminderService  
+5/18/2018 2:33:44 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:33:55 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:33:58 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:34:06 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:09 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:12 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:14 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:14 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:21 PM - -- START - OwnerReminderService  
+5/18/2018 2:34:24 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:37 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:34:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:34:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:34:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- START - OwnerReminderService  
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:48 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- START - OwnerReminderService  
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:47:57 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:11 PM - -- START - OwnerReminderService  
+5/18/2018 2:48:16 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:42 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:43 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:48:58 PM - -- START - OwnerReminderService  
+5/18/2018 2:48:59 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:00 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:10 PM - -- START - OwnerReminderService  
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:11 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:49:11 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:20 PM - -- START - OwnerReminderService  
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:49:23 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:54:59 PM - -- START - OwnerReminderService  
+5/18/2018 2:55:08 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:55:11 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:56:04 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:56:06 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:56:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:56:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:56:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:56:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:56:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:56:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:56:27 PM - -- Reminder Mail send successfully to StrataBoard Owner : 'Sumit SubAdmin
+5/18/2018 2:56:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/18/2018 2:56:55 PM - -- START - OwnerReminderService  
+5/18/2018 2:57:00 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:57:03 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:57:51 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:57:54 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:57:58 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:58:02 PM - -- Reminder Already Sent - OwnerReminderService
+5/18/2018 2:58:05 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:04:18 AM - -- START - OwnerReminderService  
+5/21/2018 6:04:32 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:04:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 6:04:51 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 6:04:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:05:00 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:05:03 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:05:07 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:05:10 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:05 AM - -- START - OwnerReminderService  
+5/21/2018 6:09:07 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:08 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 6:09:08 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 6:09:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:09:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:39 AM - -- START - OwnerReminderService  
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:10:40 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:11:33 AM - -- START - OwnerReminderService  
+5/21/2018 6:11:34 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:12:23 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 6:12:23 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 6:12:23 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:12:23 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:12:23 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:12:23 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:12:23 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:12 AM - -- START - OwnerReminderService  
+5/21/2018 6:20:17 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:22 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 6:20:22 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 6:20:22 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:22 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:22 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:22 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 6:20:22 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- START - OwnerReminderService  
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 7:34:16 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- START - OwnerReminderService  
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:34:16 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- START - OwnerReminderService  
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:41:56 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:42:57 AM - -- START - OwnerReminderService  
+5/21/2018 7:42:57 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:43:33 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 7:43:33 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 7:43:33 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:43:33 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:43:33 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:43:33 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:43:33 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:44:30 AM - -- START - OwnerReminderService  
+5/21/2018 7:44:30 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:52:41 AM - -- START - OwnerReminderService  
+5/21/2018 7:52:41 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:03 AM - -- START - OwnerReminderService  
+5/21/2018 7:54:03 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:06 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 7:54:06 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 7:54:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 7:54:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- START - OwnerReminderService  
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- START - OwnerReminderService  
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:27 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- START - OwnerReminderService  
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- START - OwnerReminderService  
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:55:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:37 AM - -- START - OwnerReminderService  
+5/21/2018 9:58:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- START - OwnerReminderService  
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 9:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- START - OwnerReminderService  
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- START - OwnerReminderService  
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:37 AM - -- START - OwnerReminderService  
+5/21/2018 10:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- START - OwnerReminderService  
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:08:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:10:47 AM - -- START - OwnerReminderService  
+5/21/2018 10:10:58 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:03 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:06 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:08 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:11 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:14 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:11:17 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:23:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:28:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:33:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:35:23 AM - -- START - OwnerReminderService  
+5/21/2018 10:35:37 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:35:57 AM - -- START - OwnerReminderService  
+5/21/2018 10:35:58 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:38:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:38:38 AM - -- START 1213131 - OwnerReminderService  
+5/21/2018 10:38:38 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:43:37 AM - -- START - OwnerReminderService  
+5/21/2018 10:43:38 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:48:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:48:37 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:53:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:53:38 AM - -- No Record Found - OwnerReminderService
+5/21/2018 10:58:36 AM - -- START - OwnerReminderService  
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 10:58:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:03:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:08:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:13:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:13:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:13:39 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:39 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:13:40 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:40 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:13:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:13:42 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:42 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:13:43 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:43 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:13:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:13:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:18:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:18:40 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:40 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:43 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:43 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:49 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:49 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:52 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:52 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:18:54 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:18:54 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:23:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:23:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:23:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:23:48 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:23:48 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:23:52 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:23:52 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:23:56 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:23:56 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:24:00 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:24:00 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:24:03 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:24:03 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:24:07 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:24:07 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/21/2018 11:28:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:28:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:44 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:47 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:49 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:49 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:52 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:52 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:28:55 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:28:55 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:33:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:33:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:48 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:48 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:52 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:52 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:55 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:55 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:33:58 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:33:58 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:38:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:38:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:44 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:48 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:48 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:52 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:52 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:38:55 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:38:55 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:43:38 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:43:40 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:40 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:43 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:43 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:47 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:47 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:50 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:50 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:43:53 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:43:53 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:48:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:48:39 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:39 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:43 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:43 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:44 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:48:48 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:48:48 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:53:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:53:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:51 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:51 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:54 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:54 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:56 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:56 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:53:59 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:53:59 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:36 AM - -- START - OwnerReminderService  
+5/21/2018 11:58:37 AM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 11:58:40 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:40 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:41 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:41 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:43 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:43 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:44 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:45 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 11:58:47 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 11:58:47 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:03:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:03:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:48 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:48 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:03:57 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:03:57 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:08:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:08:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:48 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:48 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:08:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:08:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:13:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:13:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:48 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:49 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:13:53 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:13:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:18:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:18:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:47 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:50 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:50 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:52 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:18:56 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:18:56 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:23:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:23:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:23:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:23:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:23:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:23:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:23:49 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:23:49 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:23:53 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:23:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:23:57 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:23:57 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:24:00 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:24:00 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:28:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:28:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:49 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:49 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:52 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:52 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:28:55 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:28:55 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:33:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:33:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:49 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:49 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:33:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:33:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:38:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:38:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:47 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:50 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:50 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:38:57 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:38:57 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:43:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:43:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:43:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:43:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:48:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:48:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:48:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:48:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:53:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:53:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:48 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:48 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:53:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:53:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:36 PM - -- START - OwnerReminderService  
+5/21/2018 12:58:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 12:58:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:47 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:50 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:50 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 12:58:52 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 12:58:52 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:03:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:03:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:47 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:50 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:50 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:53 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:03:56 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:03:56 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:02 PM - -- START - OwnerReminderService  
+5/21/2018 1:09:16 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:09:20 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:21 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:24 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:24 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:27 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:27 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:29 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:29 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:31 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:31 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:09:34 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:09:34 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:13:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:13:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:13:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:13:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:18:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:18:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:48 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:48 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:51 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:51 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:18:53 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:18:53 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:23:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:41 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:41 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:23:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:23:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:28:37 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:28:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:28:46 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:28:46 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:33:38 PM - -- Reminder Already Sent - OwnerReminderService
+5/21/2018 1:33:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:42 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:44 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:44 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:45 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:45 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:47 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:47 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:33:49 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:33:49 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 1:38:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:38:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 1:38:38 PM - -- Mail Error - OwnerReminderService -- Exception: Unable to cast object of type 'StratasFair.Data.Usp_OwnerReminderService_Result' to type 'System.IConvertible'.
+5/21/2018 1:43:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:48:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:53:36 PM - -- START - OwnerReminderService  
+5/21/2018 1:58:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:03:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:04:09 PM - -- START - OwnerReminderService  
+5/21/2018 2:06:04 PM - -- START - OwnerReminderService  
+5/21/2018 2:08:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:10:09 PM - -- START - OwnerReminderService  
+5/21/2018 2:11:17 PM - -- START - OwnerReminderService  
+5/21/2018 2:13:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:18:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:23:16 PM - -- START - OwnerReminderService  
+5/21/2018 2:23:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:24:30 PM - -- START - OwnerReminderService  
+5/21/2018 2:25:34 PM - -- START - OwnerReminderService  
+5/21/2018 2:26:52 PM - -- START - OwnerReminderService  
+5/21/2018 2:28:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:31:50 PM - -- START - OwnerReminderService  
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:32:09 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:32:09 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:33:37 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:33:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:33:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:34:11 PM - -- START - OwnerReminderService  
+5/21/2018 2:34:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:35:35 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:35:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:35:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:35:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:35:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:35:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:35:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:35:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:35:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:41 PM - -- START - OwnerReminderService  
+5/21/2018 2:36:42 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:43 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:43 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:51 PM - -- START - OwnerReminderService  
+5/21/2018 2:36:53 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:36:54 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:36:54 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:37:05 PM - -- START - OwnerReminderService  
+5/21/2018 2:37:08 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:37:08 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:38:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:38:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:38:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:43:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:43:37 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:43:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:48:57 PM - -- START - OwnerReminderService  
+5/21/2018 2:48:58 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:48:58 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:54:06 PM - -- START - OwnerReminderService  
+5/21/2018 2:54:19 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:54:19 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 2:58:36 PM - -- START - OwnerReminderService  
+5/21/2018 2:58:37 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 2:58:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 3:03:36 PM - -- START - OwnerReminderService  
+5/21/2018 3:03:37 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 3:03:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 3:08:36 PM - -- START - OwnerReminderService  
+5/21/2018 3:08:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 3:08:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 3:13:36 PM - -- START - OwnerReminderService  
+5/21/2018 3:13:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 3:13:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 3:18:36 PM - -- START - OwnerReminderService  
+5/21/2018 3:18:37 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 3:18:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/21/2018 3:23:36 PM - -- START - OwnerReminderService  
+5/21/2018 3:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/21/2018 3:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:11:52 AM - -- START - OwnerReminderService  
+5/22/2018 5:11:59 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:11:59 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:13:44 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:13:45 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:18:37 AM - -- START - OwnerReminderService  
+5/22/2018 5:18:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:18:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:23:38 AM - -- START - OwnerReminderService  
+5/22/2018 5:23:39 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:23:39 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:29:05 AM - -- START - OwnerReminderService  
+5/22/2018 5:29:23 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:29:23 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:33:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:33:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:38:37 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:38:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:43:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:43:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:48:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:48:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:53:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:53:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:53:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:53:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:53:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:53:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 5:58:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:58:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:58:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:58:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 5:58:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 5:58:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:08:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:08:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:08:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:08:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:08:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:08:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:13:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:13:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:13:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:13:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:13:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:13:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:18:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:18:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:18:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:18:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:18:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:18:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:23:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:23:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:23:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:23:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:23:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:23:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:28:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:28:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:33:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:33:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:33:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:33:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:38:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:38:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:38:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:38:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:43:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:43:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:43:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:43:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:48:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:48:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:48:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:48:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/22/2018 6:53:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:53:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:53:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:53:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 6:59:03 AM - -- START - OwnerReminderService  
+5/22/2018 6:59:17 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 6:59:17 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:08:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:08:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:08:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:08:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:13:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:13:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:18:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 7:18:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 7:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/22/2018 7:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:53:41 AM - -- START - OwnerReminderService  
+5/22/2018 7:53:41 AM - -- START - OwnerReminderService  
+5/22/2018 7:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 7:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:03:37 AM - -- START - OwnerReminderService  
+5/22/2018 8:09:02 AM - -- START - OwnerReminderService  
+5/22/2018 8:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:38:37 AM - -- START - OwnerReminderService  
+5/22/2018 8:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 8:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:13:37 AM - -- START - OwnerReminderService  
+5/22/2018 9:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:37:38 AM - -- START - OwnerReminderService  
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:37:46 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 9:37:46 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 9:38:13 AM - -- START - OwnerReminderService  
+5/22/2018 9:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:39:12 AM - -- START - OwnerReminderService  
+5/22/2018 9:39:58 AM - -- START - OwnerReminderService  
+5/22/2018 9:41:11 AM - -- START - OwnerReminderService  
+5/22/2018 9:41:34 AM - -- START - OwnerReminderService  
+5/22/2018 9:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:44:40 AM - -- START - OwnerReminderService  
+5/22/2018 9:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 9:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:03:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:32:53 AM - -- START - OwnerReminderService  
+5/22/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/22/2018 10:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 10:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:03:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:08:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:13:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:18:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:23:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:28:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:33:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:38:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:43:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:48:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:53:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 11:58:36 AM - -- START - OwnerReminderService  
+5/22/2018 12:03:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/22/2018 12:08:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:08:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:13:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:13:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:18:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:18:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:23:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:23:36 PM - -- START - OwnerReminderService  
+5/22/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/22/2018 12:28:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:28:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:28:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/22/2018 12:28:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/22/2018 12:33:39 PM - -- START - OwnerReminderService  
+5/22/2018 12:38:37 PM - -- START - OwnerReminderService  
+5/22/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/22/2018 12:48:39 PM - -- START - OwnerReminderService  
+5/22/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/22/2018 12:58:37 PM - -- START - OwnerReminderService  
+5/22/2018 1:03:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:03:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:08:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/22/2018 1:18:37 PM - -- START - OwnerReminderService  
+5/22/2018 1:23:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:23:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:28:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:28:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:33:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/22/2018 1:43:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:43:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:48:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/22/2018 1:53:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:53:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:58:36 PM - -- START - OwnerReminderService  
+5/22/2018 1:58:36 PM - -- START - OwnerReminderService  
+5/22/2018 2:03:36 PM - -- START - OwnerReminderService  
+5/22/2018 2:03:36 PM - -- START - OwnerReminderService  
+5/22/2018 2:08:37 PM - -- START - OwnerReminderService  
+5/22/2018 2:13:37 PM - -- START - OwnerReminderService  
+5/22/2018 2:18:39 PM - -- START - OwnerReminderService  
+5/22/2018 2:23:37 PM - -- START - OwnerReminderService  
+5/23/2018 5:09:44 AM - -- START - OwnerReminderService  
+5/23/2018 5:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 5:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/23/2018 5:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 5:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 5:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:23:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:28:38 AM - -- START - OwnerReminderService  
+5/23/2018 6:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 6:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 6:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:38 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:38 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:39 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:03:39 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 7:03:39 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 7:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 7:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 7:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:08:37 AM - -- START - OwnerReminderService  
+5/23/2018 8:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 8:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:28:37 AM - -- START - OwnerReminderService  
+5/23/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 8:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 8:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 8:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/23/2018 9:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:38:37 AM - -- START - OwnerReminderService  
+5/23/2018 9:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:48:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 9:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:53:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 9:58:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:03:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:08:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:13:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:13:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:18:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:23:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:28:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:33:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:38:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:43:36 AM - -- START - OwnerReminderService  
+5/23/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:58:37 AM - -- START - OwnerReminderService  
+5/23/2018 10:58:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:13:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:18:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:43:38 AM - -- START - OwnerReminderService  
+5/23/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/23/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/23/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:08:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:13:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:23:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:28:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:28:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:28:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 12:28:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/23/2018 12:28:38 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/23/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:38:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/23/2018 12:58:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:18:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:18:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/23/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/23/2018 2:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 2:03:37 PM - -- START - OwnerReminderService  
+5/23/2018 2:08:37 PM - -- START - OwnerReminderService  
+5/23/2018 2:08:37 PM - -- START - OwnerReminderService  
+5/24/2018 5:08:45 AM - -- START - OwnerReminderService  
+5/24/2018 5:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:18:38 AM - -- START - OwnerReminderService  
+5/24/2018 5:18:38 AM - -- START - OwnerReminderService  
+5/24/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 5:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:28:36 AM - -- START - OwnerReminderService  
+5/24/2018 6:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 7:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 8:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 9:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:13:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 10:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:14:00 AM - -- START - OwnerReminderService  
+5/24/2018 11:18:54 AM - -- START - OwnerReminderService  
+5/24/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/24/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:08:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:08:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/24/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/24/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/24/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/24/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/24/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:28:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/24/2018 12:28:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/24/2018 12:28:40 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/24/2018 12:28:40 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/24/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:39:01 PM - -- START - OwnerReminderService  
+5/24/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/24/2018 12:58:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:18:53 PM - -- START - OwnerReminderService  
+5/24/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/24/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:03:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:08:38 PM - -- START - OwnerReminderService  
+5/24/2018 2:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:13:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:18:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:18:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:24:27 PM - -- START - OwnerReminderService  
+5/24/2018 2:28:37 PM - -- START - OwnerReminderService  
+5/24/2018 2:28:37 PM - -- START - OwnerReminderService  
+5/25/2018 5:10:13 AM - -- START - OwnerReminderService  
+5/25/2018 5:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:18:38 AM - -- START - OwnerReminderService  
+5/25/2018 5:18:39 AM - -- START - OwnerReminderService  
+5/25/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:29:03 AM - -- START - OwnerReminderService  
+5/25/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 5:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 6:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 7:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:08:54 AM - -- START - OwnerReminderService  
+5/25/2018 8:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 8:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:38:38 AM - -- START - OwnerReminderService  
+5/25/2018 9:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 9:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 10:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:03:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:08:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:13:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:18:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:23:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:28:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:33:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:38:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:43:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:48:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:53:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 11:58:37 AM - -- START - OwnerReminderService  
+5/25/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:03:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:03:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:03:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:03:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:08:38 PM - -- START - OwnerReminderService  
+5/25/2018 12:08:38 PM - -- START - OwnerReminderService  
+5/25/2018 12:13:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:13:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:13:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:13:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:13:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:13:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:13:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:13:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:18:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:23:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:23:38 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:23:39 PM - -- Reminder Mail send successfully to StrataBoard Owner
+5/25/2018 12:23:39 PM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/25/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:28:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:33:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:38:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:38:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:43:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:48:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:53:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:58:37 PM - -- START - OwnerReminderService  
+5/25/2018 12:58:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:03:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:08:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:13:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:18:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:18:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:23:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:28:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:33:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:38:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:43:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:48:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:53:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/25/2018 1:58:37 PM - -- START - OwnerReminderService  
+5/25/2018 2:03:37 PM - -- START - OwnerReminderService  
+5/25/2018 2:03:37 PM - -- START - OwnerReminderService  
+5/28/2018 5:13:48 AM - -- START - OwnerReminderService  
+5/28/2018 5:14:04 AM - -- Reminder Mail send successfully to StrataBoard Owner
+5/28/2018 5:14:04 AM - -- Reminder Details Record added successfully - OwnerReminderService 
+5/28/2018 5:16:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:18:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:21:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:23:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:26:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:28:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:28:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:31:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:33:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:36:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:38:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:41:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:43:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:46:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:48:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:51:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:53:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:56:37 AM - -- START - OwnerReminderService  
+5/28/2018 5:58:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:01:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:03:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:06:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:08:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:11:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:13:37 AM - -- START - OwnerReminderService  
+5/28/2018 6:13:37 AM - -- START - OwnerReminderService  

@@ -1,0 +1,228 @@
+﻿@model StratasFair.BusinessEntity.Front.VendorModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strats Fair Vendor Registration</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" type="text/css" />
+    <style>
+        .input-validation-error{border:1px solid red !important;}
+        .field-validation-error{color:red !important;}
+        .btn-group.bootstrap-select{padding:5px 0px 0px 15px !important;}
+        .dropdown-menu.open{padding:0px;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="login">
+            <div class="container">
+                <div class="login-logo">
+                    <a href="@Url.Content("~/home")"><img src="@Url.Content("~/Content/images/login-logo.png")" alt="" title="" /></a>
+                </div>
+            </div>
+        </header><!-- header End -->
+        <div class="login-body registation">
+            <div class="container">
+                @if (TempData["Message"] != null)
+                {
+                    @Html.Raw(TempData["Message"].ToString())
+                }
+
+                <div class="login-box registation-form">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h1>Vendor Registration</h1>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("registration", "vendor", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "frmReg" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <figure class="profile-image">
+                                    <img id="imgProfile" src="@Url.Content("~/Content/images/profile-image.png")">
+                                    <div class="camera-icon">
+                                        <div class="inputfile-box ">
+                                            <input type="file" id="Image" name="Image" onchange="validateFileType($(this), ['jpg','jpeg','png']);" class="inputfile" accept=".jpg, .jpeg, .png">
+                                            <label for="Image">
+                                                <span class="choose-btn"></span>
+                                                <span class="file-button">
+                                                    <img src="@Url.Content("~/Content/images/camera-icon.png")">
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </figure>                                
+                            </div>
+                            <div style="text-align:center;">
+                                @Html.ValidationMessageFor(m => m.ImageFile)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Vendor Name<span class="required">*</span></label>
+                                    @Html.TextBoxFor(m => m.VendorName, new { @class = "form-control",@maxlength="100"})
+                                    @Html.ValidationMessageFor(m => m.VendorName)
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Discipline<span class="required">*</span></label>
+                                    @Html.DropDownListFor(m => m.DisciplineId, new SelectList(StratasFair.Business.CommonHelper.CommonData.GetDisciplineList(), "Value", "Text"), "Select", new { @class = "selectpicker form-control" })
+                                    @Html.ValidationMessageFor(m => m.DisciplineId)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="divOtherDis" style="display:none;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Other Discipline<span class="required">*</span></label>
+                                    @Html.TextBoxFor(m => m.OtherDisciplineName, new { @class = "form-control", @maxlength = "100" })
+                                    @Html.ValidationMessageFor(m => m.OtherDisciplineName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @type = "email", @maxlength = "100" })
+                                    @Html.ValidationMessageFor(m => m.EmailId)
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Mobile Number<span class="required">*</span></label>
+                                    @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control",@maxlength="15" })
+                                    @Html.ValidationMessageFor(m => m.MobileNumber)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <label>**Only pdf file is allowed</label>
+                                <div class="form-group inputfile-box">
+                                    <input type="file" id="CopyofTrade" name="CopyofTrade" onchange="validateFileType($(this), ['pdf']); uploadFile(this);" class="inputfile" accept=".pdf">
+                                    <label for="CopyofTrade">
+                                        <span class="choose-btn"></span>
+                                        <span class="file-button">
+                                            <div class="btn-black">File Upload</div>
+                                        </span>
+                                        <span id="file-name" class="file-box">Copy of Trade and Business</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    @Html.ValidationMessageFor(m => m.TradeAndBusinessFile)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 premise-type">
+                                <div class="form-group">
+                                    <label>Company Brief<span class="required">*</span></label>
+                                    @Html.TextAreaFor(m => m.CompanyBrief, new {@maxlength="500" })
+                                    @Html.ValidationMessageFor(m => m.CompanyBrief)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-center col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                <div class="form-group">
+                                    <input name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                                </div>
+                                <div class="form-group">
+                                   Already have an account? <a href="@Url.Content("~/vendor/login")">Sign In</a>
+                                </div>
+                            </div>
+                        </div>
+                    }<!-- Form End -->
+                </div>
+            </div>
+        </div><!-- login-body End -->
+        <footer class="login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 copyright">&copy; Copyrigtht 2017 <a href="#">StratasFair</a></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right social-link">
+                        <ul>
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+        </footer><!-- footer End -->
+    </div><!-- wrapper End -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+</body>
+</html>
+<script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+<script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+<script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/Content/js/bootstrap-select.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+<script src="@Url.Content("~/Scripts/ValidateFileType.js")"></script>
+<script>
+    $(function () {
+        $("#DisciplineId").change(function () {
+            $("#OtherDisciplineName").val('');
+            if ($("#DisciplineId option:selected").text().toLowerCase() == "others")
+                $("#divOtherDis").slideDown("slow");
+            else
+                $("#divOtherDis").slideUp("slow");
+
+        });
+
+        $("#frmReg").submit(function (e) {
+            var isTrue = true;
+            if ($("#Image").val().length <= 0) {
+
+                $(window).scrollTop(0);
+                e.preventDefault();
+                isTrue = false;
+                $(".profile-image").parent().effect("shake");
+                $("span[data-valmsg-for='ImageFile']").attr("class","field-validation-error").text("Profile image required");
+            }
+            else {
+                $("span[data-valmsg-for='ImageFile']").attr("class","field-validation-valid").text("");
+            }
+            if ($("#DisciplineId").val().length <= 0) {
+                $(".bootstrap-select").attr("style", "border:1px solid red");
+                isTrue = false;
+            }
+            else
+                $(".bootstrap-select").attr("style", "border:0px solid #fff");
+
+            return isTrue;
+        });
+
+        $("#Image").change(function () {
+            $('#imgProfile').attr("src", "/Content/images/profile-image.png");
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgProfile').attr("src", e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    });
+
+    //date picker
+    function uploadFile(target) {
+        $("#file-name").text(target.files[0].name);        
+    }
+</script>

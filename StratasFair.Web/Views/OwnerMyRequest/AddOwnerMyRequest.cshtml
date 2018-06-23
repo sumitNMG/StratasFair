@@ -1,0 +1,99 @@
+﻿@model StratasFair.BusinessEntity.Front.StrataOwnerMyRequestModel
+
+<script type="text/javascript">
+   
+
+
+    function FnAddOwnerMyRequestBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FnAddOwnerMyRequestSuccess(data) {
+
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.result == 1) {
+            $("#RequestTitle").val('');
+            $("#Details").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+</script>
+
+<div class="modal-body">
+    <h5 class="text-center">Add Request</h5>
+    @using (Ajax.BeginForm("AddOwnerMyRequest", "OwnerMyRequest", FormMethod.Post, new AjaxOptions { OnSuccess = "FnAddOwnerMyRequestSuccess(data)", OnBegin = "FnAddOwnerMyRequestBegin()" }, new { @class = "form-section", @id = "frmAddOwnerMyRequest" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.RequestId)
+        @Html.HiddenFor(m => m.UserClientId)
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Title<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.RequestTitle, new { @class = "form-control", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.RequestTitle)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>From Date</label>
+                    @Html.TextBoxFor(m => m.FromDate, new { @id = "datepicker", @class = "calendar-icon form-control",  })
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>To Date</label>
+                    @Html.TextBoxFor(m => m.ToDate, new { @id = "datepicker2", @class = "calendar-icon form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Details<span class="required">*</span></label>
+                    @Html.TextAreaFor(m => m.Details, new { @maxlength = "500" })
+                    @Html.ValidationMessageFor(m => m.Details)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input name="submit" id="btnSubmit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                    <div id="dvLoader" style="display:none; text-align:center">
+                        <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }<!-- Form End -->
+</div>
+

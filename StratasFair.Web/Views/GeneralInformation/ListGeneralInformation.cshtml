@@ -1,0 +1,28 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.GeneralInformationModel>
+
+@using StratasFair.Business.Front
+@{
+    if (Model != null)
+    {
+        if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <li>
+                    <div class="info-head">
+                        <span class="title">@item.Title</span>
+                        <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                    </div>
+                    <span class="more">
+                        @item.Description
+                    </span>
+                    <span class="pdf-download">
+                        <a href="@Url.Action("downloaduploadedfile", "generalinformation", new { @GeneralInformationId = @item.GeneralInformationId })">
+                            <i class="fa fa-file" aria-hidden="true"></i> Click to download
+                        </a>
+                    </span>
+                </li>
+            }
+        }
+    }
+}

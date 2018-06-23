@@ -1,0 +1,139 @@
+﻿@model StratasFair.BusinessEntity.ForumModelView
+@using StratasFair.BusinessEntity
+@using StratasFair.Business.Front
+
+@if (Model.ListForum.Count != 0)
+{
+    foreach (var item in Model.ListForum)
+    {
+        <li class="@(item.IsFlagged == true ? "gray-box" : "")" id="liTopic_@item.TopicId">
+            <div class="email-row">
+                <div class="icon-lft">
+
+
+                    @*@if (@item.IsFlagged)
+                    {
+                        if (@item.FlaggedByLoggedInUser == 1)
+                        {
+                            if (ClientSessionData.ClientRoleName == "Admin" || ClientSessionData.ClientRoleName == "admin")
+                            {
+                                <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal" data-target="#red-flag-popup" onclick="SetValueForFlagView(@item.TopicId,'topic');"></i>
+                            }
+                            else
+                            {
+                                <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal"></i>
+                            }
+                        }
+                        else
+                        {
+                            if (ClientSessionData.ClientRoleName == "Admin" || ClientSessionData.ClientRoleName == "admin")
+                            {
+                                <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal" data-target="#red-flag-popup" onclick="SetValueForFlagView(@item.TopicId,'topic');"></i>
+                            }
+                            else
+                            {
+                                <i id="iflagTopic_@item.TopicId" class="fa fa-flag" aria-hidden="true" data-toggle="modal" data-target="#flag-popup" onclick="SetValueForFlag(@item.TopicId,'topic');"></i>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <i id="iflagTopic_@item.TopicId" class="fa fa-flag" aria-hidden="true" data-toggle="modal" data-target="#flag-popup" onclick="SetValueForFlag(@item.TopicId,'topic');"></i>
+                    }*@
+
+
+                    @if (@item.IsFlagged)
+                    {
+                       
+                        if (ClientSessionData.ClientRoleName == "Admin" || ClientSessionData.ClientRoleName == "admin")
+                        {
+                            <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal" data-target="#red-flag-popup" onclick="SetValueForFlagView(@item.TopicId,'topic');"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-flag flag-red" aria-hidden="true" data-toggle="modal"></i>
+                        }
+                    }
+                    else
+                    {
+                        <i id="iflagTopic_@item.TopicId" class="fa fa-flag" aria-hidden="true" data-toggle="modal" data-target="#flag-popup" onclick="SetValueForFlag(@item.TopicId,'topic');"></i>
+                    }
+                    <input type="hidden" value="@Model.TotalPages" id="hfBookingPageCount" name="hfBookingPageCount" />
+                    @if (!string.IsNullOrEmpty(item.UploadedFileName))
+                    {
+                        <a href="@Url.Action("download", new StratasFair.BusinessEntity.ForumModel { StratasBoardId = item.StratasBoardId, UploadedFileName = item.UploadedFileName, UploadedFileActualName = item.UploadedFileActualName })">
+                            <i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </a>
+                    }
+
+                </div>
+                <div class="cnt" id="viewForum_@item.TopicId" onclick="FnViewReply(this);">
+                    <span class="title">@item.Topic</span>
+                    <span class="time">@item.CreatedDateTime</span>
+                    <p>
+                        @Html.Raw(@StratasFair.Business.CommonHelper.AppLogic.FixDescriptionWithoutMore(@item.TopicContent.Trim(), 120))
+                    </p>
+
+                </div>
+            </div>
+            <div id="viewForumReply_@item.TopicId" class="viewmore" style="display:none;">
+                <div class="more-cnt">
+                    @Html.Raw(@StratasFair.Business.CommonHelper.AppLogic.EndDescriptionSuffix(@item.TopicContent.Trim(), 120))
+                    <div class="mail-by"><small>by</small> @item.CreatedByName</div>
+                    <div class="btn-group">
+
+                        @if (item.ReplyCounter == 0)
+                        {
+                            <a id="ancReply_@item.TopicId" onclick="FnViewReplyForm(this);" class="reply" href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Reply">
+                                <i class="fa fa-reply" aria-hidden="true"></i>
+                            </a>
+                        }
+
+                        @if (item.CreatedBy == @ClientSessionData.UserClientId)
+                        {
+                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        }
+
+                    </div>
+                </div>
+
+
+                @using (Ajax.BeginForm("AddTopicReply", "myforum", FormMethod.Post, new AjaxOptions { OnBegin = "FnAddTopicReplyBegin('" + @item.TopicId + "')", OnSuccess = "FnAddTopicReplySuccess(data)" }, new { @id = "frmAddTopicReply_" + @item.TopicId }))
+                {
+                    <input type="hidden" id="TopicId" name="TopicId" value="@item.TopicId" />
+                    <div class="admin-reply">
+                        <div id="divReplyBox_@item.TopicId">
+
+                            @if (item.ReplyCounter > 0)
+                            {
+                                ForumReplyModel model = new ForumReplyModel();
+                                model.TopicId = @item.TopicId;
+
+                                @Html.RenderPartial("_ForumReplyListPartial", model);
+                            }
+
+                        </div>
+
+                        <div class="form-section" id="ancReplyForm_@item.TopicId" style="display:none">
+                            <div class="form-group">
+                                @Html.TextAreaFor(m => m.Message, new { @maxlength = "500", @placeholder = "Comment" })
+                            </div>
+                            <div id="dvReplySubmit_@item.TopicId" class="row form-group">
+                                <div class="col-md-2 col-sm-4 col-xs-6"><input type="submit" value="Submit" name="" class="btn-yellow btn"></div>
+                                <div class="col-md-2 col-sm-4 col-xs-6"><a id="btnCancel_@item.TopicId" onclick="FnViewReplyForm(this);" value="Cancel" name="" class="btn-black btn">Cancel</a></div>
+                            </div>
+
+                            <div id="dvReplyLoader_@item.TopicId" style="display:none; text-align:center">
+                                <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </li>
+    }
+}

@@ -1,0 +1,121 @@
+﻿@model StratasFair.BusinessEntity.Admin.ManageAdvertisementModel
+
+@{
+    ViewBag.Title = "Edit Advertisement";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Manage Advertisement
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage Advertisement</li>
+    </ol>
+    <div class="top-buttons-container">
+        <a href="@Url.Content("~/securehost/rootlogin/manageadvertisement")" class="btn btn-success">View</a>
+     </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Edit Advertisement
+                </h3>
+            </div>
+            <div class="row"></div>
+            @using (Html.BeginForm("Edit", "manageadvertisement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="box-body fix-width">
+                    @Html.HiddenFor(m => m.AdvertisementId)
+                    @Html.HiddenFor(m => m.ImageFile)
+                    @Html.HiddenFor(m => m.OldImageFile)
+                    @Html.HiddenFor(m => m.ActualImageFile)
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Redirection Url")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.RedirectionUrl, new { @class = "form-control", @placeholder = "Redirection Url e.g (http://www.domainname.com)", @maxlength = "200" })
+                            @Html.ValidationMessageFor(m => m.RedirectionUrl)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Image (Only PNG/JPG)")  (Preferred size: 300*250)<br />
+                            <br>
+                            <img width="300" height="250" src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/advertisement/@Model.ImageFile"><br>
+
+                            @Html.TextBoxFor(m => m.ImageType, new { @type = "file", data_val = "false", onchange = "return ValidateImageFile(this);" })
+                            @Html.ValidationMessageFor(m => m.ImageType)
+                        </div>
+                    </div>  
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Display Order") <br />
+                            @Html.TextBoxFor(m => m.DisplayOrder, new { @class = "form-control", @maxlength = "3", @onkeyup = "keyUP(event.keyCode)", @onkeydown = "return isNumeric(event.keyCode);", @onpaste = "return false;" })
+                            @Html.ValidationMessageFor(m => m.DisplayOrder)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Status)<br />
+                            @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.StatusList, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Status)
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <a href='@Url.Content("~/securehost/rootlogin/manageadvertisement")' class="btn btn-warning">
+                        Cancel
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+
+    <script type="text/javascript" language="javascript">
+    var isShift = false;
+    function isNumeric(keyCode) {
+        if (keyCode == 16)
+            isShift = true;
+        return (((keyCode >= 48 && keyCode <= 57) || keyCode == 8 || keyCode == 46 || keyCode == 9 || (keyCode >= 96 && keyCode <= 105)) && isShift == false);
+    }
+
+    function keyUP(keyCode) {
+        if (keyCode == 16)
+            isShift = false;
+    }
+
+    function ValidateImageFile(obj) {
+        var val = $(obj).val().toLowerCase();
+        var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+        if (!(regex.test(val))) {
+            $(obj).val('');
+            $("#" + obj.id + "-error").remove();
+            $("#" + obj.id).addClass("input-validation-error");
+            $('span[data-valmsg-for="' + obj.id + '"]').append("<span id='" + obj.id + "-error' style='color:#ff0000'>Valid image file required.</span>");
+            return false;
+        }
+        else {
+            $('span[data-valmsg-for="' + obj.id + '"]').empty();
+        }
+        return true;
+    }
+    </script>
+
+}
+

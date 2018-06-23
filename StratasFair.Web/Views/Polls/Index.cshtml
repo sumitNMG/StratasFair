@@ -1,0 +1,287 @@
+﻿@model StratasFair.BusinessEntity.Front.PollQuestionModel
+@using StratasFair.Business.Front;
+@{
+    ViewBag.Title = "Strats Fair Stratas Board Admin Polls";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@section styles
+{
+    <link href="@Url.Content("~/Content/css/jquery-ui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+}
+<div class="col-md-9 right_col">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Polls</h1>
+        </div>
+        <div class="title_right add-btn">
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#add-polling">Add Polling</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 polls-section">
+            <ul id="poll-data"></ul>
+            <div id="NoRecord">No records found</div>
+            <div id="NoMoreRecord">No more records</div>
+        </div>
+        <div id="divLoader" style="display:none;">
+            <img src="@Url.Content("~/Content/images/loader.gif")" style="margin:0 auto;" />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- Modal Add Polling  -->
+    <div class="modal fade" id="add-polling" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal-popup add-request">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                </div>
+                <h5 class="text-center">Add Polling</h5>
+                @using (Ajax.BeginForm("index", "polls", FormMethod.Post, new AjaxOptions()
+                {
+                    OnBegin = "showLoader",
+                    OnSuccess = "hideLoader"
+                }, new { @id = "frmPolls", @class = "form-section" }))
+                {
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>Poll Header<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.PollHeader, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.PollHeader)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>End Date<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.EndDate, new { @class = "calendar-icon form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.EndDate)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>Option 1 <span class="required">*</span></label>
+                            <input type="text" name="pollOption[0]" id="option-0" class="form-control poll-option" required />
+                            @Html.ValidationMessageFor(m => m.pollOption[0])
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>Option 2<span class="required">*</span></label>
+                            <input type="text" name="pollOption[1]" id="option-1" class="form-control poll-option" required />
+                            @Html.ValidationMessageFor(m => m.pollOption[1])
+                        </div>
+                    </div>
+                </div>
+                <div id="new-option-textbox">
+                    <!--New text box will be added here-->
+                </div>
+                <div class="row">
+                    <span class="poll-delete" style="display:none;"><a href="javascript:void(0)">Delete</a></span>
+                </div>
+                <div class="row" id="btnAddNewOption">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="poll-add-option">
+                                <a href="javascript:void(0)" onclick="addNewOption();">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Add More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow btn-submit" type="submit">
+                        </div>
+                    </div>
+                </div>
+                }<!-- form-section End -->
+            </div>
+        </div>
+    </div><!-- Modal Add Polling End -->
+    <!-- Modal Graphical View -->
+    <div class="modal fade" id="graphical-view" role="dialog">
+        <div class="modal-dialog" style="width:720px;">
+            <!-- Modal content-->
+            <div class="modal-content modal-popup polls-chart">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+
+                </div>
+            </div>
+        </div><!-- Modal Graphical View End -->
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+
+@section scripts{
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap-select.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+
+
+
+    <script>
+        var pageNo = 1;
+        var hasMorePage = 0;
+        $(function () {
+            //Load poll list
+            loadPollList(pageNo);
+
+            $(".poll-delete>a").click(function () {
+                var id = ($(".poll-option").length - 1);
+                if (id == 2)
+                    $(".poll-delete").hide();
+
+                if (id < 8)
+                    $("#btnAddNewOption").show();
+
+                $("#option-" + id).remove();
+            });
+        });
+
+        //load data on scroll
+        $(window).scroll(function () {
+            if (hasMorePage > 0) {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    pageNo = pageNo + 1;
+                    loadPollList(pageNo);
+                }
+            }
+        });
+
+        function showLoader() {
+            $(".btn-submit").val("Please wait...").prop("disabled", true);
+        }
+        function hideLoader(result) {
+            if (result == 0) {
+                swal({
+                    title: "Success!",
+                    text: "Poll added successfully!",
+                    type: "success"
+                }, function () {
+                    window.location.href = "@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"]+ClientSessionData.ClientPortalLink+"/polls")";
+                });
+            }
+            else
+                swal("Error!", "Failed to add poll. Please try again later!", "error");
+
+            $(".btn-submit").val("Submit").prop("disabled", false);
+        }
+
+        function addNewOption() {
+            var optionid = $(".poll-option").length;
+            $("#btnAddNewOption").show();
+            var url = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"] + ClientSessionData.ClientPortalLink + "/polls/AddNewOptionField")';
+            $.ajax({
+                url: url,
+                contentType: 'application/html; charset=utf-8',
+                dataType: 'html',
+                data: { optionid: optionid },
+                type: 'get',
+                success: function (result) {
+                    $("#new-option-textbox").append(result);
+                    $(".poll-delete").show();
+                    if (optionid == 7)
+                        $("#btnAddNewOption").hide();
+                }
+            });
+        }
+
+        function deletePoll(id) {
+            swal({
+                title: "Are you sure?",
+                text: "Your want to delete this poll !",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            },
+                function () {
+                    var url = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"] + ClientSessionData.ClientPortalLink + "/polls/delete")';
+                    $.ajax({
+                        url: url,
+                        data: { pollid: id },
+                        type: 'post',
+                        success: function (result) {
+                            if (result == 0) {
+                                $("#div-" + id).remove();
+                                swal("Success!", "Poll deleted successfully!", "success");
+                            }
+                            else
+                                swal("Error!", "Failed to delete poll. Please try again later!", "error");
+                        }
+                    });
+                });
+        }
+
+        function showChart(heading, id) {
+            var url = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"] + ClientSessionData.ClientPortalLink + "/polls/showchart")';
+            $.ajax({
+                url: url,
+                data: { pollid: id, caption: heading },
+                contentType: 'application/html; charset=utf-8',
+                dataType: 'html',
+                type: 'get',
+                success: function (result) {
+                    $("#modal-body").html(result);
+                }
+            });
+        }
+
+        function loadPollList(pageNo) {
+            $("#divLoader").show();
+            var url = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"] + StratasFair.Business.Front.ClientSessionData.ClientPortalLink + "/polls/getpolllist")';
+            $.ajax({
+                url: url,
+                data: { pageNo: pageNo },
+                contentType: 'application/html; charset=utf-8',
+                dataType: 'html',
+                type: 'get',
+                success: function (result) {
+                    setTimeout(function () {
+                        if (result.length == 0 || result == "0") {
+                            hasMorePage = 0;
+                            if (pageNo == 1)
+                                $("#NoRecord").show();
+                            else
+                                $("#NoMoreRecord").show();
+                        }
+                        else {
+                            hasMorePage = 1;
+                            $("#poll-data").append(result);
+                        }
+                        $("#divLoader").hide();
+                    }, 300);
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+}

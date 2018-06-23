@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "GetListOwnerBookingRequest";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front;
+@model IEnumerable<StratasFair.BusinessEntity.Front.StrataOwnerBookingRequestModel>
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="back-btn">
+        <div class="back-btn">
+            <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/mycalendar")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+        </div>
+        <div class="page-title">
+            <div class="title_left">
+                <h1>Booking Request List</h1>
+            </div>
+            @*<div class="title_right add-btn pull-right">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#add-request">Add Request</a>
+            </div>*@
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12 table-section cale-list-table">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <td class="common-area">Common Area</td>
+                            <td class="date">Dates (From-To)</td>
+                            <td class="reason">Subject</td>
+                            <td class="reason">Reason</td>
+                            <td class="no-days">No. of Days</td>
+                            <td class="status">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        { 
+                        <tr>
+                            <td data-title="Common Area" class="common-area">@item.CommonAreaName</td>
+                            <td data-title="Dates (From-To)" class="date">
+                                @item.FromDate to @item.ToDate
+                            </td>
+                            <td data-title="Subject" class="subject">
+                                @item.Subject
+                            </td>
+                            <td data-title="Reason" class="reason">
+                                @item.Reason
+                            </td>
+                            <td data-title="No of Days" class="no-days">
+                                @item.TotalDays
+                            </td>
+                            <td data-title="Status" class="status">
+                                <span class=@item.AdminStatus.ToLower()>@item.AdminStatus</span>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div><!-- table section End -->
+        </div>
+    </div>
+</div><!-- page content End -->

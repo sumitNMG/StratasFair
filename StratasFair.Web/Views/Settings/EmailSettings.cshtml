@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "EmailSettings";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@model StratasFair.BusinessEntity.Front.EmailServerSettingModel
+@section scripts{
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+}
+
+@section styles{
+    <link href="~/Content/css/DevStyle.css" rel="stylesheet" />
+}
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        @if (TempData["CommonMessage"] != null)
+        {
+            @Html.Raw(TempData["CommonMessage"])
+        }
+        <div class="title_left">
+            <h1>Email Server Settings</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            @using (@Html.BeginForm("emailsettings", "EmailSettingClient"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    @Html.HiddenFor(m => m.Id)
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>SMTP Server Client<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.EmailServerClient, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.EmailServerClient)
+                        </div>
+                        <div class="form-group">
+                            <label>Sender Display Name  <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.SenderDisplayName, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.SenderDisplayName)
+                        </div>
+                        <div class="form-group">
+                            <label>From Name  <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.FromEmail)
+                        </div>
+                        <div class="form-group">
+                            <label>Network User ID<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.NetworkUserId, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.NetworkUserId)
+                        </div>
+                        <div class="form-group">
+                            <label>Network User Password<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.NetworkUserPassword, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.NetworkUserPassword)
+                        </div>
+                        <div class="form-group">
+                            <label>Port <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.Port, new { @class = "form-control", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.Port)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="form-group">
+                            <input name="Submit" value="EmailSettings" class="btn btn-lg btn-block btn-yellow" type="submit">
+                        </div>
+                    </div>
+                </div>
+            }
+            @*</form>*@
+
+        </div>
+    </div><!-- page content End -->
+    <div style="clear:both"></div>
+    
+    
+
+    @if (@Model.Id > 0)
+    {
+        using (@Html.BeginForm("checkemailsettings", "EmailSettingClient"))
+        {
+            <div class="row form-section">
+                <div class="box-body fix-width">
+
+                    <div class="col-md-6">
+                        @Html.HiddenFor(m => m.Id)
+                        @Html.HiddenFor(m => m.SenderDisplayName)
+                        @Html.HiddenFor(m => m.FromEmail)
+                        @Html.HiddenFor(m => m.EmailServerClient)
+                        @Html.HiddenFor(m => m.NetworkUserId)
+                        @Html.HiddenFor(m => m.NetworkUserPassword)
+                        <div class="form-group">
+                            @Html.Label("Email ID")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.EmailForTest, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EmailForTest)
+
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" value="CheckEmailSettings">
+                            Test Email Credentials
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    }
+
+
+

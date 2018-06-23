@@ -1,0 +1,95 @@
+﻿@model StratasFair.BusinessEntity.Front.AlertAndNotificationModel
+
+
+<script type="text/javascript">
+
+    function FnAddAlertAndNotificationBegin() {
+        $("#btnAlertSubmit").hide();
+        $("#dvAlertLoader").show();
+    }
+
+    function FnAddAlertAndNotificationSuccess(data) {
+
+        $("#btnAlertSubmit").show();
+        $("#dvAlertLoader").hide();
+        if (data.result == 1) {
+            $("#RequestTitle").val('');
+            $("#Details").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+</script>
+
+
+<div class="modal-body">
+    <h5 class="text-center">Add Alerts</h5>
+@using (Ajax.BeginForm("AddAlertAndNotification", "NoticeBoard", FormMethod.Post, new AjaxOptions { OnSuccess = "FnAddAlertAndNotificationSuccess(data)", OnBegin = "FnAddAlertAndNotificationBegin()" }, new { @class = "form-section", @id = "frmAddAlertAndNotification" }))
+    {
+    @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Type<span class="required">*</span></label>
+                    @Html.DropDownList("MessageType", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="Emergency Alert", Value = "1" },
+                                    new SelectListItem{ Text="Broadcast Notification", Value = "2" }
+                                }, "Select", new { @class = "selectpicker form-control", @InitialValue = "Select" })
+                    @Html.ValidationMessage("MessageType")
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Title<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.Title)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Message<span class="required">*</span></label>
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @maxlength = "500" })
+                    @Html.ValidationMessageFor(m => m.Message)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input name="btnAlertSubmit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                </div>
+            </div>
+            <div id="dvAlertLoader" style="display:none; text-align:center">
+                <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+            </div>
+        </div>
+}<!-- Form End -->
+</div>

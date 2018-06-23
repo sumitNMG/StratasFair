@@ -1,0 +1,93 @@
+﻿@model StratasFair.BusinessEntity.Front.BillTypeModel
+
+<script type="text/javascript">
+
+    function FnEditBillTypeBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FnEditBillTypeSuccess(data) {
+
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.result == 1) {                                                                                                                                                                                                                                                              $("#Details").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+</script>
+
+<div class="modal-body">
+    <h5 class="text-center">Edit Bill Type</h5>
+
+    @using (Ajax.BeginForm("EditBillType", "BillType", FormMethod.Post, new AjaxOptions { OnSuccess = "FnEditBillTypeSuccess(data)", OnBegin = "FnEditBillTypeBegin()" }, new { @class = "form-section", @id = "frmEditBillType" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.BillTypeId)
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Bill Type<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.BillTypeName, new { @class = "form-control", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.BillTypeName)
+                </div>
+            </div>
+        </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 occurrence-type">
+        <div class="form-group">
+            <p>Occurrence<span class="required">*</span></p>
+            <div class="radiobox">
+                @Html.RadioButtonFor(m => m.BillPeriod, 1, new { @id = "once1", @checked = true })
+                <label for="once1">Once</label>
+            </div>
+            <div class="radiobox">
+                @Html.RadioButtonFor(m => m.BillPeriod, 2, new { @id = "monthly1" })
+                <label for="monthly1">Monthly</label>
+            </div>
+            <div class="radiobox">
+                @Html.RadioButtonFor(m => m.BillPeriod, 3, new { @id = "quarterly1" })
+                <label for="quarterly1">Quarterly</label>
+            </div>
+            <div class="radiobox">
+                @Html.RadioButtonFor(m => m.BillPeriod, 4, new { @id = "half-yearly1" })
+                <label for="half-yearly1">Half-Yearly</label>
+            </div>
+            <div class="radiobox">
+                @Html.RadioButtonFor(m => m.BillPeriod, 5, new { @id = "yearly1" })
+                <label for="yearly1">Yearly</label>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input name="btnSubmit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                </div>
+            </div>
+        </div>
+    }<!-- Form End -->
+</div>

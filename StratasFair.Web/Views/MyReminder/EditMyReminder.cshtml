@@ -1,0 +1,212 @@
+﻿@model StratasFair.BusinessEntity.Front.ReminderModel
+<html>
+<head>
+
+    <script type="text/javascript">
+
+
+        function FnEditMyReminderBegin() {
+            $("#btnSubmit").hide();
+            $("#dvLoader").show();
+        }
+
+        function FnEditMyReminderSuccess(data) {
+
+            $("#btnSubmit").show();
+            $("#dvLoader").hide();
+            if (data.result == 1) {
+                $("#RequestTitle").val('');
+                $("#Details").val('');
+
+                swal({
+                    type: "success",
+                    title: "Success",
+                    showConfirmButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                    text: "<b>" + data.Msg + "</b>",
+                    html: true
+                }, function () {
+                    window.location = window.location;
+                });
+            }
+            else {
+                swal({
+                    type: "warning",
+                    title: "Failed",
+                    showConfirmButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                    text: "<b>" + data.Msg + "</b>",
+                    html: true
+                });
+            }
+        }
+
+        $("#StartTimeHour, #StartTimeMinute, #StartTimeAmPm").selectpicker({
+            style: 'btn-info',
+            size: 12
+        });
+
+        $(function () {
+            $("#datepicker2").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+
+    </script>
+    <style>
+       .btn-info {
+           border-color:none !important;
+       }        
+       .radiobox label:before {border-radius: 0; background-image: url("@Url.Content("~/Content/images/radio-btn.png")"); background-repeat:no-repeat; background-position:0 0px}
+        .radiobox input[type=radio]:checked + label:before {background-image: url("@Url.Content("~/Content/images/radio-btn.png")"); background-repeat:no-repeat; background-position:0 -20px}
+
+    </style>
+    <title>
+
+    </title>
+
+</head>
+<body>
+
+
+    <div class="modal-body">
+        <h5 class="text-center">Edit Reminder</h5>
+
+        @using (Ajax.BeginForm("EditMyReminder", "MyReminder", FormMethod.Post, new AjaxOptions { OnSuccess = "FnEditMyReminderSuccess(data)", OnBegin = "FnEditMyReminderBegin()" }, new { @class = "form-section", @id = "frmEditMyReminder" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.ReminderId)
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Subject<span class="required">*</span></label>
+                        @Html.TextBoxFor(m => m.ReminderSubject, new { @class = "form-control", @maxlength = "100" })
+                        @Html.ValidationMessageFor(m => m.ReminderSubject)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Text Message Reminder (SMS)</label>
+                        @Html.TextAreaFor(m => m.SmsText, new { @class = "form-control", @maxlength = "140", @placeholder = "Limit :- 140 Characters" })
+                        @Html.ValidationMessageFor(m => m.SmsText)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Email Message Reminder</label>
+                        @Html.TextAreaFor(m => m.ReminderNote, new { @class = "form-control", @maxlength = "500", @placeholder = "Limit :- 500 Characters" })
+                        @Html.ValidationMessageFor(m => m.ReminderNote)
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Date<span class="required">*</span></label>
+                        @Html.TextBoxFor(m => m.StartDateTime, new { @id = "datepicker2", @class = "calendar-icon form-control datepicker" })
+                        @Html.ValidationMessageFor(m => m.StartDateTime)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Time<span class="required">*</span></label>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                @Html.DropDownList("StartTimeHour", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="01", Value = "1" },
+                                    new SelectListItem{ Text="02", Value = "2" },
+                                    new SelectListItem{ Text="03", Value = "3" },
+                                    new SelectListItem{ Text="04", Value = "4" },
+                                    new SelectListItem{ Text="05", Value = "5" },
+                                    new SelectListItem{ Text="06", Value = "6" },
+                                    new SelectListItem{ Text="07", Value = "7" },
+                                    new SelectListItem{ Text="08", Value = "8" },
+                                    new SelectListItem{ Text="09", Value = "9" },
+                                    new SelectListItem{ Text="10", Value = "10" },
+                                    new SelectListItem{ Text="11", Value = "11" },
+                                    new SelectListItem{ Text="12", Value = "12" }
+                                }, "Hour", new { @Id = "StartTimeHour", @class = "selectpicker form-control", @InitialValue = "Hour" })
+                                @Html.ValidationMessageFor(model => model.StartTimeHour)
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                @Html.DropDownList("StartTimeMinute", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="00", Value = "0" },
+                                    new SelectListItem{ Text="15", Value = "15" },
+                                    new SelectListItem{ Text="30", Value = "30" },
+                                    new SelectListItem{ Text="45", Value = "45" }
+                                }, "Minute", new { @Id = "StartTimeMinute", @class = "selectpicker form-control", @InitialValue = "Minute" })
+                                @Html.ValidationMessageFor(model => model.StartTimeMinute)
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                @Html.DropDownList("StartTimeAmPm", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="AM", Value = "AM" },
+                                    new SelectListItem{ Text="PM", Value = "PM" }
+                                }, new { @Id = "StartTimeAmPm", @class = "selectpicker form-control" })
+                                @Html.ValidationMessage("StartTimeAmPm")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 occurrence-type">
+                <div class="form-group">
+                    <p>Occurrence<span class="required">*</span></p>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 1, new { @id = "once1"})
+                        <label for="once1">Once</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 2, new { @id = "daily1" })
+                        <label for="daily1">Daily</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 3, new { @id = "weekly1" })
+                        <label for="weekly1">Weekly</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 4, new { @id = "Bi-weekly1" })
+                        <label for="Bi-weekly1">Bi-Weekly</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 5, new { @id = "monthly1" })
+                        <label for="monthly1">Monthly</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 6, new { @id = "quarterly1" })
+                        <label for="quarterly1">Quarterly</label>
+                    </div>
+                    <div class="radiobox">
+                        @Html.RadioButtonFor(m => m.Occurrence, 7, new { @id = "semi-annually1" })
+                        <label for="semi-annually1">Semi-Annually</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                    </div>
+                </div>
+            </div>
+        }<!-- Form End -->
+    </div>
+
+
+</body>
+</html>

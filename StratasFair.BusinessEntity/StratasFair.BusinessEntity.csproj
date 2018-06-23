@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9639688-010F-4538-848E-622EBF32C337}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StratasFair.BusinessEntity</RootNamespace>
+    <AssemblyName>StratasFair.BusinessEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StratasFair.Web\SharedBin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ChangePasswordModel.cs" />
+    <Compile Include="Admin\CMSModel.cs" />
+    <Compile Include="Admin\DashBoardModel.cs" />
+    <Compile Include="Admin\EmailNotificationModel.cs" />
+    <Compile Include="Admin\EmailServerModel.cs" />
+    <Compile Include="Admin\EmailTemplateModel.cs" />
+    <Compile Include="Admin\FAQModel.cs" />
+    <Compile Include="Admin\LogOnModel.cs" />
+    <Compile Include="Admin\ManageAdvertisementModel.cs" />
+    <Compile Include="Admin\ProfileModel.cs" />
+    <Compile Include="Admin\ReportModel.cs" />
+    <Compile Include="Admin\RoleModel.cs" />
+    <Compile Include="Admin\SettingsModel.cs" />
+    <Compile Include="Admin\UserModel.cs" />
+    <Compile Include="Admin\VendorModel.cs" />
+    <Compile Include="Admin\VendorSearchModel.cs" />
+    <Compile Include="AdvertisementModel.cs" />
+    <Compile Include="CalendarProperties.cs" />
+    <Compile Include="CommonModel.cs" />
+    <Compile Include="ForumModel.cs" />
+    <Compile Include="Front\AlertAndNotificationModel.cs" />
+    <Compile Include="Front\BillTypeModel.cs" />
+    <Compile Include="Front\BookingRequestModel.cs" />
+    <Compile Include="Front\CommonAreaModel.cs" />
+    <Compile Include="Front\ContactUsModel.cs" />
+    <Compile Include="DisciplineModel.cs" />
+    <Compile Include="Front\DashBoardModel.cs" />
+    <Compile Include="Front\EmailServerSettingModel.cs" />
+    <Compile Include="Front\FAQModel.cs" />
+    <Compile Include="Front\GeneralInformationModel.cs" />
+    <Compile Include="Front\JsonModel.cs" />
+    <Compile Include="Front\MaintenanceScheduleModel.cs" />
+    <Compile Include="Front\NoticeBoardModel.cs" />
+    <Compile Include="Front\PollAnswerModel.cs" />
+    <Compile Include="Front\PollOptionModel.cs" />
+    <Compile Include="Front\PollQuestionModel.cs" />
+    <Compile Include="Front\ReminderModel.cs" />
+    <Compile Include="Front\RequestPortalLinkModel.cs" />
+    <Compile Include="Front\ClientLogOnModel.cs" />
+    <Compile Include="Front\ScheduleMeetingInviteModel.cs" />
+    <Compile Include="Front\ScheduleMeetingModel.cs" />
+    <Compile Include="Front\StrataOwnerBookingRequestModel.cs" />
+    <Compile Include="Front\StrataOwnerModel.cs" />
+    <Compile Include="Front\StrataOwnerMyRequestModel.cs" />
+    <Compile Include="Front\SubAdminModel.cs" />
+    <Compile Include="Front\UserClientPrivileges.cs" />
+    <Compile Include="Front\VendorModel.cs" />
+    <Compile Include="PMBModel.cs" />
+    <Compile Include="Front\PollChartModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPasswordModel.cs" />
+    <Compile Include="StrataBoardModel.cs" />
+    <Compile Include="SubscriptionModel.cs" />
+    <Compile Include="TestimonialModel.cs" />
+    <Compile Include="VendorQuotationModel.cs" />
+    <Compile Include="VendorSearchModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,237 @@
+﻿@{
+    ViewBag.Title = "OwnerDashboard";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@model StratasFair.BusinessEntity.Front.DashBoardModel
+@using StratasFair.Business.Front
+
+@section styles{
+    <link href="@Url.Content("~/Content/css/responsive-accordion.css")" rel="stylesheet" />
+}
+           
+@section scripts{
+
+    <script src="@Url.Content("~/Content/js/responsive-accordion.min.js")"></script>
+    <script type="text/javascript">
+        function ViewLatestAlertDetails(AlertNotificationId) {
+
+            $('#ViewLatestAlertDiv').html('');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/Dashboard/ViewLatestAlert")',
+                dataType: 'html',
+                data: { AlertNotificationId: AlertNotificationId },
+                success: function (result) {
+                    $('#ViewLatestAlertDiv').html(result);
+                }
+            });
+
+        }
+
+        function ViewMaintenanceScheduleDetails(MaintenanceScheduleId) {
+
+            $('#ViewMaintenanceScheduleDiv').html('');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/Dashboard/ViewMaintenanceSchedule")',
+                dataType: 'html',
+                data: { MaintenanceScheduleId: MaintenanceScheduleId },
+                success: function (result) {
+                    $('#ViewMaintenanceScheduleDiv').html(result);
+                }
+            });
+
+        }
+
+
+        function ViewScheduleMeetingDetails(MeetingId) {
+
+            $('#ViewScheduleMeetingDiv').html('');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/Dashboard/ViewScheduleMeeting")',
+                dataType: 'html',
+                data: { MeetingId: MeetingId },
+                success: function (result) {
+                    $('#ViewScheduleMeetingDiv').html(result);
+                }
+            });
+        }
+
+    </script>
+}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dashboard-column">
+                <h3>Latest Alerts</h3>
+                <span class="view-all-btn"><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/listlatestalert")">View All</a></span>
+                <div class="clearfix"></div>
+                <ul>
+                    @{
+                        foreach (var item in Model.AlertAndNotificationModelList)
+                        {
+                            if (item.MessageType == 1)
+                            {
+                                <li class="emergency-box" onclick="ViewLatestAlertDetails(@item.AlertNotificationId)" data-toggle="modal" data-target="#latest-alert">
+                                    <span class="title">@item.Title</span>
+                                    <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                                    <p>
+                                        @item.Message...
+                                    </p>
+                                </li>
+                            }
+                            else
+                            {
+                                <li data-toggle="modal" onclick="ViewLatestAlertDetails(@item.AlertNotificationId)" data-target="#latest-alert">
+                                    <span class="title">@item.Title</span>
+                                    <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                                    <p>
+                                        @item.Message...
+                                    </p>
+                                </li>
+                            }
+                        }
+}
+
+                </ul>
+                <div class="alert-row">
+                    <span class="emergency">Emergency Alert</span>
+                    <span class="broadcast">Broadcast Notification</span>
+                </div>
+            </div><!-- dashboard-column End -->
+            <div class="dashboard-column">
+                <h3>Maintenance Schedule</h3>
+                <span class="view-all-btn"><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/listmaintenanceschedule")">View All</a></span>
+                <div class="clearfix"></div>
+                <ul>
+                    @{
+                        foreach (var item in Model.MaintenanceScheduleModelList)
+                        {
+                            <li onclick="ViewMaintenanceScheduleDetails(@item.MaintenanceScheduleId)" data-toggle="modal" data-target="#maintenance-schedule">
+                                <span class="title">@item.CommonAreaName</span>
+                                <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                                <div class="event-row">
+                                    <span class="event-date">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        @item.ScheduleDate.Replace(",", "").Substring(0, 11)
+                                    </span>
+                                    <span class="event-time">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        @item.StartTime
+                                    </span>
+                                </div>
+                                <p>
+                                    @item.Description...
+                                </p>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </div><!-- dashboard-column End -->
+            <div class="dashboard-column">
+                <h3>Meeting Schedule</h3>
+                <span class="view-all-btn"><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/listschedulemeeting")">View All</a></span>
+                <div class="clearfix"></div>
+                <ul>
+                    @{
+                        foreach (var item in Model.ScheduleMeetingModelList)
+                        {
+
+                            <li onclick="ViewScheduleMeetingDetails(@item.MeetingId)" data-toggle="modal" data-target="#meeting-schedule">
+                                <span class="title">@item.Subject</span>
+                                <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                                <div class="event-row">
+                                    <span class="event-date">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        @item.MeetingDate.Replace(",", "").Substring(0, 11)
+                                    </span>
+                                    <span class="event-time">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        @item.MeetingTime
+                                    </span>
+                                </div>
+                                <p>
+                                    @item.Message...
+                                </p>
+                            </li>
+
+                        }
+                    }
+                </ul>
+            </div><!-- dashboard-column End -->
+            <div class="dashboard-column">
+                <h3>Other  Notification</h3>
+                <span class="view-all-btn"><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/GetListOwnerBookingRequest")">View All</a></span>
+                <div class="clearfix"></div>
+                <ul>
+                    @{
+                        foreach (var item in Model.StrataOwnerBookingRequestModelList)
+                        {
+                            <li>
+                                <span class="title">@item.Subject</span>
+                                <span class="date">@item.CreatedOn</span>
+                                <p>
+                                   @item.Reason...
+                                </p>
+                            </li>
+                        }
+                    }                   
+                </ul>
+            </div><!-- dashboard-column End -->
+        </div>
+    </div>
+</div><!-- page content End -->
+
+<!-- Modal  latest-alert -->
+<div class="modal fade" id="latest-alert" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="ViewLatestAlertDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- Modal latest-alert End -->
+
+<!-- Modal  maintenance-schedule -->
+<div class="modal fade" id="maintenance-schedule" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="ViewMaintenanceScheduleDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- Modal maintenance-schedule End -->
+
+<!-- Modal  meeting-schedule -->
+<div class="modal fade" id="meeting-schedule" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="ViewScheduleMeetingDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- Modal meeting-schedule End -->

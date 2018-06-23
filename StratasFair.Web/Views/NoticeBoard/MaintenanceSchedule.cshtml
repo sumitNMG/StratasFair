@@ -1,0 +1,223 @@
+﻿@{
+    ViewBag.Title = "Maintenance Schedule";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+@model StratasFair.BusinessEntity.Front.NoticeBoardModel
+@section scripts{
+
+    <script src="~/Content/js/bootstrap-multiselect.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            debugger;
+            var BlockNumber = 2;  //Infinate Scroll starts from second block
+            var NoMoreData = false;
+            var inProgress = false;
+
+
+            var InformationCount = $("#hdnMaintenanceSchedule").val();
+            if (InformationCount > 9) {
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() == $(document).height() -
+                    $(window).height() && !NoMoreData && !inProgress) {
+
+                        inProgress = true;
+                        $("#dvLoaderIndex").show();
+                        $.post("@Url.Action("MaintenanceInfinateScroll", "NoticeBoard")",
+                                { "BlockNumber": BlockNumber },
+                                function (data) {
+                                    BlockNumber = BlockNumber + 1;
+                                    NoMoreData = data.NoMoreData;
+                                    $("#ListMaintenanceSchedulebody").append(data.HTMLString);
+                                    $("#dvLoaderIndex").hide();
+                                    inProgress = false;
+                                });
+                    }
+                });
+            }
+
+        })
+
+        function DeleteMaintenanceScheduleDetails(MaintenanceScheduleId) {
+
+            var checkstr = confirm('Are you sure you want to delete this Maintenance Schedule ?');
+            if (checkstr == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/DeleteMaintenanceSchedule")',
+                    dataType: 'json',
+                    data: { MaintenanceScheduleId: MaintenanceScheduleId },
+                    success: function (result) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        function EditMaintenanceScheduleDetails(MaintenanceScheduleId) {
+
+            $('#EditMaintenanceScheduleDiv').html('');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/EditMaintenanceSchedule")',
+                dataType: 'html',
+                data: { MaintenanceScheduleId: MaintenanceScheduleId },
+                success: function (result) {
+                    $('#EditMaintenanceScheduleDiv').html(result);
+                    $.validator.unobtrusive.parse('#frmEditMaintenanceSchedule');         /////////////// For apply validation on Edit Modal pop up
+                }
+            });
+
+        }
+
+
+    </script>
+}
+
+@section styles{
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-multiselect.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    <style>
+        .checkbox input[type="checkbox"] {
+            display: block;
+        }
+    </style>
+
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        @if (TempData["CommonMessage"] != null)
+        {
+            @Html.Raw(TempData["CommonMessage"])
+        }
+        <div class="title_left">
+            <h1>Notice Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 tab-menu">
+            <div class="tabs-menu">
+                <ul>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard")" class="showSingle">Latest Alerts</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MeetingSchedule")" class="showSingle">Meeting Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MaintenanceSchedule")" id="first-anchor" target="3" class="showSingle">Maintenance Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/GeneralInformation")" class="showSingle">General Information</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row admin-dashboard">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="div3" class="targetDiv table-section admin-notice-meeting">
+                <div class="row sub-heading">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <h2>Maintenance Schedule</h2>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-6 pull-right text-right">
+                        <div class="add-btn pull-right">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#add-schedule">Add Schedule</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <td class="subject">Common Area</td>
+                            <td class="message">Description</td>
+                            <td class="meeting">Date and Time</td>
+                            <td class="added-on">Added On</td>
+                            <td class="action">Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id="ListMaintenanceSchedulebody">
+                        @if (Model.MaintenanceScheduleModelList != null)
+                        {
+                            if (Model.MaintenanceScheduleModelList.Count() > 0)
+                            {
+                                { Html.RenderAction("ListMaintenanceSchedule", "NoticeBoard", new { Model = Model.MaintenanceScheduleModelList }); }
+                                <input id="hdnMaintenanceSchedule" value=@Model.MaintenanceScheduleModelList.Count() type="hidden" />
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                        <span class="text-orange">No Record Found</span>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                    <span class="text-orange">No Record Found</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div><!-- Maintenance Schedule End -->
+            <div id="dvLoaderIndex" style="display:none; text-align:center">
+                <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- page content End -->
+<!-- Modal Add Schedule -->
+<div class="modal fade" id="add-schedule" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            @{
+                NoticeBoardHelper noticeBoardHelper = new NoticeBoardHelper();
+                MaintenanceScheduleModel maintenanceScheduleModel = new MaintenanceScheduleModel();
+            }
+            <div id="AddMaintenanceScheduleDiv">
+                @{Html.RenderPartial("AddMaintenanceSchedule", maintenanceScheduleModel);}
+            </div>
+        </div>
+    </div>
+</div><!-- modal Add Schedule End -->
+
+<!-- Modal Add Schedule -->
+<div class="modal fade" id="edit-schedule" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="EditMaintenanceScheduleDiv">
+            </div>
+        </div>
+    </div>
+</div><!-- modal Add Schedule End -->

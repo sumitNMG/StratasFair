@@ -1,0 +1,133 @@
+﻿@model StratasFair.BusinessEntity.Front.SubAdminModel
+
+
+<script type="text/javascript">
+    // $(document).ready( function () {
+    //     $(".modal-body").on("hidden.bs.modal", function () {
+    //        $(this).removeData();
+    //    });
+    //});
+
+
+    function checkprivilage() {
+        var selectedList = [];
+        $.each($("input[name='cbk']:checked"), function () {
+            selectedList.push($(this).val());
+        });
+        $("#SelectedUserClientPrivilege").val(selectedList.join(","));
+    };
+
+    function FnSubAdminAddBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FnSubAdminAddSuccess(data) {
+      
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.result == 0) {
+            $("#FirstName").val('');
+            $("#LastName").val('');
+            $("#Email").val('');
+            $("#Position").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            if (data.result == -1) {
+                $("#Email").val('');
+            }
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+
+</script>
+
+@using (Ajax.BeginForm("AddSubAdmin", "managesubadmin", new AjaxOptions { OnSuccess = "FnSubAdminAddSuccess(data)", OnBegin = "FnSubAdminAddBegin()" }, new { @class = "form-section", @id = "frmAddSubAdmin" }))
+{
+    <div class="modal-body">
+        <h5 class="text-center">Add Sub Admin</h5>
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>First Name<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @value = "", @type = "text", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Last Name<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @text = "", @type = "text", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @text = "", @type = "text", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Position </label>
+                    @Html.TextBoxFor(m => m.Position, new { @class = "form-control", @text = "", @type = "text", @maxlength = "100" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 privilege">
+                <div class="form-group" id="dvClientPrivileges">
+                    <p>Access Privileges<span class="required">*</span></p>
+                    @Html.HiddenFor(m => m.SelectedUserClientPrivilege, new { id = "SelectedUserClientPrivilege" })                 
+                    @for (int i = 0; i < Model.UserClientPrivilege.Count; i++)
+                    {
+                        <div class="checkbox">
+                            <input name="cbk" class="myCheckbox" onchange="checkprivilage()" value="@Model.UserClientPrivilege[i].PageId" id="@Model.UserClientPrivilege[i].PageId" checked="@Model.UserClientPrivilege[i].IsChecked" type="checkbox" multiple>
+                            <label for="@Model.UserClientPrivilege[i].PageId">@Model.UserClientPrivilege[i].PageName</label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input id="btnSubmit" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                    <div id="dvLoader" style="display:none; text-align:center">
+                        <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}<!-- form-section End -->

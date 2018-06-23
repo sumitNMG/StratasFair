@@ -1,0 +1,40 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.ScheduleMeetingModel>
+
+@{
+    if (Model != null)
+    {
+        if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td data-title="Subject" class="subject">@item.Subject</td>
+                    <td data-title="Message" class="message">@item.Message</td>
+                    <td data-title="Meeting Time" class="meeting">@item.MeetingDate</td>
+                    <td data-title="Added On" class="added-on">@item.CreatedOn</td>
+                    <td data-title="Action" class="action">
+                        <a href="javascript:void(0)" onclick="EditScheduleMeetingDetails(@item.MeetingId)" data-toggle="modal" data-target="#edit-meeting" data-placement="bottom" title="" data-original-title="Edit">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <a href="javascript:void(0)" onclick="DeleteScheduleMeetingDetails(@item.MeetingId)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a href="javascript:void(0)" onclick="ViewScheduleMeetingDetails(@item.MeetingId)" data-toggle="modal" data-target="#view-meeting" data-placement="bottom" title="" data-original-title="View">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                    <span class="text-orange">No Record Found</span>
+                </td>
+            </tr>
+        }
+    }
+}

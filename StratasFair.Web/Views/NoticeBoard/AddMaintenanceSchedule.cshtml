@@ -1,0 +1,133 @@
+﻿@model StratasFair.BusinessEntity.Front.MaintenanceScheduleModel
+
+
+<script type="text/javascript">
+
+    function FnAddMaintenanceScheduleBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FnAddMaintenanceScheduleSuccess(data) {
+
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.result == 1) {
+            $("#RequestTitle").val('');
+            $("#Details").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+</script>
+
+
+<div class="modal-body">
+    <h5 class="text-center">Add Maintenance Schedule</h5>
+
+@using (Ajax.BeginForm("AddMaintenanceSchedule", "NoticeBoard", FormMethod.Post, new AjaxOptions { OnSuccess = "FnAddMaintenanceScheduleSuccess(data)", OnBegin = "FnAddMaintenanceScheduleBegin()" }, new { @class = "form-section", @id = "frmAddMaintenanceSchedule" }))
+    {
+    @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Resource/Common Area<span class="required">*</span></label>
+                    @Html.DropDownListFor(m => m.CommonAreaId, new SelectList(ViewBag.CommonAreaList, "Value", "Text"), "Select Common Area", new { @class = "selectpicker form-control" })
+                    @Html.ValidationMessageFor(x => x.CommonAreaId, null, new { @class = "error" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Description</label>
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @maxlength = "100" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Date<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.ScheduleDate, new { @class = "calendar-icon form-control", @id = "datepicker" })
+                    @Html.ValidationMessageFor(m => m.ScheduleDate)
+                </div>
+            </div>
+        </div>
+        <div class="row start-date">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Time<span class="required">*</span></label>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            @Html.DropDownList("StartTimeHour", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="01", Value = "01" },
+                                    new SelectListItem{ Text="02", Value = "02" },
+                                    new SelectListItem{ Text="03", Value = "03" },
+                                    new SelectListItem{ Text="04", Value = "04" },
+                                    new SelectListItem{ Text="05", Value = "05" },
+                                    new SelectListItem{ Text="06", Value = "06" },
+                                    new SelectListItem{ Text="07", Value = "07" },
+                                    new SelectListItem{ Text="08", Value = "08" },
+                                    new SelectListItem{ Text="09", Value = "09" },
+                                    new SelectListItem{ Text="10", Value = "10" },
+                                    new SelectListItem{ Text="11", Value = "11" },
+                                    new SelectListItem{ Text="12", Value = "12" }
+                                }, "Hour", new { @class = "selectpicker form-control", @InitialValue = "Hour" })
+                            @Html.ValidationMessage("StartTimeHour")
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            @Html.DropDownList("StartTimeMinute", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="00", Value = "00" },
+                                    new SelectListItem{ Text="15", Value = "15" },
+                                    new SelectListItem{ Text="30", Value = "30" },
+                                    new SelectListItem{ Text="45", Value = "45" }
+                                }, "Minute", new { @class = "selectpicker form-control", @InitialValue = "Minute" })
+                            @Html.ValidationMessage("StartTimeMinute")
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            @Html.DropDownList("StartTimeAmPm", new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="AM", Value = "AM", Selected=true },
+                                    new SelectListItem{ Text="PM", Value = "PM" }
+                                }, "AM", new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessage("StartTimeAmPm")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                </div>
+            </div>
+        </div>
+}<!-- Form End -->
+</div>

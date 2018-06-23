@@ -1,0 +1,25 @@
+﻿@model string
+<html>
+<head>
+    <title>Pie Example </title>
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/fusionChart/fusioncharts.js")"></script>
+    <script src="@Url.Content("~/Scripts/fusionChart/fusioncharts.charts.js")"></script>
+    <script src="@Url.Content("~/Scripts/fusionChart/themes/fusioncharts.theme.ocean.js")"></script>
+    <style>
+        .no-chart-data{padding:50px; font-size:14px;}
+    </style>
+</head>
+<body>
+    @if (Model != "0")
+    {
+        FusionCharts.Charts.Chart chartData = new FusionCharts.Charts.Chart("pie2d", "Pie3dLesson", "100%", "500px", "xml", Convert.ToString(Model));
+        @Html.Raw(chartData.Render())
+    }
+    else
+    {
+        @Html.Raw("<div class=\'no-chart-data\'>No data for chart<div>")
+    }
+</body>
+</html>

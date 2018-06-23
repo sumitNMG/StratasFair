@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StratasFair.Data</RootNamespace>
+    <AssemblyName>StratasFair.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StratasFairModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StratasFairModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StratasFairModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StratasFairModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StratasFairModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdminEmailNotificationSetting.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdminPMB.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdvertisement.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAlertAndNotification.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillType.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCMSMaster.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommonArea.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactU.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDiscipline.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmailServer.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmailServerClient.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFAQ.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFlagComment.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForum.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForumReply.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForumReplyUser.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForumUser.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGeneralInformation.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMaintenanceSchedule.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOwnerBill.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOwnerBillDetail.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblpage.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPMB.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPollAnswer.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPollOption.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPollQuestion.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblQuotationRequest.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReminder.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReminderDetail.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblScheduleMeeting.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblScheduleMeetingInvite.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSetting.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStratasBoard.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStratasBoardSubscription.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSubscription.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSubscriptionExpireMailReminder.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTemplateMaster.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTestimonial.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserBookingRequest.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserClient.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserPriv.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserRequest.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVendor.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_ContactUsReportAdmin_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAdminCommonResourceCalendarData_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAdminPMB_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetModulesByUserClientId_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetOwnerCommonResourceCalendarData_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetOwnerGeneralCalendarData_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetPMB_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GetPollChart_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetQuotationRequest_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GetVendorsById_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_SearchVendor_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_StratasBoardStatusReportAdmin_Result.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetBookingList.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetDiscipline.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetFlaggedMessage.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetForumList.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetForumListReply.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetMaintenanceSchedule.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetOwnerBookingRequest.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetStratasBoard.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetStratasBoardSubscription.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetSubscriptionMaster.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_GetVendor.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_UserClientPrivileges.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_UserDetails.cs">
+      <DependentUpon>StratasFairModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="StratasFairModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StratasFairModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StratasFairModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StratasFairModel.edmx</DependentUpon>
+      <LastGenOutput>StratasFairModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="StratasFairModel.edmx.diagram">
+      <DependentUpon>StratasFairModel.edmx</DependentUpon>
+    </None>
+    <None Include="StratasFairModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StratasFairModel.edmx</DependentUpon>
+      <LastGenOutput>StratasFairModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

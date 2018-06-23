@@ -1,0 +1,203 @@
+﻿@model StratasFair.BusinessEntity.Admin.UpcomingRenewalReportModel
+@using StratasFair.Business.Admin;
+@using StratasFair.Business.CommonHelper;
+@using StratasFair.BusinessEntity.Admin;
+@{
+    ViewBag.Title = "Upcoming Renewal Report";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <link href="@Url.Content("~/Areas/Administrator/Content/plugins/jQueryUI/jquery-ui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.css")" rel="stylesheet" type="text/css" />
+}
+<section class="content-header">
+    <h1>
+        Upcoming Renewal Report
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Upcoming Renewal Report</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="nav-tabs-custom">
+                <div class="tab-pane active" id="tab_1-1">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Keyword Search</label>
+                                    @Html.TextBoxFor(m => m.KeywordSearch, new { @class = "form-control", @placeholder = "Search by firstname, lastname, emailId or strataname" })
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-2  col-sm-offset-6">
+                                    <input type="submit" value="Search" class="btn btn-primary col-sm-12 col-xs-12" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <a href="@Url.Action("upcomingrenewal", "report")" class="btn btn-warning col-sm-12 col-xs-12">View All</a>
+                                </div>
+                                <div class="col-sm-2">
+                                    <a href="javascript:void(0)" id="linkExportToCsv" class="btn btn-success">Download Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="box-body table-responsive">
+                        @{
+                                ReportsHelper objReportsHelper = new ReportsHelper();
+                                UpcomingRenewalReportModel upcomingRenewalReportModel = Model as UpcomingRenewalReportModel;
+                                List<UpcomingRenewalReportModel> listMebership = objReportsHelper.GetUpcomingRenewalReport(upcomingRenewalReportModel);
+                                int totalCount = 0;
+                                int? totalPages = 0;
+                                try
+                                {
+                                    totalCount = listMebership[0].TotalCount.Value;
+                                    totalPages = objReportsHelper.GetPageCount(totalCount, upcomingRenewalReportModel.PageSize);
+
+                                }
+                                catch { }
+                        }
+                        <span style="background:#f6e8e8; padding:10px"><span>Total Count: </span><span><b>@totalCount</b></span></span>
+                        @{
+                                var activeGrid = new ASPRazorWebGrid(source: listMebership, maintainState: false);
+                        }
+                        @activeGrid.GetHtml(columns: new ASPRazorWebGridColumn[]{
+                         activeGrid.CreateColumn(dataField: "Sno", headerText:"S.No.",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                         activeGrid.CreateColumn(headerText:"Name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left", dataFieldFormat:
+                                    @<text>
+                                        @Html.Raw(@item.FirstName + " " + @item.LastName)
+                                    </text>),
+                         activeGrid.CreateColumn(dataField: "EmailId", headerText:"Email Address",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                         activeGrid.CreateColumn(dataField: "StratasBoardName", headerText:"Strata name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                         activeGrid.CreateColumn(dataField: "ContactNumber", headerText:"Contact number",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                         activeGrid.CreateColumn(headerText:"Register On",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left", dataFieldFormat:
+                                    @<text>
+                                        @Html.Raw(AppLogic.GetDateFromat(item.CreatedOn))
+                                    </text>),
+                         activeGrid.CreateColumn(dataField: "PortalLink", headerText:"Unique name",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left"),
+                         activeGrid.CreateColumn(headerText:"Subscription Expiring On",canSort: false,headerHorizontalAlignment: "Left", itemHorizontalAlignment: "Left", dataFieldFormat:
+                                    @<text>
+                                        @Html.Raw(AppLogic.GetDateFromat(item.ExpiryDate))
+                                    </text>)
+                       },
+                             tableStyle: "table table-bordered table-hover",
+                             headerStyle: "head",
+                             alternatingRowStyle: "alt",
+                             tableId: "activeTable")
+
+                    </div>
+                    <!--Here paging goes-->
+                    @if (totalCount > 0)
+                    {
+                        if (totalPages != 0)
+                        {
+                                    <!--Custom paging-->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-5"></div>
+                                    <div class="col-sm-7">
+                                        <div class="dataTables_paginate paging_simple_numbers" id="activeTable_paginate">
+                                            <ul class="pagination">
+                                                @if (totalPages > 1)
+                                                {
+                                                    <li class="paginate_button previous"><a href="@Url.Action("upcomingrenewal", "report", new { PageNumber = 1, KeywordSearch = Model.KeywordSearch })" aria-controls="activeTable">First</a></li>
+                                                }
+                                                @for (int i = 0; i < totalPages; i++)
+                                                {
+                                                    int count = i + 1;
+                                                    if (Model.PageNumber == count)
+                                                    {
+                                                        <li class="paginate_button active"><a href="@Url.Action("upcomingrenewal", "report", new { PageNumber = count, KeywordSearch = Model.KeywordSearch })" aria-controls="activeTable" data-dt-idx="@count" tabindex="@count">@count</a></li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="paginate_button "><a href="@Url.Action("upcomingrenewal", "report", new { PageNumber = count, KeywordSearch = Model.KeywordSearch })" aria-controls="activeTable" data-dt-idx="@count" tabindex="@count">@count</a></li>
+                                                    }
+                                                }
+                                                @if (totalPages > 1)
+                                                {
+                                                    <li class="paginate_button next"><a href="@Url.Action("upcomingrenewal", "report", new { PageNumber = totalPages, KeywordSearch = Model.KeywordSearch })" aria-controls="activeTable">Last</a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</section>
+@section scripts{
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/jQueryUI/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Administrator/Content/plugins/datatables/dataTables.bootstrap.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#activeTable').DataTable({
+                "lengthChange": false,
+                "searching": false,
+                "info": false,
+                "paging": false
+            });
+
+            //To add the active class to the pagination button
+            $("a").each(function () {
+                var PageNumber=@Model.PageNumber;
+                if ($(this).text() == PageNumber) {
+                    $(this).closest('li').addClass('active');
+                    $(this).removeAttr('href');
+                }
+            });
+        });
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            $("#linkExportToCsv").click(function () {
+                window.location = '@Url.Action("UpcomingRenewalExportToCsv", "report")';
+            });
+        });
+    </script>
+}
+
+
+
+
+
+

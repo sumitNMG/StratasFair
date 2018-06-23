@@ -1,0 +1,141 @@
+﻿@model StratasFair.BusinessEntity.StrataBoardModel
+
+@{
+    ViewBag.Title = "Add StratasBoard";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="@Url.Content("~/Areas/Administrator/Content/plugins/datepicker/datepicker3.css")" />
+<section class="content-header">
+    <h1>
+        Manage StratasBoard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage StratasBoard</li>
+    </ol>
+    <div class="top-buttons-container">
+        <a href="@Url.Content("~/securehost/rootlogin/client")" class="btn btn-success">View</a>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Add StratasBoard
+                </h3>
+            </div>
+            <div class="row"></div>
+            @using (Html.BeginForm("Add", "Client", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="box-body fix-width">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("StratasBoard Name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.StratasBoardName, new { @class = "form-control", @placeholder = "Stratasboard name", @maxlength = "50" })
+                            @Html.ValidationMessageFor(m => m.StratasBoardName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Building Name/Address")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.BuildingName, new { @class = "form-control", @placeholder = "Building Name", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.BuildingName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Unique name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.PortalLink, new { @class = "form-control", @placeholder = "UniqueName", @maxlength = "50" })
+                            <span>eg. : http://www.stratasfair.com/{UniqueName}</span><br />
+                            @Html.ValidationMessageFor(m => m.PortalLink)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Subscription Package")<br />
+                            @Html.DropDownListFor(m => m.SubscriptionId, new SelectList(@StratasFair.Business.CommonHelper.CommonData.GetSubscriptionList(), "Value", "Text"), "Select", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SubscriptionId)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("First Name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "First name", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Last Name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last name", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Email Address")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @placeholder = "Email address", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.EmailId)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Contact Number")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control", @placeholder = "Contact number", @maxlength = "15" })
+                            @Html.ValidationMessageFor(m => m.ContactNumber)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Status)<br />
+                            @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.StatusList, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Status)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <a href='@Url.Content("~/securehost/rootlogin/client")' class="btn btn-warning">
+                        Cancel
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("form").submit(function (e) {
+
+            });
+        });
+    </script>
+}
+

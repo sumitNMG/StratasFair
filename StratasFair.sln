@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.Web", "StratasFair.Web\StratasFair.Web.csproj", "{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.Web.Tests", "StratasFair.Web.Tests\StratasFair.Web.Tests.csproj", "{326E044E-D507-495E-91CB-0F7285B53762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.BusinessEntity", "StratasFair.BusinessEntity\StratasFair.BusinessEntity.csproj", "{C9639688-010F-4538-848E-622EBF32C337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.Business", "StratasFair.Business\StratasFair.Business.csproj", "{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.Common", "StratasFair.Common\StratasFair.Common.csproj", "{8845D12B-7369-4A96-BF26-FB82DBF6D66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.Data", "StratasFair.Data\StratasFair.Data.csproj", "{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StratasFair.NotificationService", "StratasFair.NotificationService\StratasFair.NotificationService.csproj", "{215CDBA7-E097-4A08-B2FD-E2002D717CE8}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.0.0.3:8080/tfs/nmg_dotnet
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StratasFair.Business\\StratasFair.Business.csproj
+		SccProjectName1 = StratasFair.Business
+		SccLocalPath1 = StratasFair.Business
+		SccProjectUniqueName2 = StratasFair.BusinessEntity\\StratasFair.BusinessEntity.csproj
+		SccProjectName2 = StratasFair.BusinessEntity
+		SccLocalPath2 = StratasFair.BusinessEntity
+		SccProjectUniqueName3 = StratasFair.Common\\StratasFair.Common.csproj
+		SccProjectName3 = StratasFair.Common
+		SccLocalPath3 = StratasFair.Common
+		SccProjectUniqueName4 = StratasFair.Data\\StratasFair.Data.csproj
+		SccProjectName4 = StratasFair.Data
+		SccLocalPath4 = StratasFair.Data
+		SccProjectUniqueName5 = StratasFair.NotificationService\\StratasFair.NotificationService.csproj
+		SccProjectName5 = StratasFair.NotificationService
+		SccLocalPath5 = StratasFair.NotificationService
+		SccProjectUniqueName6 = StratasFair.Web.Tests\\StratasFair.Web.Tests.csproj
+		SccProjectName6 = StratasFair.Web.Tests
+		SccLocalPath6 = StratasFair.Web.Tests
+		SccProjectUniqueName7 = StratasFair.Web\\StratasFair.Web.csproj
+		SccProjectName7 = StratasFair.Web
+		SccLocalPath7 = StratasFair.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Debug|x86.ActiveCfg = Debug|x86
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Debug|x86.Build.0 = Debug|x86
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Release|x86.ActiveCfg = Release|x86
+		{12AFEE01-B2D3-4CD3-99E9-BB77DC8713C0}.Release|x86.Build.0 = Release|x86
+		{326E044E-D507-495E-91CB-0F7285B53762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326E044E-D507-495E-91CB-0F7285B53762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326E044E-D507-495E-91CB-0F7285B53762}.Debug|x86.ActiveCfg = Debug|x86
+		{326E044E-D507-495E-91CB-0F7285B53762}.Debug|x86.Build.0 = Debug|x86
+		{326E044E-D507-495E-91CB-0F7285B53762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326E044E-D507-495E-91CB-0F7285B53762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326E044E-D507-495E-91CB-0F7285B53762}.Release|x86.ActiveCfg = Release|x86
+		{326E044E-D507-495E-91CB-0F7285B53762}.Release|x86.Build.0 = Release|x86
+		{C9639688-010F-4538-848E-622EBF32C337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9639688-010F-4538-848E-622EBF32C337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9639688-010F-4538-848E-622EBF32C337}.Debug|x86.ActiveCfg = Debug|x86
+		{C9639688-010F-4538-848E-622EBF32C337}.Debug|x86.Build.0 = Debug|x86
+		{C9639688-010F-4538-848E-622EBF32C337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9639688-010F-4538-848E-622EBF32C337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9639688-010F-4538-848E-622EBF32C337}.Release|x86.ActiveCfg = Release|x86
+		{C9639688-010F-4538-848E-622EBF32C337}.Release|x86.Build.0 = Release|x86
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Debug|x86.ActiveCfg = Debug|x86
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Debug|x86.Build.0 = Debug|x86
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Release|x86.ActiveCfg = Release|x86
+		{888E39A3-B1B4-4494-916E-0CC1EBDD63F8}.Release|x86.Build.0 = Release|x86
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Debug|x86.ActiveCfg = Debug|x86
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Debug|x86.Build.0 = Debug|x86
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Release|x86.ActiveCfg = Release|x86
+		{8845D12B-7369-4A96-BF26-FB82DBF6D66B}.Release|x86.Build.0 = Release|x86
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Debug|x86.ActiveCfg = Debug|x86
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Debug|x86.Build.0 = Debug|x86
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Release|x86.ActiveCfg = Release|x86
+		{F1B842B9-C7EB-4E7A-8E55-FFE4EB07378F}.Release|x86.Build.0 = Release|x86
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Debug|x86.ActiveCfg = Debug|x86
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Debug|x86.Build.0 = Debug|x86
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Release|x86.ActiveCfg = Release|x86
+		{215CDBA7-E097-4A08-B2FD-E2002D717CE8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

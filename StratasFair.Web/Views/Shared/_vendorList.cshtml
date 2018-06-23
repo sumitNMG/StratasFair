@@ -1,0 +1,19 @@
+﻿@model List<StratasFair.BusinessEntity.Front.VendorModel>
+
+@foreach (var item in Model)
+{
+    <li>
+        <figure class="vendor-pic">
+            <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/vendor/@item.VendorId/ProfilePicture/@item.ImageFile" alt="" title="Vendor" />
+        </figure>
+        <span class="name">@item.VendorName</span>
+        <span class="designation">@item.DisciplineName</span>
+        <div class="email-id">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:@item.EmailId">@item.EmailId</a>
+        </div>
+        <div class="phone-no">
+            <i class="fa fa-mobile-phone"></i> @item.MobileNumber
+        </div>
+    </li>
+}

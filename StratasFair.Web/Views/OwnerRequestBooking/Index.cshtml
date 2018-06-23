@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+
+@section styles{
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+}
+
+
+@section scripts{
+   <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+}
+
+
+
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+
+    <script src="~/Content/js/moment.min.js"></script>
+    <script src="~/Content/js/fullcalendar.min.js"></script>
+    <script src="~/Content/js/custom-calender.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>*@
+
+
+
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>*@
+
+@*@section scripts{
+
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+@* <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>*@
+
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>*@
+
+@*<script type="text/javascript">
+
+            $(document).ready(function () {
+
+                debugger;
+                var BlockNumber = 2;  //Infinate Scroll starts from second block
+                var NoMoreData = false;
+                var inProgress = false;
+                var Count = $("#hdnModelRecordCount").val();
+                if (Count > 11) {
+                    $(window).scroll(function () {
+                        if ($(window).scrollTop() == $(document).height() -
+                        $(window).height() && !NoMoreData && !inProgress) {
+
+                            inProgress = true;
+                            $("#dvLoaderIndex").show();
+                            $.post("@Url.Action("InfinateScroll", "OwnerMyRequest")",
+                                { "BlockNumber": BlockNumber },
+                                function (data) {
+                                    BlockNumber = BlockNumber + 1;
+                                    NoMoreData = data.NoMoreData;
+                                    $("#ListOwnerMyRequestBody").append(data.HTMLString);
+                                    $("#dvLoaderIndex").hide();
+                                    inProgress = false;
+                                });
+                        }
+                    });
+                }
+
+            })
+
+            $(function () {
+                var dateFormat = "mm/dd/yy",
+                  from = $("#datepicker")
+                    .datepicker({
+                        changeMonth: true,
+                        changeYear: true
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                  to = $("#datepicker2").datepicker({
+                      changeMonth: true,
+                      changeYear: true
+                  })
+                  .on("change", function () {
+                      from.datepicker("option", "maxDate", getDate(this));
+                  });
+
+                function getDate(element) {
+                    var date;
+                    try {
+                        date = $.datepicker.parseDate(dateFormat, element.value);
+                    } catch (error) {
+                        date = null;
+                    }
+
+                    return date;
+                }
+            });
+        </script>
+
+    }*@
+<script type="text/javascript">
+
+        function GetCommonAreaforDropDown() {
+
+            $('#AddOwnerBookingRequestDiv').html('');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/OwnerRequestBooking/AddOwnerBookingRequest")',
+                dataType: 'html',
+                success: function (result) {
+                    $('#AddOwnerBookingRequestDiv').html(result);
+                }
+            });
+        }
+    </script>
+
+
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Calendar</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12 tab-menu">
+            <div class="tabs-menu">
+                <ul>
+                    <li>
+                        <a class="showSingle" id="first-anchor" target="1">My Calendar</a>
+                    </li>
+                    <li>
+                        <a class="showSingle" target="2">Community Calendar</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="div1" class="targetDiv calendar-panel">
+                <div id='eventcalendar'></div>
+            </div>
+            <div id="div2" class="targetDiv">
+                <div class="calendar-panel">
+                    <div id='eventcalendar2'></div>
+                    <div class="calend-btn">
+                        <a href="javascript:void(0)" onclick="GetCommonAreaforDropDown()" class="yellow-btn-round booking-request" id="toggle-booking">Add Booking</a>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/OwnerRequestBooking/GetListOwnerBookingRequest")" class="green-btn-round">My Booking Request</a>
+                    </div>
+                </div>
+                <div class="booking-expand" style="display:none">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h5>Booking Request</h5>
+                            <a href="javascript:void(0)" id="toggle-booking" class="close-cross">X</a>
+                        </div>
+                    </div>
+                    <div id="AddOwnerBookingRequestDiv">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- page content End -->

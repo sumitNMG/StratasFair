@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "General Information";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@model IEnumerable<StratasFair.BusinessEntity.Front.GeneralInformationModel>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            debugger;
+            var BlockNumber = 2;  //Infinate Scroll starts from second block
+            var NoMoreData = false;
+            var inProgress = false;
+
+            var InformationCount = $("#hdnGeneralInformation").val();
+            if (InformationCount > 3) {
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() == $(document).height() -
+                    $(window).height() && !NoMoreData && !inProgress) {
+
+                        inProgress = true;
+                        SearchGeneralInformation(BlockNumber);
+                        BlockNumber = BlockNumber + 1;
+                        NoMoreData = data.NoMoreData;
+                    }
+                });
+            }
+
+        })
+
+        function SearchGeneralInformation(BlockNumber) {
+            $("#dvLoaderIndex").show();
+            var SearchKeyword = $("#txtSearchKeyword").val();
+            debugger;
+
+            $.post("@Url.Action("GenralInformationInfinateScroll", "GeneralInformation")",
+        { "BlockNumber": BlockNumber, "SearchKeyword": SearchKeyword },
+        function (data) {
+            if (data.HTMLString == null) {
+                $("#ListGeneralInformationUl").html('');
+                $("#ListGeneralInformationUl").append("<li><span class= 'text-orange'>No Record Found</span></li>");
+            }
+            else {
+                if (BlockNumber == 1) {
+                    $("#ListGeneralInformationUl").html('');
+                }
+                $("#ListGeneralInformationUl").append(data.HTMLString);
+            }
+            $("#dvLoaderIndex").hide();
+        });
+        }
+    </script>      
+}
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>General Information</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-sm-6 col-md-5 col-xs-12">
+            <div class="general-search">
+                <input value="" id="txtSearchKeyword" name="txtSearchKeyword" placeholder="Keyword" type="text">
+                <button type="submit" class="btn btn-default" onclick="SearchGeneralInformation(1);">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 general-info-list">
+            <ul id="ListGeneralInformationUl">
+                @if (Model != null)
+                {
+                    if (Model.Count() > 0)
+                    {
+                        { Html.RenderAction("ListGeneralInformation", "GeneralInformation", new { Model = Model }); }
+                        <input id="hdnGeneralInformation" value=@Model.Count() type="hidden" />
+                    }
+                    else
+                    {
+                        <li>
+                            <span class="text-orange">No Record Found</span>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li>
+                        <span class="text-orange">No Record Found</span>
+                    </li>
+                }
+            </ul>
+        </div><!--general info list End -->
+    </div>
+    <div id="dvLoaderIndex" style="display:none; text-align:center">
+        <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+    </div>
+</div><!-- page content End -->

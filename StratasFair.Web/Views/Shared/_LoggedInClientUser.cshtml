@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "_LoggedInClientUser";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StratasFair Login</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+  
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/DevStyle.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Url.Content("~/Content/js/script.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    @RenderSection("scripts",required:false)
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="wrapper">
+        <header class="login">
+            <div class="container">
+                <div class="login-logo"><a href="@Url.Content("~/Home")"><img src="~/Content/images/login-logo.png" alt="" title="" /></a></div>
+            </div>
+        </header><!-- header End -->
+            @if (TempData["CommonMessage"] != null)
+            {
+                @Html.Raw(TempData["CommonMessage"])
+            }
+            @RenderBody()
+        @*@RenderBody()*@
+        <footer class="login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 copyright">&copy; Copyright @System.DateTime.Now.Year <a href="#">StratasFair</a></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right social-link">
+                        <ul>
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+        </footer><!-- footer End -->
+        <div class="clearfix"></div>
+    </div><!-- wrapper End -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+﻿@model StratasFair.BusinessEntity.Front.GeneralInformationModel
+
+
+<script type="text/javascript">
+
+    //function FnAddGeneralInformationBegin() {
+    //    if ($("#frmAddGeneralInformation").valid()) {
+    //        $("#btnSubmit").hide();
+    //        $("#dvLoader").show();
+    //    }
+
+    //}
+
+    window.addEventListener("submit", function (e) {
+        var form = e.target;
+        if (form.getAttribute("enctype") === "multipart/form-data") {
+            if (!$("#frmAddGeneralInformation").valid()) {
+                return false;
+            }
+            else {
+                $("#btnSubmit").hide();
+                $("#dvLoader").show();
+            }
+
+            if (form.dataset.ajax) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var xhr = new XMLHttpRequest();
+                xhr.open(form.method, form.action);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+
+                        $("#btnSubmit").show();
+                        $("#dvLoader").hide();
+                        
+
+                        var resultString = $.parseJSON(xhr.response);
+                        if (resultString.result > 0) {
+
+                            swal({
+                                type: "success",
+                                title: "Success",
+                                showConfirmButton: true,
+                                showCancelButton: false,
+                                confirmButtonText: "OK",
+                                closeOnConfirm: true,
+                                text: "<b>" + resultString.Msg + "</b>",
+                                html: true
+                            }, function () {
+                                window.location = window.location;
+                            });
+                        }
+                        else {
+                            swal({
+                                type: "warning",
+                                title: "Failed",
+                                showConfirmButton: true,
+                                showCancelButton: false,
+                                confirmButtonText: "OK",
+                                closeOnConfirm: true,
+                                text: "<b>" + resultString.Msg + "</b>",
+                                html: true
+                            });
+                        }
+                    }
+                };
+                xhr.send(new FormData(form));
+            }
+        }
+    }, true);
+
+</script>
+
+<div class="modal-body">
+    <h5 class="text-center">Add General Information</h5>
+    @using (Ajax.BeginForm("AddGeneralInformation", "NoticeBoard", FormMethod.Get, new AjaxOptions { OnBegin = "FnAddGeneralInformationBegin()" }, new { @enctype = "multipart/form-data", @class = "form-section", @id = "frmAddGeneralInformation" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.GeneralInformationId)
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Title<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.Title)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Description<span class="required">*</span></label>
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @maxlength = "500" })
+                    @Html.ValidationMessageFor(m => m.Description)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-section">
+                <div class="form-group">
+                    <div class="inputfile-box">
+                        <div class="form-control bulk-upload-file">
+                            <input type="file" id="FileUpload" name="FileUpload" class="inputfile" onchange="uploadFile(this)" />
+                            <label for="FileUpload">
+                                <span class="choose-btn"></span>
+                                <span id="file-name" class="file-box">
+                                    Upload file
+                                </span>
+                                <span class="file-button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="File Upload">
+                                    <i class="fa fa-download"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input id="btnSubmit" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                </div>
+            </div>
+        </div>
+        <div id="dvLoader" style="display:none; text-align:center">
+            <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+        </div>
+    }<!-- Form End -->
+</div>

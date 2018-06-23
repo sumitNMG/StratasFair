@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9512a56b07f416c9ee4c36b5617f761" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="StratasFairDBModel.tblEmailServer" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblTemplateMaster" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblAdminEmailNotificationSetting" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblSetting" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblDiscipline" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblSubscription" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetSubscriptionMaster" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_UserDetails" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblStratasBoard" Width="1.5" PointX="11.75" PointY="9.375" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblStratasBoardSubscription" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetStratasBoardSubscription" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblSubscriptionExpireMailReminder" Width="1.5" PointX="9.375" PointY="14.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblTestimonial" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblAdvertisement" Width="1.5" PointX="11.375" PointY="14.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblUserClient" Width="1.5" PointX="14" PointY="8.375" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblUserClient_tblStratasBoard" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_UserClientPrivileges" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblContactU" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetStratasBoard" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblPMB" Width="1.5" PointX="5.375" PointY="17.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetDiscipline" Width="1.5" PointX="7.375" PointY="17.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetVendor" Width="1.5" PointX="17.375" PointY="16.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblUserPriv" Width="1.5" PointX="18.375" PointY="12.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblVendor" Width="1.5" PointX="9.375" PointY="19.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblPollOption" Width="1.5" PointX="21.625" PointY="21" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblPollAnswer" Width="1.5" PointX="21.625" PointY="16.25" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblPollQuestion" Width="1.5" PointX="19.375" PointY="23.5" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblPollAnswer_tblPollQuestion" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblPollOptions_tblPollQuestion" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblReminderDetail" Width="1.5" PointX="7.3971885737949936" PointY="13.619644514107911" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblEmailServerClient" Width="1.5" PointX="2.6885611464681856" PointY="0.2731178702195724" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblpage" Width="1.5" PointX="6.72540775068356" PointY="1.0036354069614948" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblAdminPMB" Width="1.5" PointX="4.407894173826973" PointY="23.476016919815919" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblOwnerBill" Width="1.5" PointX="6.4818598807239249" PointY="6.5607813329253259" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblOwnerBillDetail" Width="1.5" PointX="7.2865952063755115" PointY="17.122812204585788" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblScheduleMeeting" Width="1.5" PointX="11.779437739299349" PointY="9.8795855240335619" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblMaintenanceSchedule" Width="1.5" PointX="11.625" PointY="24.625" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblScheduleMeetingInvite" Width="1.5" PointX="20.375" PointY="12.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblBillType" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblUserRequest" Width="1.5" PointX="22.375" PointY="6.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblForumUser" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblGeneralInformation" Width="1.5" PointX="14.375" PointY="21.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblFAQ" Width="1.5" PointX="22.375" PointY="11.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblForum" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblUser" Width="1.5" PointX="16.375" PointY="23.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblUserBookingRequest" Width="1.5" PointX="24.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblCMSMaster" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblCommonArea" Width="1.5" PointX="9.75" PointY="26.875" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblMaintenanceSchedule_tblCommonArea" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblQuotationRequest" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblReminder" Width="1.5" PointX="5.125" PointY="29.375" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblReminderDetail_tblReminder" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetBookingList" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetForumList" Width="1.5" PointX="6.375" PointY="22.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetForumListReply" Width="1.5" PointX="24.375" PointY="9.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetMaintenanceSchedule" Width="1.5" PointX="16.375" PointY="8.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblFlagComment" Width="1.5" PointX="25.625" PointY="1.125" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblForum_tblFlagComment" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblForumReply" Width="1.5" PointX="25.625" PointY="20" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblForumReply_tblFlagComment" />
+        <AssociationConnector Association="StratasFairDBModel.FK_tblForum_tblForumReply" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblAlertAndNotification" Width="1.5" PointX="24.375" PointY="14.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetFlaggedMessage" Width="1.5" PointX="24.375" PointY="24.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.tblForumReplyUser" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="StratasFairDBModel.vw_GetOwnerBookingRequest" Width="1.5" PointX="21.375" PointY="25.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,196 @@
+﻿@model StratasFair.BusinessEntity.Admin.VendorModel
+
+@{
+    ViewBag.Title = "Edit Vendor";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<section class="content-header">
+    <h1>
+        Manage Vendor
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/DashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage Vendor</li>
+    </ol>
+    <div class="top-buttons-container">
+        <a href="@Url.Content("~/securehost/rootlogin/vendor")" class="btn btn-success">View</a>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Edit Vendor
+                </h3>
+            </div>
+            <div class="row"></div>
+            @using (Html.BeginForm("Edit", "vendor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.HiddenFor(m => m.ImageFile)
+                @Html.HiddenFor(m => m.OldImageFile);
+                @Html.HiddenFor(m => m.ActualImageFile);
+
+                @Html.HiddenFor(m => m.TradeAndBusinessFile)
+                @Html.HiddenFor(m => m.OldTradeAndBusinessFile);
+                @Html.HiddenFor(m => m.ActualTradeAndBusinessFile);
+
+                @Html.HiddenFor(m => m.VendorId);
+
+                @Html.HiddenFor(m => m.AdminApprovalPrev);
+
+                <div class="box-body fix-width">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Vendor name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.VendorName, new { @class = "form-control", @placeholder = "Vendor Name" })
+                            @Html.ValidationMessageFor(m => m.VendorName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Email address")
+                            <br />
+                            @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @readonly = true })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Mobile number")
+                            <br />
+                            @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control", @placeholder = "Mobile number" })
+                            @Html.ValidationMessageFor(m => m.MobileNumber)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Company brief")
+                            <span class="asterisk">*</span>
+                            @Html.TextAreaFor(m => m.CompanyBrief, new { @class = "form-control", @placeholder = "Company Brief", @maxlength = "1000", style="resize:none;" })
+                            @Html.ValidationMessageFor(m => m.CompanyBrief)
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Discipline")<span class="asterisk">*</span><br />
+                            @Html.DropDownList("DisciplineId", new SelectList(ViewBag.DisciplineList as System.Collections.IEnumerable, "DisciplineId", "DisciplineName"), "Select Discipline", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.DisciplineId)
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Trade and business file")<span class="asterisk">*</span><br />
+                            @if (!string.IsNullOrEmpty(Model.TradeAndBusinessFile))
+                            {
+                                <a href="@Url.Action("Download", "Vendor", new { id=@Model.VendorId })">Download Trade and Business File</a>
+                            }
+                            @Html.TextBoxFor(m => m.TradeAndBusinessFileType, new { type = "file" })
+                            @Html.ValidationMessageFor(m => m.TradeAndBusinessFileType, string.Empty, new { id = "validationTxt1" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Profile picture") <span class="asterisk">*</span><br>
+                            @if (!string.IsNullOrEmpty(Model.ImageFile))
+                            {
+                                <img width="100" height="100" src='@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/vendor/@Model.VendorId/ProfilePicture/@Model.ImageFile'><br>
+                            }
+                            @Html.TextBoxFor(m => m.ImageType, new { type = "file" })
+                            @Html.ValidationMessageFor(m => m.ImageType, string.Empty, new { id = "validationTxt" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Change Status")<br />
+                            @Html.RadioButtonFor(model => model.AdminApproval, "0", new { @name = "rdoAdminApproval", @onclick = "FnRejectRemark(this,0);" }) Pending
+                            @Html.RadioButtonFor(model => model.AdminApproval, "1", new { @name = "rdoAdminApproval", @onclick = "FnRejectRemark(this,1);" }) Approved
+                            @Html.RadioButtonFor(model => model.AdminApproval, "2", new { @name = "rdoAdminApproval", @onclick = "FnRejectRemark(this,2);" }) Rejected
+                            @Html.ValidationMessageFor(m => m.AdminApproval)
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" id="divRemark" style="display:none;">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Remark for Rejection")<br />
+
+                            @Html.TextAreaFor(model => model.Remark, 4, 100, new { @class = "form-control" })
+
+                            @Html.ValidationMessageFor(m => m.Remark)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Status)<br />
+                            @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.StatusList, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Status)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <a href='@Url.Content("~/securehost/rootlogin/vendor")' class="btn btn-warning">
+                        Cancel
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    @*<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
+    <script language="javascript" type="text/javascript">
+
+        function FnRejectRemark(e, val) {
+            if (e.checked && val == 2) {
+                $("#divRemark").show();
+            }
+            else {
+                $("#divRemark").hide();
+            }
+        }
+        $(document).ready(function () {
+            var isAlreadyReject = "@Model.AdminApproval";
+            if (isAlreadyReject == 2) {
+                $("#divRemark").show();
+            }
+            else {
+                $("#divRemark").hide();
+            }
+
+            $("form").submit(function (e) {
+
+            });
+        });
+
+    </script>
+}
+
+
+
+

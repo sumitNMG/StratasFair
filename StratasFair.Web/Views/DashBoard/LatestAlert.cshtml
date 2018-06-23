@@ -1,0 +1,100 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.AlertAndNotificationModel>
+@{
+    ViewBag.Title = "List Latest Alert";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front
+
+@section styles{
+    <link href="@Url.Content("~/Content/css/responsive-accordion.css")" rel="stylesheet" />
+}
+
+@section scripts{
+
+    <script src="@Url.Content("~/Content/js/responsive-accordion.min.js")"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        debugger;
+        var BlockNumber = 2;  //Infinate Scroll starts from second block
+        var NoMoreData = false;
+        var inProgress = false;
+
+
+        var InformationCount = $("#hdnAlertAndNotification").val();
+        if (InformationCount > 9) {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() -
+                $(window).height() && !NoMoreData && !inProgress) {
+
+                    inProgress = true;
+                    $("#dvLoaderIndex").show();
+                    $.post("@Url.Action("LatestAlertInfinateScroll", "NoticeBoard")",
+                            { "BlockNumber": BlockNumber },
+                            function (data) {
+                                BlockNumber = BlockNumber + 1;
+                                NoMoreData = data.NoMoreData;
+                                $("#ListAlertAndNotificationbody").append(data.HTMLString);
+                                $("#dvLoaderIndex").hide();
+                                inProgress = false;
+                            });
+                }
+            });
+        }
+
+    })
+    </script>
+    }
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="back-btn">
+        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/OwnerDashboard")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Latest Alerts</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 dashboard-list">
+            <ul class="responsive-accordion responsive-accordion-default bm-larger">
+                @if (Model != null)
+                {
+                    if (Model.Count() > 0)
+                    {
+                        { Html.RenderAction("ListLatestAlert", "dashboard", new { Model = Model }); }
+                        <input id="hdnLatestAlert" value=@Model.Count() type="hidden" />
+                    }
+                    else
+                    {
+                        <li>
+                            <table>
+                                <tr>
+                                    <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                        <span class="text-orange">No Record Found</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li>
+                        <table>
+                            <tr>
+                                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                    <span class="text-orange">No Record Found</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div><!-- page content End -->

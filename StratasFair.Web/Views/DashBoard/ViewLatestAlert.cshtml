@@ -1,0 +1,9 @@
+﻿@model StratasFair.BusinessEntity.Front.AlertAndNotificationModel
+
+<div class="modal-body">
+    <h4>@Model.Title</h4>
+    <span class="date">@Model.CreatedOn.Replace(",", "")</span>
+    <p>
+        @Model.Message
+    </p>
+</div>

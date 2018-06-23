@@ -1,0 +1,23 @@
+﻿@model StratasFair.BusinessEntity.Front.SubAdminModel
+
+<div class="modal-body sub-admin-user">
+    <div class="name">@Model.FirstName @Model.LastName<span>(@Model.Position)</span></div>
+    <span class="post-date">@Model.CreatedOn</span>
+    <span class="email">
+        <span class="text-orange">@Model.Email</span>
+    </span>
+    <div class="detal">
+        <ul>
+            @{
+                if(!string.IsNullOrEmpty(@Model.PageIds))
+                { 
+                    int[] selectedPrivilegeArray = Model.PageIds.Split(",".ToCharArray()).Select(x => int.Parse(x.ToString())).ToArray();
+                    foreach (var item in selectedPrivilegeArray)
+                    {
+                        <li>@Model.UserClientPrivilege.Where(x => x.PageId == item).FirstOrDefault().PageName</li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>

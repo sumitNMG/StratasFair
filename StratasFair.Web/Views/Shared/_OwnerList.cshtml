@@ -1,0 +1,23 @@
+﻿@model List<StratasFair.BusinessEntity.Front.StrataOwnerModel>
+
+
+        @foreach (var owner in Model)
+        {
+            <tr>
+                <td data-title="First Name" class="f-name">@owner.FirstName</td>
+                <td data-title="Last Name" class="l-name">@owner.LastName</td>
+                <td data-title="Email Address" class="email-id">
+                    <a href="mailto:@owner.Email">
+                        @owner.Email
+                    </a>
+                </td>
+                <td data-title="Unit Number" class="unit-number">@owner.UnitNumber</td>
+                <td data-title="Added On" class="added-on">@string.Format("{0:dd MMM, yyyy}",Convert.ToDateTime(owner.CreatedOn))</td>
+                <td data-title="Action" class="action">
+                    <a href="@Url.Content("~/"+StratasFair.Business.Front.ClientSessionData.ClientPortalLink+"/adminpmb?id="+owner.UserClientId)">
+                        <i class="fa fa-weixin" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Private Message Board"></i>
+                    </a>
+                </td>
+            </tr>           
+        }
+ 

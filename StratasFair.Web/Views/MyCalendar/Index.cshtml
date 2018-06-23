@@ -1,0 +1,257 @@
+﻿@model StratasFair.BusinessEntity.Front.StrataOwnerBookingRequestModel
+@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+@{
+    ViewBag.Title = "Calendar";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+
+@section scripts{
+  
+<script src="@Url.Content("~/content/js/jquery.min.js")"></script>
+<script src="@Url.Content("~/content/js/jquery-ui.js")"></script>
+
+<script src="@Url.Content("~/content/js/moment.min.js")"></script>
+
+<script type="text/javascript">
+    var generalCalUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/mycalendar/getownergeneralcalendarlist";
+</script>
+
+<script src="@Url.Content("~/content/js/fullcalendar.js")"></script>
+<script src="@Url.Content("~/content/js/jquery.qtip.js")"></script>
+
+    
+<script src="@Url.Content("~/content/js/bootstrap-select.min.js")"></script>
+@*<script src="@Url.Content("~/content/js/custom.min.js")"></script>*@
+
+<script src="@Url.Content("~/Content/js/owner-custom-calendar.js")"></script>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+<script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+<script src="@Url.Content("~/content/js/bootstrap-datetimepicker.js")"></script>
+<script type="text/javascript">
+    //http://eonasdan.github.io/bootstrap-datetimepicker/
+    $(function () {
+        $('#datetimepicker').datetimepicker({
+            useCurrent: true,
+            showClear: true
+        });
+        $('#datetimepicker1').datetimepicker({
+            useCurrent: false,
+            showClear:true
+        });
+        $("#datetimepicker").on("dp.change", function (e) {
+            $('#datetimepicker1').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $('#datetimepicker').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
+
+<script type="text/javascript">
+  
+
+
+
+    function FrmAddCommonAreaBookingBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FrmAddCommonAreaBookingSuccess(data) {
+
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.Result == 0) {
+            $("#FromDate").val('');
+            $("#ToDate").val('');
+            $("#Subject").val('');
+            $("#Reason").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/ownerrequestbooking/getlistownerbookingrequest";
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+
+</script>
+}
+
+@section styles{
+ <link rel="stylesheet" href="@Url.Content("~/content/css/fullcalendar.css")" />
+<link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap-select.min.css")" />
+<link rel="stylesheet" href="@Url.Content("~/content/css/jquery-ui.css")" type="text/css" />
+<link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/css/jquery.qtip.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/css/bootstrap-datetimepicker.css")" rel="stylesheet" />
+   
+
+}
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Calendar</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12 tab-menu">
+            <div class="tabs-menu">
+                <ul>
+                    <li>
+                        <a class="showSingle" id="first-anchor"  target="1">My Calendar</a>
+                    </li>
+                    <li>
+                        <a class="showSingle"  target="2">Community Calendar</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="div1" class="targetDiv calendar-panel">
+                <div class="row color-code">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <ul>
+                            <li>
+                                <span class="color-box" style="background:#4286f4"></span> Booking Request
+                            </li>
+                            <li>
+                                <span class="color-box" style="background:#f4516c"></span> New Request
+                            </li>
+                            <li>
+                                <span class="color-box" style="background:#257e4a"></span> Meeting Schedule
+                            </li>
+                            <li>
+                                <span class="color-box" style="background:#ff8f1f"></span> Reminder
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="eventcalendar"></div>
+            </div>
+            <div id="div2" class="targetDiv">
+                <div class="calendar-panel">
+                    <div class="row color-code">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <ul>
+                                <li>
+                                    <span class="color-box" style="background:#4286f4"></span> Booking Request
+                                </li>
+                                <li>
+                                    <span class="color-box" style="background:#ff0000"></span> Maintenance Schedule
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="eventcalendar2"></div>
+                    <div class="calend-btn">
+                        <a href="javascript:void(0)" class="yellow-btn-round booking-request" id="toggle-booking">Add Booking</a>
+                      
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/OwnerRequestBooking/GetListOwnerBookingRequest")" class="green-btn-round">My Booking Request</a>
+                    </div>
+                </div>
+                <div class="booking-expand" style="display:none">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h5>Booking Request</h5>
+                            <a href="javascript:void(0)" id="toggle-booking" class="close-cross">X</a>
+                        </div>
+                    </div>
+                   @using (Ajax.BeginForm("AddCommonAreaBooking", "MyCalendar", FormMethod.Post, new AjaxOptions { OnSuccess = "FrmAddCommonAreaBookingSuccess(data)", OnBegin = "FrmAddCommonAreaBookingBegin()" }, new { @class = "form-section", @id = "frmAddCommonAreaBooking" }))
+                   { 
+                       @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="form-group">
+                                    @Html.DropDownListFor(m => m.CommonAreaId, new SelectList(ViewBag.CommonAreaList, "Value", "Text"), "Select Common Area", new { @class = "selectpicker form-control" })
+                                    @Html.ValidationMessageFor(x => x.CommonAreaId, null, new { @class = "error" })
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.FromDate, new { @id = "datetimepicker", @class = "calendar-icon form-control", @placeholder = "From Date" })
+                                    @Html.ValidationMessageFor(x => x.FromDate, null, new { @class = "error" })
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.ToDate, new { @id = "datetimepicker1", @class = "calendar-icon form-control", @placeholder = "To Date" })
+                                    @Html.ValidationMessageFor(x => x.ToDate, null, new { @class = "error" })
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                                    @Html.ValidationMessageFor(x => x.Subject, null, new { @class = "error" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    @Html.TextAreaFor(m => m.Reason, new { @placeholder = "Reason" })
+                                    @Html.ValidationMessageFor(x => x.Reason, null, new { @class = "error" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="form-group">
+                                    <input id="btnSubmit" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit" />
+                                    <div id="dvLoader" style="display:none; text-align:center">
+                                        <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                   }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- page content End -->
+
+
+
+
+
+
+
+
+
+
+
+

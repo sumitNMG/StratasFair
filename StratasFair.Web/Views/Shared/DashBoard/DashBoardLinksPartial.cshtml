@@ -1,0 +1,138 @@
+﻿@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;"></div>
+        <div class="clearfix"></div>
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+            <div class="profile_pic">
+
+                @if (!string.IsNullOrEmpty(ClientSessionData.ClientProfilePicture))
+                {
+                    <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/strataboard/@ClientSessionData.ClientStrataBoardId/profileimages/@ClientSessionData.ClientProfilePicture" alt="profile-img" class="img-circle profile_img" />
+                }
+                else
+                {
+                    <img src="@Url.Content("~/content/images/profile-image.png")" alt="profile-img" class="img-circle profile_img" />
+                }
+
+               
+            </div>
+            <div class="profile_info">
+                <span>@ClientSessionData.ClientName</span>
+            </div>
+        </div><!-- menu profile quick info End -->
+        <!-- sidebar menu -->
+        @{
+
+            if (ClientSessionData.ClientRoleName == "Admin")
+            {
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <ul class="nav side-menu">
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard")"><span class="dashboard-icon"></span>Dashboard</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard")"><span class="notice-icon"></span>Notice Board</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/commonarea")"><span class="notice-icon"></span>Manage Common Area</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/billtype")"><span class="receipts-icon"></span>Manage Bill type</a></li>
+                        <li><a href="javascript:void(0);"><span class="vendor-icon"></span>Manage Vendor</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/myotherrequest")"><span class="request-icon"></span>Manage Other Request</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/calendar/admincommonarea")"><span class="calendar-icon"></span>Community Calendar</a></li>
+                        <li><a href="javascript:void(0);"><span class="financial-icon"></span>Financial Accounting</a></li>
+                        <li><a href="javascript:void(0);"><span class="receipts-icon"></span>Receipts</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/myforum")"><span class="forum-icon"></span>Strata Forum</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/polls")"><span class="polls-icon"></span>Polls</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/adminpmb/ownerlist")"><span class="stratasBoard-icon"></span>StrataBoard Owner Private Message Board</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/managestrataowner")"><span class="vendor-icon"></span>Manage Strata Owner</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/managesubadmin")"><span class="sub-admin-icon"></span>Manage Board Members</a></li>
+                        <li>
+                            <a href="javascript:void(0);"><span class="settings-icon"></span> Settings <span class="fa fa-chevron-down"></span> <span class="fa fa-chevron-right"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/myprofile")"><span class="profile-icon"></span> My Profile</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/emailsettingclient")"><span class="request-icon"></span> Email Server Settings</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/uniqueurlrequest")"><span class="url-request-icon"></span>Unique URL Request</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/enabledisableadminnotification")"><span class="enable-icon"></span>Enable/Disable Notification</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/resetpassword")"><span class="reset-icon"></span> Reset password</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink+ "/dashboard/signout")"><span class="logout-icon"></span>Logout</a></li>
+                    </ul>
+                </div><!-- sidebar menu End -->
+            }
+            else if (ClientSessionData.ClientRoleName == "SubAdmin")
+            {
+                ClientLoginHelper clientLoginHelper = new ClientLoginHelper();
+                ClientLogOnModel Model = new ClientLogOnModel();
+                Model.UserClientPrivilege = clientLoginHelper.GetUserClientPrivileges(ClientSessionData.UserClientId);
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <ul class="nav side-menu">
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard")"><span class="dashboard-icon"></span>Dashboard</a></li>
+
+                        @if (Model.UserClientPrivilege != null)
+                        {
+                            if (Model.UserClientPrivilege.Count > 0)
+                            {
+                                foreach (var item in Model.UserClientPrivilege)
+                                {
+                                    if (@item.PageLevel == 0 && Model.UserClientPrivilege.Where(x => x.ParentPageId == item.PageId && x.PageLevel == 1).Count() == 0)
+                                    {
+                                        if (@item.PageLink.Contains("blank"))
+                                        {
+                                            <li><a href="javascript:void(0);"><span class=@item.PageLinkIconName></span> @item.PageName</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/" + @item.PageLink)"><span class=@item.PageLinkIconName></span> @item.PageName</a></li>
+                                        }
+
+                                    }
+                                    else if (@item.PageLevel == 0 && Model.UserClientPrivilege.Where(x => x.ParentPageId == item.PageId && x.PageLevel == 1).Count() > 0)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);"><span class=@item.PageLinkIconName></span> @item.PageName <span class="fa fa-chevron-down"></span> <span class="fa fa-chevron-right"></span></a>
+                                            <ul class="nav child_menu">
+                                                @foreach (var subItem in Model.UserClientPrivilege.Where(x => x.ParentPageId == item.PageId && x.PageLevel == 1))
+                                                {
+                                                    <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/" + subItem.PageLink)"><span class=@subItem.PageLinkIconName></span> @subItem.PageName</a></li>
+
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                }
+                            }
+                        }
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink+ "/dashboard/signout")"><span class="logout-icon"></span>Logout</a></li>
+                    </ul>
+                </div><!-- sidebar menu End -->
+            }
+            else if (ClientSessionData.ClientRoleName == "Owner")
+            {
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <ul class="nav side-menu">
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/ownerdashboard")"><span class="dashboard-icon"></span>Dashboard</a></li>
+                        @*<li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/OwnerRequestBooking")"><span class="calendar-icon"></span>Calender</a></li>*@
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/mycalendar")"><span class="calendar-icon"></span>Calendar</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/generalinformation")"><span class="calendar-icon"></span>General Information</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/myreminder")"><span class="calendar-icon"></span>Personal Reminders</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/myforum")"><span class="forum-icon"></span>Strata Forum</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/ownermyrequest")"><span class="request-icon"></span>My Request</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/adminpmb?id="+ClientSessionData.UserClientId)"><span class="stratasBoard-icon"></span>Contact StrataBoard</a></li>                        
+                        <li>
+                            <a href="javascript:void(0);"><span class="settings-icon"></span> Settings <span class="fa fa-chevron-down"></span> <span class="fa fa-chevron-right"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/ownermyprofile")"><span class="profile-icon"></span> My Profile</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/enabledisableownernotification")"><span class="enable-icon"></span>Enable/Disable Notification</a></li>
+                                <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/settings/resetpassword")"><span class="reset-icon"></span> Reset password</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/ownerpoll")"><span class="polls-icon"></span>Polls</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/Vendor/Quotation")"><span class="vendor-icon"></span>Request Quote</a></li>
+                        <li><a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink+ "/dashboard/signout")"><span class="logout-icon"></span>Logout</a></li>
+                    </ul>
+                </div><!-- sidebar menu End -->
+            }
+        }
+
+    </div>
+
+</div><!-- left_col menu -->

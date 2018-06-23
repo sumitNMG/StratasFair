@@ -1,0 +1,17 @@
+﻿ /* Menu */
+
+/*------ MENU ------*/
+
+
+
+ a[href]:after {
+     content:" ("attr(href)")";
+     color:#868686;
+     background-color:inherit;
+     font-style:italic;
+     size:90%;
+  }
+
+ a[href]:after {
+   content:"" !important;
+}

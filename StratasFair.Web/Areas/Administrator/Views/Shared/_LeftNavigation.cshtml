@@ -1,0 +1,9 @@
+﻿@{
+    string controller = System.Web.HttpContext.Current.Request.RequestContext.RouteData.GetRequiredString("controller").ToString();
+    string action = System.Web.HttpContext.Current.Request.RequestContext.RouteData.GetRequiredString("action").ToString();
+    if (action != null || action != "")
+    {
+        @Html.Raw(StratasFair.Business.Admin.MenuHelper.Navigation(controller, action))
+    }
+}
+

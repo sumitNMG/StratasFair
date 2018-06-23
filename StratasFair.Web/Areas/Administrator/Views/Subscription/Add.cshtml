@@ -1,0 +1,118 @@
+﻿@model StratasFair.BusinessEntity.SubscriptionModel
+
+@{
+    ViewBag.Title = "Add Subscription";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Manage Subscription
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage Subscription</li>
+    </ol>
+    <div class="top-buttons-container">
+        <a href="@Url.Content("~/securehost/rootlogin/subscription")" class="btn btn-success">View</a>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Add Subscription
+                </h3>
+            </div>
+            <div class="row"></div>
+            @using (Html.BeginForm("Add", "Subscription", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="box-body fix-width">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Subscription Name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.SubscriptionName, new { @class = "form-control", @placeholder = "Subscription Name", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.SubscriptionName)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Subscription Validity") <span class="asterisk">*</span><br />
+                            @Html.DropDownListFor(m => m.Validity, new SelectList(ViewBag.SubscriptionValidityList, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Validity)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Total number of allowed users") <span class="asterisk">*</span> <br />
+                            @Html.TextBoxFor(m => m.AllowedUser, new { @class = "form-control", @maxlength = "3", @onkeyup = "keyUP(event.keyCode)", @onkeydown = "return isNumeric(event.keyCode);", @onpaste = "return false;" })
+                            @Html.ValidationMessageFor(m => m.AllowedUser)
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("SMS allowed for Alert/Notification")<br />
+                            @Html.CheckBoxFor(m => m.IsSmsForAlert, new { })
+                            @Html.ValidationMessageFor(m => m.IsSmsForAlert)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("SMS allowed for reminders")<br />
+                            @Html.CheckBoxFor(m => m.IsSmsForReminder, new { })
+                            @Html.ValidationMessageFor(m => m.IsSmsForReminder)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Status)<br />
+                            @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.StatusList, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Status)
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <a href='@Url.Content("~/securehost/rootlogin/subscription")' class="btn btn-warning">
+                        Cancel
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    <script type="text/javascript" language="javascript">
+        var isShift = false;
+        function isNumeric(keyCode) {
+            if (keyCode == 16)
+                isShift = true;
+            return (((keyCode >= 48 && keyCode <= 57) || keyCode == 8 || keyCode == 46 || keyCode == 9 || (keyCode >= 96 && keyCode <= 105)) && isShift == false);
+        }
+
+        function keyUP(keyCode) {
+            if (keyCode == 16)
+                isShift = false;
+        }
+
+    </script>
+}
+
+
+

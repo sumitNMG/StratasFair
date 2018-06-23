@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "BulkUploadStrataOwner";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+
+@*@section scripts
+    {
+
+
+
+    }*@
+
+    @section styles{
+        <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    }
+
+
+
+
+@using StratasFair.Business.Front;
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+<script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+<script type="text/javascript">
+
+    function FnOwnerBulkAddBegin() {
+        $("#dvLoaderBulkUpload").show();
+        $("#dvButton").hide();
+    }
+
+    window.addEventListener("submit", function (e) {
+        FnOwnerBulkAddBegin();
+        var form = e.target;
+        if (form.getAttribute("enctype") === "multipart/form-data") {
+            if (form.dataset.ajax) {
+
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var xhr = new XMLHttpRequest();
+                xhr.open(form.method, form.action);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        $("#dvLoaderBulkUpload").hide();
+                        $("#dvButton").show();
+
+                        var resultString = $.parseJSON(xhr.response);
+                        if (resultString.counter>0) {
+                            swal({
+                                type: "success",
+                                title: "Success",
+                                showConfirmButton: true,
+                                showCancelButton: false,
+                                confirmButtonText: "OK",
+                                closeOnConfirm: true,
+                                text: "<b>" + resultString.msg + "</b>",
+                                html: true
+                            }, function () {
+                                window.location = '@System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"]' + '@ClientSessionData.ClientPortalLink' + '/manageStrataOwner';
+                            });
+                        }
+                        else {
+                            swal({
+                                type: "warning",
+                                title: "Failed",
+                                showConfirmButton: true,
+                                showCancelButton: false,
+                                confirmButtonText: "OK",
+                                closeOnConfirm: true,
+                                text: "<b>" + resultString.msg + "</b>",
+                                html: true
+                            });
+                        }
+                    }
+                };
+                xhr.send(new FormData(form));
+            }
+        }
+    }, true);
+
+
+    function FnBacktoParent() {
+        window.location = '@System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"]' + '@ClientSessionData.ClientPortalLink' + '/manageStrataOwner';
+    }
+
+
+</script>
+
+<!-- page content -->
+
+<div class="right_col" role="main">
+    @using (Ajax.BeginForm("BulkUploadStrataOwner", "manageStrataOwner", FormMethod.Get, new AjaxOptions { OnBegin = "FnOwnerBulkAddBegin" }, new { @enctype = "multipart/form-data", @id = "frmBulkUpload" }))
+    {
+        <div class="back-btn">
+            <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/manageStrataOwner")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+        </div>
+        <div class="page-title">
+            <div class="title_left">
+                <h1>Bulk Upload Owner</h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row admin-dashboard bulk-upload">
+            <div class="col-md-10 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <h3>Importing Users info <strong>StratasFair</strong></h3>
+                        <em>Please follow these instructions to properly import users:</em>                        
+                    </div>
+
+                    <div class="col-md-6 col-xs-12 add-btn">
+                        @if (System.IO.File.Exists(Server.MapPath("~/content/resources/importuser/sample-file-importuser.xlsx")))
+                        {
+                            <a href="@Url.Action("downloadimportuserfile", "managestrataowner", new { @type = "samplefile" })">view .xlsx format</a>
+                        }
+                        @if (System.IO.File.Exists(Server.MapPath("~/content/resources/importuser/sample-file-importuser.csv")))
+                        {
+                            <a href="@Url.Action("downloadimportuserfile", "managestrataowner", new { @type = "samplefilecsv" })" class="file-format">view .csv format</a>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-section">
+                            <div class="form-group">
+                                <strong><font color="red">Do not add Strata Board members here, that is done in 'Manage Board Members'</font></strong>
+                                <h4>Use the browse button below to select the file <span>(xls,xlsx,csv)</span> you wish to import</h4>
+                                <div class="inputfile-box">
+                                    <div class="form-control bulk-upload-file">
+                                        <input type="file" id="file" name="FileUpload" class="inputfile" onchange="uploadFile(this)" />
+                                        <label for="file">
+                                            <span class="choose-btn"></span>
+                                            <span id="file-name" class="file-box">
+                                                Upload file
+                                            </span>
+                                            <span class="file-button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="File Upload">
+                                                <i class="fa fa-download"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="dvButton">
+                            <input type="submit" id="btnSubmit" value="Submit" class="btn-yellow btn" />
+                            
+                            <input value="Cancel" onclick="FnBacktoParent();"  class="btn-black btn" />
+                        </div>
+                        <div id="dvLoaderBulkUpload" style="display:none; text-align:center">
+                            <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- admin-dashboard End -->
+
+    }
+
+
+
+</div><!-- page content End -->

@@ -1,0 +1,61 @@
+@import url("fonts.css");
+/*	Responsive Accordion v1.3, Copyright 2014, Joe Mottershaw, https://github.com/joemottershaw/
+//	============================================================================================ */
+
+/*	Table of Contents
+//	==================================================
+//		#Reset
+//		#Themes
+
+
+/*	#Reset
+//	================================================== */
+@import url("fonts.css");
+.responsive-accordion {margin: 0 0 20px 0;padding: 0;list-style-type: none;}
+.responsive-accordion li {margin: 0 0 10px 0;	padding: 0;	border: 1px solid #e6eaee;}
+.responsive-accordion li:last-child { margin-bottom: 0; }
+.responsive-accordion li .responsive-accordion-head { cursor: pointer; border-radius:3px; }
+/*	#Themes
+//	================================================== */
+
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head {
+	padding:0px 15px; background: #fff;color: #272727;line-height: normal;	position: relative;
+	font:12px/54px "robotolight";}
+
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head span.date
+{color:rgba(58,59,58,0.5); font-size:13px; display:inline-block; float:right;}
+
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head.active,
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head:hover
+{border-radius:0px;  border-top-left-radius:3px; border-top-right-radius:3px}
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head:hover{pointer; border-radius:3px; }	
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head i{width:16px; height:16px; background-image:url(../images/accordion-plus-green.png); background-repeat:no-repeat;}
+.responsive-accordion li .responsive-accordion-head.active i{ background-image:url(../images/accordion-min-green.png);}
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head i {
+	position: absolute;top:20px;left:17px;}
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-panel {margin:-2px 0 0;
+	padding:0px 20px 20px;background: #fff; color:rgba(58,59,58,0.9);
+	border-bottom-left-radius:3px; border-bottom-right-radius:3px
+	}
+.responsive-accordion-default.responsive-accordion li.emergency-alert .responsive-accordion-head {
+	padding:0px 15px; background: #8154ee;color: #fff;line-height: normal;	position: relative;
+	font:12px/54px "robotolight";}
+	
+.responsive-accordion-default.responsive-accordion li.emergency-alert .responsive-accordion-head span.date
+{color:rgba(255,255,255,0.5)}
+.responsive-accordion-default.responsive-accordion li.emergency-alert .responsive-accordion-head i{width:16px; height:16px; background-image:url(../images/accordion-plus.png); background-repeat:no-repeat;}	
+.responsive-accordion-default.responsive-accordion li.emergency-alert .responsive-accordion-head.active i{ background-image:url(../images/accordion-min.png);}
+.responsive-accordion-default.responsive-accordion li.emergency-alert .responsive-accordion-panel {margin:-2px 0 0;
+	padding:0px 20px 20px;background: #8154ee; color:#fff;
+	border-bottom-left-radius:3px; border-bottom-right-radius:3px
+	}
+.admin-dashboard .dashboard-list li .responsive-accordion-head i{top:17px}	
+.strata-email ul.inbox-mail .responsive-accordion-head i {
+    position: inherit;
+    background-image: none;
+}
+
+	
+@media screen and (max-width:414px){	
+.responsive-accordion-default.responsive-accordion li .responsive-accordion-head i{margin-top:0px}
+}

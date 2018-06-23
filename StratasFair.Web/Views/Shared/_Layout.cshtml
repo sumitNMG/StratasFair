@@ -1,0 +1,151 @@
+﻿@using StratasFair.Business.Front;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1">*@
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Accordion -->
+    <link href="@Url.Content("~/Content/css/responsive-accordion.css")" rel="stylesheet" type="text/css">
+    <!-- Custom styling plus plugins -->
+    <link href="@Url.Content("~/Content/css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/custom.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/responsive.css")" rel="stylesheet" />
+
+    @RenderSection("styles", false)
+    <style>
+        .field-validation-error span {
+            color: red;
+        }
+
+        .input-validation-error {
+            border: 1px solid red !important;
+        }
+
+        .scrollToTop {
+            display: none;
+        }
+
+        .bootstrap-select {
+            padding: 6px 7px 0px 20px !important;
+        }
+
+            .bootstrap-select .dropdown-menu {
+                padding: 0px;
+            }
+    </style>
+
+</head>
+<body class="nav-md">
+    <div class="wrapper">
+        <div class="container body">
+            <header>
+                <!-- menu Btn -->
+                <div class="nav toggle">
+                    <a id="menu_toggle">
+                        <span class="menu-icon">Menu</span>
+                        <span class="close-icon">X</span>
+                    </a>
+                </div>
+                <a href="@Url.Content("~/vendor/dashboard")"><img src="@Url.Content("~/Content/images/logo.png")" class="logo" title="Logo"></a>
+                <div class="h-rgt">
+                    <ul>
+                        <li class="bell">
+                            <a href=""><img src="@Url.Content("~/Content/images/h-bell-icon.png")"><span></span></a>
+                        </li>
+                        <li class="reminder">
+                            <a href=""><img src="@Url.Content("~/Content/images/h-reminder-icon.png")"><span></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </header>
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;"></div>
+                        <div class="clearfix"></div>
+                        <!-- menu profile quick info -->
+                        <div class="profile clearfix">
+                            <div class="profile_pic">
+                                <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/vendor/@VendorSessionData.Instance.VendorId/ProfilePicture/@VendorSessionData.Instance.VendorProfilePicture" alt="..." class="img-circle profile_img" />
+                            </div>
+                            <div class="profile_info">
+                                <span>@VendorSessionData.Instance.VendorName</span>
+                            </div>
+                        </div><!-- menu profile quick info End -->
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <ul class="nav side-menu">
+                                <li><a href="@Url.Content("~/vendor/dashboard")"><span class="dashboard-icon"></span>Manage Quotation</a></li>
+                                <li><a href="@Url.Content("~/vendor/logout")"><span class="logout-icon"></span>Logout</a></li>
+                            </ul>
+                        </div><!-- sidebar menu End -->
+                    </div>
+                </div><!-- left_col menu -->
+                <!-- page content -->
+                <div class="right_col col-md-9 chat-section" role="main">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h1>@ViewBag.PageHeading</h1>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            @RenderBody()
+                        </div><!-- stratas-board End -->
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- page content End -->
+                <div class="clearfix"></div>
+                <!-- footer content -->
+                <footer>
+                    <div class="copyright-text">
+                        &copy; Copyright @DateTime.UtcNow.Year StratasFair
+                    </div>
+                    <div class="clearfix"></div>
+                </footer><!-- footer end -->
+            </div><!-- main_container end -->
+        </div><!-- container end -->
+        <div class="clearfix"></div>
+    </div><!-- wrapper End -->
+    <div class="clearfix"></div>
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+    <!-- Calender -->
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/Content/js/custom.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/script.js")"></script>
+    <!-- select option-->
+    <script src="@Url.Content("~/Content/js/bootstrap-select.min.js")"></script>
+    <!-- Accordion -->
+    <script src="@Url.Content("~/Content/js/responsive-accordion.min.js")" type="text/javascript"></script>
+
+    @RenderSection("scripts", false)
+    <script>
+        $(function () {
+            $("button.close").click(function () {
+                $(".alert-box").remove();
+            });
+        });
+
+    </script>
+    
+    <script src="@Url.Content("~/Content/js/script.js")" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.StrataOwnerMyRequestModel>
+@using StratasFair.Business.Front
+@{
+    if (Model != null)
+    {
+        if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td data-title="Title" class="title">@item.RequestTitle</td>
+                    <td data-title="Date" class="date">
+                        @if (!string.IsNullOrEmpty(item.FromDate) && !string.IsNullOrEmpty(item.ToDate))
+                        {
+                            if (item.FromDate == "N/A" && item.ToDate == "N/A")
+                            {
+                                @Html.Raw("N/A")
+                            }
+                            else
+                            {
+                                @Html.Raw(@item.FromDate + " to " + @item.ToDate)
+                            }
+                        }
+                    </td>
+                    <td data-title="No of Days" class="no-days">@item.TotalDays</td>
+                    <td data-title="Details" class="details">
+                        @if (item.Details.Length > 40)
+                        {
+                            <a href="javascript:void(0)" id="view-cont" class="text-yellow">@item.Details.Substring(0, 40) <span>...</span></a>
+                            <div id="more-cont" style="display:none">
+                                <span class="text-yellow"> @item.Details.Substring(41, (@item.Details.Length - 1) - 40)</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <span id="view-cont" class="text-yellow">@item.Details</span>
+                        }
+
+                    </td>
+                    
+                   
+                        @if (@item.Status == "Pending...")
+                        {
+                            <td data-title="Status" class="status">@item.Status</td>
+                            <td data-title="Action" class="action">
+                                <a href="javascript:void(0)" onclick="UpdateMyRequestStatus(@item.RequestId)"><span class="approved">Approved</span></a><strong>/</strong>
+                                <a href="javascript:void(0)" onclick="UpdateMyRequestStatusDetails(@item.RequestId)" data-toggle="modal" data-target="#rejected">
+                                    <span class="rejected">Rejected</span>
+                                </a>
+
+                            </td>                            
+                        }
+                        else
+                        {
+                            if (@item.Status == "Approved")
+                            {
+
+                                <td data-title="Status" class="status"><span class="approved">@item.Status</span></td>
+                            }
+                            else
+                            {
+                                <td data-title="Status" class="status"><span class="rejected">@item.Status</span></td>
+                            }
+                            <td data-title="Action" class="action"><strong>Done<strong></td>
+                        }
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                    <span class="text-orange">No Record Found</span>
+                </td>
+            </tr>
+        }
+    }
+}

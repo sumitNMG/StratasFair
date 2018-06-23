@@ -1,0 +1,85 @@
+﻿    .create-portfolio-section {
+    padding: 10px 0 5px;
+}
+
+    .cp-listbox {
+    list-style-type: none;
+}
+
+    .cp-listbox li {
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+    position: relative;
+    width: 24%;
+}
+
+    .cp-box {
+    position: relative;
+}
+.cp-box {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 0 10px #ddd;
+    box-sizing: border-box;
+    min-height: 210px;
+    padding: 15px;
+    width: 100%;
+}
+
+.cp-box .cp-contbox {
+    min-height: 150px;
+    padding: 0;
+}
+
+.cp-box .cp-contbox .cp-imgbox {
+    line-height: 0;
+    position: relative;
+}
+
+cp-box .cp-contbox .cp-imgbox .cp-hidebox {
+    background: rgba(42, 42, 42, 0.7) none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.25s ease-in-out 0s;
+    width: 100%;
+    z-index: 9;
+}
+
+.cp-edit-section {
+    height: 44px;
+    left: 50%;
+    margin-left: 63px;
+    margin-top: 44px;
+    position: absolute;
+    top: 50%;
+    width: 142px;
+    z-index: 99;
+}
+
+
+.cp-edit-section a:last-child {
+    margin: 0;
+}
+.cp-edit-section a {
+    float: left;
+    padding: 0;
+    width: auto !important;
+}
+
+.clear{ clear:both; }
+.box-body.full-width {width:100% }
+.bg-container {margin:0 15px 25px; box-shadow:0 0 8px rgba(0,0,0,0.4) ; padding:0 15px}
+.bg-container .col-md-6.left-bg { background:#f5f5f5; padding:15px 25px 4px}
+.bg-container .col-md-6.right-bg { background:#eee; padding:15px 25px 10px}
+.bg-container1 .col-md-4 .ques-bg { background:#f5f5f5; box-shadow:0 0 8px rgba(0,0,0,0.4); padding:15px}
+.bg-container1 {margin:0 0 25px; padding:0 15px}
+
+
+.file-length{word-wrap: break-word;width: 215px;overflow: auto; }
+.file-length-small{word-wrap: break-word;overflow: auto; } /*;width: 115px*/
+
+
+

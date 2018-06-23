@@ -1,0 +1,12 @@
+﻿@model int
+<div class="row" id="option-@Model">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group">
+            <label>
+                Option @(Model+1)<span class="required">*</span>
+            </label>
+            <input type="text" name="pollOption[@Model]" class="form-control poll-option" required />
+            @Html.ValidationMessage("pollOption["+Model+"]")            
+        </div>
+    </div>
+</div>

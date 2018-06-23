@@ -1,0 +1,115 @@
+﻿@using StratasFair.Business.Front;
+@model StratasFair.BusinessEntity.PMBModel
+@{
+    ViewBag.Title = "Private Message Board";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    List<StratasFair.BusinessEntity.PMBModel> pmbList = (ViewBag.PMBList as List<StratasFair.BusinessEntity.PMBModel>);
+}
+
+@section styles
+{
+<link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+}
+<div class="col-md-9 right_col">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Private Message Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="back-btn">
+        <a href="@Url.Content("~/"+ClientSessionData.ClientPortalLink+"/vendor/quotation")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+    @if (pmbList != null && pmbList.Count > 0)
+    {
+        foreach (var item in pmbList as List<StratasFair.BusinessEntity.PMBModel>)
+        {
+            <div class="stratas-board">
+                <div class="chat-container @if(item.CreatedByUserType!="O"){@Html.Raw("text-right")}">
+                    <figure class="@if (item.CreatedByUserType != "O") { @Html.Raw("right")}">
+                        @if (item.CreatedByUserType != "O")
+                        {
+                            if (!string.IsNullOrEmpty(item.VendorImage))
+                            {
+                                <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/vendor/@item.VendorId/ProfilePicture/@item.VendorImage" alt="" title="User">
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/images/profile-image.png")" title="User" />
+                            }
+                        }
+
+                        @if (item.CreatedByUserType == "O")
+                        {
+                            if (!string.IsNullOrEmpty(item.ClientImage))
+                            {
+                                <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/strataboard/@ClientSessionData.ClientStrataBoardId/profileimages/@ClientSessionData.ClientProfilePicture" alt="" title="User">
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/images/profile-image.png")" title="User" />
+                            }
+                        }
+                    </figure>
+                    <div class="cnt">
+                        <div class="chat-cnt @if(item.CreatedByUserType!="O"){@Html.Raw("orange")}">
+                            @item.Message
+                            @if (!string.IsNullOrEmpty(item.AttachedFileName))
+                            {
+                                <a class="pmb-attachment @if(item.CreatedByUserType!="O"){@Html.Raw("white")}else{@Html.Raw("orange")}" href="@Url.Content("~/"+ClientSessionData.ClientPortalLink+"/vendor/download?quotid="+item.QuotatoinId+"&fileName="+item.AttachedFileName+"&actualFileName="+item.AttachedActualFileName)" title="@item.AttachedActualFileName">
+                                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                </a>
+                            }
+                        </div>
+                        <span class="@if(item.CreatedByUserType!="O"){@Html.Raw("time-right")}else{@Html.Raw("time-left")}">@string.Format("{0:dd MM yyyy hh:mm tt}", item.CreatedOn.Value.ToLocalTime())</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+        </div>
+    <div class="clearfix"></div>
+        }
+    }
+    <div class="clearfix"></div>
+    @using (Html.BeginForm("pmb", @StratasFair.Business.Front.ClientSessionData.ClientPortalLink, FormMethod.Post, new { @enctype = "multipart/form-data", @id = "frmPMB" }))
+    {
+        @Html.HiddenFor(m => m.QuotatoinId)
+        <div class="chat-reply-box">
+            <div class="reply-box-inner">
+                <div class="inputfile-box">
+                    @Html.TextBoxFor(m => m.Attachment, new { @type = "file", @class = "inputFile", @onchange = "validateFileType($(this),['jpg', 'png', 'pdf', 'ppt', 'xls', 'xlsx', 'doc', 'docx','txt']); uploadFile(this);" })
+                    <label for="Attachment">
+                        <span class="choose-btn"></span>
+                        <span class="file-button">
+                            <i class="fa fa-plus-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add File"></i>
+                        </span>
+                        <span id="file-name" class="file-box"></span>
+                    </label>
+                </div>
+                @Html.TextBoxFor(m => m.Message, new { @placeholder = "Type..." })
+                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Submit"></i></button>
+            </div><!-- chat-reply-box End -->
+            <div class="file-type">
+                ** Only .jpg, .jpeg, .png, .pdf, .ppt, .xls, .xlsx, .doc, .docx, .txt file types are allowed.
+            </div>
+            </div>
+        
+        <div>
+            @Html.ValidationMessageFor(m => m.Message)
+        </div>
+       
+    }
+
+</div>
+<div class="clearfix"></div>
+@section scripts
+{
+<script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/ValidateFileType.js")"></script>
+    <script>
+        $(function () {
+            $("ul.nav a[href='/stratasfair/@ClientSessionData.ClientPortalLink/Vendor/Quotation']").parent().addClass('current-page');
+        });
+    </script>
+}

@@ -1,0 +1,16 @@
+﻿@import url("fonts.css");
+.padd-bot{padding-bottom:10px;}
+.padd-bot  a{padding: 0px 20px;display: block;margin: 0px;background: #ff8f1f;border-radius: 30px;color: #fff;text-transform: capitalize;font: 13px/28px "robotolight"; min-}
+.btn-loader {font-size: 0 !important;
+        background: #fff url(../images/loader.gif) no-repeat 50% 50% !important;
+        border:0px !important;
+        padding:18px 40px;
+}
+
+span.field-validation-error span,span.field-validation-error{color:red; }
+.login-box .checkbox { margin-top:0px; margin-bottom:0px;}
+
+.color-code{line-height:normal; font:normal 14px 'robotoregular'; margin-bottom:20px;}
+.color-code ul{padding:0px; margin:0px;}
+.color-code li{display:inline-block; margin-right:20px;}
+.color-code .color-box{width:14px; height:14px; display:inline-block; margin-right:4px;}

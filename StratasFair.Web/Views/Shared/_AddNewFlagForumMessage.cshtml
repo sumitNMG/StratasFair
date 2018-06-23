@@ -1,0 +1,98 @@
+﻿@model StratasFair.BusinessEntity.ForumFlaggedModel
+@using StratasFair.Business.Front;
+  <!-- Modal content-->
+<div class="modal-content modal-popup add-request">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+        <h5 class="text-center">Message</h5>
+        @using (Ajax.BeginForm("AddFlagOnTopic", "myforum", FormMethod.Post, new AjaxOptions { OnBegin = "FnAddFlagTopicBegin()", OnSuccess = "FnAddFlagTopicSuccess(data)" }, new { @id = "frmAddFlagTopic", @class = "form-section" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" id="AutoId" name="AutoId"  />
+            <input type="hidden" id="ForumMessageType" name="ForumMessageType" />
+            
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Comment <span class="required">*</span></label>
+                        @Html.TextAreaFor(m => m.Comment, new { @type = "text", @maxlength = "4000" })
+                        @Html.ValidationMessageFor(m => m.Comment)
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input id="btnAddFlagTopic" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit" />
+                        <div id="dvAddFlagTopicLoader" style="display:none; text-align:center">
+                            <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+    <script type="text/javascript">
+                function FnAddFlagTopicBegin() {
+                    $("#dvAddFlagTopicLoader").show();
+                    $("#btnAddFlagTopic").hide();
+                }
+
+                function FnAddFlagTopicSuccess(data) {
+                    $("#dvAddFlagTopicLoader").hide();
+                    $("#btnAddFlagTopic").show();
+
+                    if (data.counter == 0) {
+                        $("#Comment").val('');
+                        swal({
+                            title: data.msg,
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonText: "Ok",
+                            closeOnConfirm: true
+                        }, function () {
+                            /* Load the replies after adding a new reply */
+                            if (data.type == 'topic') {
+                                $('#iflagTopic_' + data.autoid).addClass('flag-red');
+                                $('#iflagTopic_' + data.autoid).removeAttr('onclick');
+                                $('#iflagTopic_' + data.autoid).removeAttr('data-target');
+                                if (data.userRole != "owner") {
+                                    $('#iflagTopic_' + data.autoid).attr('data-target', '#red-flag-popup');
+                                    $('#iflagTopic_' + data.autoid).attr('onclick', 'SetValueForFlagView(' + data.autoid + ',"topic");');
+                                }
+                            }
+                            else if (data.type == 'reply') {
+                               
+                                $('#iflagReply_' + data.autoid).addClass('flag-red');
+                                $('#iflagReply_' + data.autoid).removeAttr('onclick');
+                                $('#iflagReply_' + data.autoid).removeAttr('data-target');
+                                if (data.userRole != "owner") {
+                                    $('#iflagReply_' + data.autoid).attr('data-target', '#red-flag-popup');
+                                    $('#iflagReply_' + data.autoid).attr('onclick', 'SetValueForFlagView(' + data.autoid + ',"reply");');
+                                }
+                              
+                            }
+                            $('.close').click();
+                        });
+                    }
+                    else {
+                        swal({
+                            type: "warning",
+                            title: "Failed",
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonText: "Ok",
+                            closeOnConfirm: true,
+                            text: "<b>" + data.msg + "</b>",
+                            html: true
+                        });
+                    }
+                }
+    </script>
+        }
+    </div>
+</div>

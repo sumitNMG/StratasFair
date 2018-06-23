@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "EnableDisableAdminNotification";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@model StratasFair.BusinessEntity.Front.ClientLogOnModel
+
+@section styles{
+    <link href="~/Content/css/responsive-accordion.css" rel="stylesheet" type="text/css">
+    <!-- Custom styling plus plugins -->
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/sweetalert.css")" />
+}
+
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/scripts/js/sweetalert.js")"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+
+        });
+
+        function NotificationClick(obj) {
+
+            var isNotification = false;
+            var settingType = 0;
+            if ($(obj).is(':checked')) {
+                isNotification = true;
+            }
+
+            if (obj.id == "cmn-toggle-1") {
+                settingType = 1;
+            }
+            $.ajax({
+                type: 'POST',
+                url:  'UpdateAdminNotificationSetting',
+                dataType: 'json',
+                data: { IsEnable: isNotification, Type: settingType },
+                success: function (result) { 
+                    location.reload();
+                }
+            });
+
+        }
+    </script>
+}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="notification-page">
+        <div class="page-title">
+            @if (TempData["CommonMessage"] != null)
+            {
+                @Html.Raw(TempData["CommonMessage"])
+            }
+            <div class="title_left">
+                <h1>Notifications</h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <div class="row form-group">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
+                        <div class="switch-box">
+                            <span>Email</span>
+                            <div class="switch">
+                                @if (Model.IsEmailNotification)
+                                {
+                                    <input id="cmn-toggle-1" name="EmailNotification" class="cmn-toggle cmn-toggle-round" checked type="checkbox" onchange="NotificationClick(this)">
+                                    <label for="cmn-toggle-1"></label>
+                                }
+                                else
+                                {
+                                    <input id="cmn-toggle-1" name="EmailNotification" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="NotificationClick(this)">
+                                    <label for="cmn-toggle-1"></label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- page content End -->

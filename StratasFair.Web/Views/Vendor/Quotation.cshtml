@@ -1,0 +1,290 @@
+﻿@model StratasFair.BusinessEntity.VendorQuotationModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+    var QuotationList = StratasFair.Business.Front.VendorQuotationHelper.Instance.GetAllQuotations();
+}
+@section styles
+{
+    <link href="@Url.Content("~/Content/css/bootstrap-multiselect.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    <style>
+        .input-validation-error {
+            border: 1px solid red !important;
+        }
+
+       .checkbox input[type="checkbox"] {
+            display: block;
+        }
+    </style>
+}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <div class="">
+                <h1>Vendor Quotation</h1>
+            </div>
+        </div>
+        <div class="title_right">
+            <div class="row pull-right">
+                <div class="col-md-12 col-xs-12">
+                    <div class="add-btn pull-right">
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#request-quote">Request Quote</a>
+                    </div>
+                    <div class="add-btn">
+                        <a class="green" href="@Url.Content("~/" + StratasFair.Business.Front.ClientSessionData.ClientPortalLink + "/vendor/directory")">Vendor Directory</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 table-section vendor-table">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <td class="discipline">Discipline</td>
+                        <td class="vendor">Vendor</td>
+                        <td class="details">Details</td>
+                        <td class="pmb">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (QuotationList != null)
+                    {
+                        if (QuotationList.Count > 0)
+                        {
+                            foreach (var item in QuotationList)
+                            {
+                                <tr>
+                                    <td data-title="Discipline" class="discipline">@item.DisciplineName</td>
+                                    <td data-title="Vendor" class="vendor">
+                                        @item.VendorName
+                                    </td>
+                                    <td data-title="Details" class="details">
+                                        <p>@Html.Raw(item.Details)</p>
+                                    </td>
+                                    <td data-title="Action" class="action">
+                                        <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Private Message Board" href="@Url.Content("~/" + @StratasFair.Business.Front.ClientSessionData.ClientPortalLink + "/pmb/" + item.QuotationId)">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" style="color:orange">No record found</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No record found</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!-- table section End -->
+    </div>
+</div><!-- page content End -->
+<!-- Modal  Request A Quote -->
+<div class="modal fade" id="request-quote" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Request A Quote</h5>
+                @using (Ajax.BeginForm("quotation", new { controller = StratasFair.Business.Front.ClientSessionData.ClientPortalLink + "/vendor" }, new AjaxOptions()
+                {
+                    OnBegin = "showLoader",
+                    OnSuccess = "hideLoader",
+                    HttpMethod = "post"
+                }, new { @class = "form-section", @id = "frm-request" }))
+                {
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Requester Name<span class="required">*</span></label>
+                                @Html.TextBoxFor(m => m.RequesterName, new { @class = "form-control", @readonly = true })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Requester Email Address<span class="required">*</span></label>
+                                @Html.TextBoxFor(m => m.RequesterEmailId, new { @class = "form-control", @readonly = true })
+                                <div class="checkbox">
+                                    <input type="checkbox" id="showEmail" style="display:none;" checked />
+                                    <label for="showEmail">Show email address to vendor</label>
+                                    <input type="hidden" value="true" name="IsShowEmail" id="IsShowEmail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Discipline<span class="required">*</span></label>
+                                @Html.DropDownListFor(m => m.DisciplineId, new SelectList(StratasFair.Business.CommonHelper.CommonData.GetDisciplineWithoutOtherList(), "DisciplineId", "DisciplineName", Model.DisciplineId), "Select", new { @class = "form-control selectpicker" })
+                                @Html.ValidationMessageFor(m => m.DisciplineId)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Vendor <span class="required">*</span></label>
+                                <select id="ddVendorsList" name="ddVendorsList" multiple="multiple" size="7"></select>                                
+                                @Html.HiddenFor(m => m.VendorList)
+                                @Html.ValidationMessageFor(m => m.VendorList)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Details <span class="required">*</span></label>
+                                @Html.TextAreaFor(m => m.Details, new { @maxlength = "500" })
+                                @Html.ValidationMessageFor(m => m.Details)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <input id="btnSubmit" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                            </div>
+                        </div>
+                    </div>
+                }<!-- Form End -->
+            </div>
+        </div>
+    </div>
+</div><!-- Modal Request Quote End -->
+@section scripts
+{
+    <script src="~/Content/js/bootstrap-multiselect.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script>
+        $(function () {
+            $('#ddVendorsList').multiselect({
+                includeSelectAllOption: true,
+                buttonText: function (options, select) {
+                    if (options.length === 0) {
+                        return 'Select';
+                    }
+                    if (options.length === select[0].length) {
+                        return 'All selected (' + select[0].length + ')';
+                    }
+                    else if (options.length >= 6) {
+                        return options.length + ' selected';
+                    }
+                    else {
+                        var labels = [];
+                        options.each(function () {
+                            labels.push($(this).text());
+                        });
+                        return labels.join(', ') + '';
+                    }
+                },
+                onChange: function (option, checked, select) {
+                    $(this).toggleClass("checked");
+                }
+
+            });
+        });
+
+
+        function showLoader() {
+            $("#btnSubmit").val("Please wait...");
+            $("#btnSubmit").prop("disabled", true);
+        }
+        function hideLoader(result) {
+            var title = "Error!";
+            var type = "warning";
+            if (result.status == "ok") {
+                title = "Success!"
+                type = "success";
+            }
+
+            swal({
+                title: title,
+                text: result.data,
+                type: type,
+                closeOnConfirm: true
+            }, function () {
+                $("button.close").trigger("click");
+                window.location.href = '@Url.Content("~/"+StratasFair.Business.Front.ClientSessionData.ClientPortalLink+"/vendor/quotation")';
+            });
+            $("#btnSubmit").val("Submit");
+            $("#btnSubmit").prop("disabled", false);
+        }
+
+        $(function () {
+            $("#DisciplineId").change(function () {
+                $('#ddVendorsList').empty();
+                var url = '@Url.Content("~/"+StratasFair.Business.Front.ClientSessionData.ClientPortalLink+"/vendor/GetVendorsList")';
+                $.ajax({
+                    url: url,
+                    data: { Id: $(this).val() },
+                    complete: function () { $('#ddVendorsList').multiselect('rebuild'); },
+                    success: function (result) {
+                        $.each(result, function (key, value) {
+                            $('#ddVendorsList').append($("<option value='" + value.VendorId + "'>" + value.VendorName + "</option>"));
+                        });
+
+                        $('#ddVendorsList').multiselect();
+                    }
+                });
+
+            });
+
+            $("#ddVendorsList").change(function () {
+                var selMulti = $.map($("#ddVendorsList option:selected"), function (el, i) {
+                    return $(el).val();
+                });
+                $("#VendorList").val(selMulti.join(", "));
+                if (selMulti.length > 0) {
+                    $("span[data-valmsg-for='VendorList']").text("");
+                }
+            });
+
+
+            $("#showEmail").click(function () {
+                if ($(this).is(":checked")) { $("#IsShowEmail").val('true'); }
+                else { $("#IsShowEmail").val('false'); }
+            });
+
+            $("#frm-request").submit(function (e) {
+                if ($("#ddVendorsList option:selected").length <= 0) {
+                    $("span[data-valmsg-for='VendorList']").removeClass("field-validation-valid").addClass("field-validation-error").text("Vendor is required");
+                    $("#ddVendorsList").removeClass("input-validation-valid").addClass("input-validation-error");
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $("ul.nav a[href='/stratasfair/@StratasFair.Business.Front.ClientSessionData.ClientPortalLink/Vendor/Quotation']").parent().addClass('current-page');
+        });
+    </script>
+}

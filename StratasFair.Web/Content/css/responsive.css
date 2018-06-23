@@ -1,0 +1,178 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@media screen and (max-width:1024px) {
+input {-webkit-appearance: none !important;  outline:0px !important;}
+.dashboard-column ul li{padding:10px; width: 30.9%; min-height: 192px;}
+.general-search input[type="text"]{width:88%}
+
+.admin-dashboard .board-page ul li{width:30%}
+.tabs-menu ul li{min-width:25%;}
+.tabs-menu ul li a{min-width:inherit; padding:0 7px;}
+.polls-section .poll-view a.yellow-btn-round {width: 117px;}
+.owner-btn {float: left; text-align: left; margin: 8px 0 0;}
+/*body{overflow-x:hidden}*/
+}
+@media (max-width: 900px) {
+header {padding:5px 20px;}
+.logo{padding: 0px 0px 0 0px; margin-left: 62px; max-width: 188px;}
+/*--- table responsive -----*/
+.table-section{max-width:100%;}
+.table-section table, table.financial-table{border: 1px solid #eaeaea;}
+.table-section table td, table.financial-table td {-moz-border-bottom-colors: none;-moz-border-left-colors: none;-moz-border-right-colors: none;-moz-border-top-colors: none;border-color: -moz-use-text-color -moz-use-text-color #EEEEEE;border-image: none;padding-left: 50%;position: relative;text-align: left;white-space: normal;  line-height: normal;}
+.table-section table tr, table.financial-table tr {padding-top:10px;}
+.table-section table thead tr, table.financial-table thead tr {left: -9999px;  position: absolute;  top: -9999px;}
+.table-section table, .table-section td, .table-section tr, .table-section tbody, .table-section thead,
+table.financial-table, table.financial-table td, table.financial-table tr, table.financial-table tbody, table.financial-table thead
+
+ {display: block}
+.table-section tbody td:before, table.financial-table tbody td:before{content: attr(data-title);} 
+.table-section table td:before,  table.financial-table td:before{font-weight: bold;left:10px;padding-right: 12px;position: absolute;text-align: left;top:17px;white-space: nowrap;width: 45%;}
+.table-section tbody td, .table-section table td:first-child,
+.table-section table td.title, .table-section table td.date, .table-section table td.details,
+.table-section.reminder-table table td.note, .table-section.reminder-table table td.start,
+.table-section.cale-list-table .common-area, .table-section.cale-list-table .reason, .table-section.cale-list-table .date,
+.table-section.receipt-table .bill-name, .table-section.receipt-table .bill-type, .table-section.m-receipt-table .date, .table-section.m-receipt-table .amount,
+.table-section.m-receipt-table .bill-name, .table-section.m-receipt-table .receipt-no, .table-section.m-receipt-table .service,
+.table-section.m-receipt-table .alteration, .table-section.m-receipt-table .download-date, .table-section.vendor-table .discipline, .table-section.vendor-table .vendor, .table-section.vendor-table .details,
+table.financial-table tbody td, table.financial-table td:first-child,
+table.financial-table td.date, table.financial-table td.expenditure, table.financial-table td.income, table.financial-table td.particulars,
+.table-section.manage-vendor-table td.requester, .table-section.manage-vendor-table td.email-id, .table-section.manage-vendor-table td.discipline,
+.table-section.admin-notice-alert td.type, .table-section.admin-notice-alert td.title, .table-section.admin-notice-alert td.message,
+.table-section.admin-notice-meeting td.subject, .table-section.admin-notice-meeting td.meeting, .table-section.admin-notice-meeting td.message,
+.table-section.admin-notice-meeting td.file-name, .table-section.admin-financial td.date, .table-section.admin-financial td.bill-type,
+.table-section.admin-financial td.bill-name, .table-section.admin-financial td.item, .table-section.admin-financial td.description,
+.table-section.admin-manual-receipt td.owner, .table-section.admin-manual-receipt td.bill-name, .table-section.admin-manual-receipt td.service, .table-section.admin-manual-receipt td.action, .table-section.admin-manual-receipt td.date, .table-section.admin-manual-receipt td.request, .table-section.admin-manual-receipt td.amount, .table-section.admin-manual-receipt td.r-Number,
+.table-section.admin-download-receipt td.r-Number , .table-section.admin-download-receipt td.date , .table-section.admin-download-receipt td.owner ,.table-section.admin-download-receipt td.request, 
+.table-section.owner-board-table td, .table-section.owner-board-table td.action, .table-section.owner-board-table td.unit-number, .table-section.owner-board-table td.added-on, .table-section.owner-board-table td.email-id, .table-section.admin-request td.details,
+.table-section.account-table td.account-classification, .table-section.account-table td.account-name,
+.table-section.trancaction-table td.dr, .table-section.trancaction-table td.cr,.table-section.trancaction-table td.particular,
+.table-section.trancaction-table td.date, .table-section.trancaction-table td.recurring,
+.table-section.owner-board-table td.position, table.dataTable tbody th, table.dataTable tbody td,
+.table-section.manage-vendor-table td.board-name, .table-section.manage-vendor-table td.requester, .table-section.manage-vendor-table td.email-id,
+.table-section.manage-vendor-table td.details 
+
+{ width:auto; padding-left:50%; text-align:left;}
+.table-section td a{ word-break: break-all !important;}
+
+table.financial-table td.month{ width:auto; padding-left:10px;}
+/*--- table responsive End -----*/
+.strata-email ul.inbox-mail li .cnt{width:80%;}
+.dashboard-column ul li{width:31%}
+.chat-reply-box{width:98%;}
+.login-box.registation-form{width:98%}
+.admin-dashboard .board-page ul li {width: 31%;}
+
+.owner-total-cunt{padding:0 0 10px}
+.owner-btn{text-align:left; float:none !important}
+.owner-total-cunt span:last-child {border: 0px;}
+header.fixed {position:relative;}
+footer{position:inherit}
+body {padding-right: 0px !important}
+.modal-open {
+  overflow-y: auto;
+}
+
+}
+
+@media screen and (max-width:767px) {
+h1{font-size:25px;}
+.login-box h1{font-size:25px;}
+.login-box{ left: 50%; position: absolute;  top: 50%; width:100%; }
+.login-wrapper {width: 100%;}
+.login-form{width:75%;}
+.information-icon .information-box{left:auto; right:-6px;  bottom: 34px; transform:inherit; -webkit-transform:inherit; box-shadow:none;}
+.information-icon .information-box:after, .information-icon .information-box:before{left:auto; right: -6px; }
+.information-icon .information-box:before{bottom:-25px}
+.information-icon .information-box:after{bottom: -24px;}
+.vertical-align{display:block}
+.yellow-btn-round{width:150px; margin:0px auto;}
+.page-title .title_left{width:40%; }
+.page-title .title_right{width:60%; }
+.dashboard-column ul li {width: 47.5%; margin-bottom:10px;}
+.vendor-directory ul.vendor{margin:0 -1.5%}
+.vendor-directory ul.vendor li{width:48%; margin-bottom:10px;}
+.vendor-directory ul.vendor li:nth-child(3n+1) {margin-left: 1.5%;}
+.short-by-row{text-align:left;}
+/*.short-by-row .short-by{    width: 40%;}*/
+/*.short-by-row .pull-right {float: left!important;}
+.add-btn.pull-right {float: none!important;}*/
+.chat-reply-box {width: auto; position: relative; margin: 50px 0 0;}
+
+.admin-dashboard .board-page ul{margin: 0 -0.5%;}
+.admin-dashboard .board-page ul li {width:48%; margin: 0 0.5% 1%;}
+.polls-section .poll-view{text-align:left}
+.polls-section .poll-view a.delete-btn {float: none;}
+.admin-dashboard.bulk-upload em {padding: 0px 0 10px;}
+.admin-dashboard.bulk-upload .add-btn{padding: 0px 0 10px;}
+.trancaction-page .desktop-view{display:none;}
+.trancaction-page .mob-view{color:rgba(58,59,58,0.9); display:block; padding:20px; border:1px solid #eae9e9;}
+.trancaction-page .mob-view .detals{border-bottom:1px solid #eae9e9;  margin-bottom:25px;}
+.trancaction-page .mob-view .detals .col-xs-12{padding-bottom:2px;}
+.trancaction-page .mob-view .detals i{margin:0 4px}
+.trancaction-page .mob-view .date-row{padding-bottom:10px;}
+.trancaction-page .mob-view .title{color:#353535; font-size:15px; font-family:"robotoregular"}
+.trancaction-page .mob-view .list-row{padding-bottom:6px;}
+.trancaction-page .mob-view .cash-row{padding-bottom:15px; color:rgba(255, 143, 31, 0.9); display:block; font-family:robotobold;}
+.trancaction-page .mob-view .cash-row span{padding-left:10px; display:block}
+.balance-sheet.income-sheet .form-section .submit-btn.submit-btn{width:80px; margin:0px 10px 10px 0; display: block; float:right}
+.balance-sheet.income-sheet .form-section .form-group {margin-bottom:10px;}
+.login-body {min-height: 500px;}
+
+footer .copyright{text-align:center}
+footer .social-link {text-align:center; padding:10px 0 0}
+
+.modal-popup.polls-chart{width:98%; padding:0 10px}
+.modal-popup button.close{margin:15px 10px 13px 0;}
+
+}
+@media screen and (max-width:568px) {
+.tabs-menu ul li a{min-width: 150px;}
+.page-title .title_left{width:100%; float:none}
+.page-title .title_right{width:100%; float:none; margin-top:10px; text-align:left;}
+.page-title .pull-right{float:none !important;}
+.financial-search{width: 100%;}
+.chat-container figure{max-width: 60px;}
+.chat-container figure img{width: 60px; height:60px;}
+.chat-container .cnt{max-width:75%;}
+span#file-name {display: block; margin-top:5px;}
+.admin-dashboard.bulk-upload span#file-name {display: inline-block;}
+.short-by-row .short-by{width:100%;}
+.short-by-row .select-box {width:70%; float: right;}
+.short-by-row .short-by label{padding-top:8px}
+.short-by-row .filter{text-align:left; padding:10px 0 0 0}
+.strata-email ul.inbox-mail li .close-btn{top:20px}
+
+.modal-popup.add-request{width: 320px;}
+.tabs-menu ul li{float:none; display:block; text-align:left;}
+.tabs-menu ul li a{text-align:left; padding:0 0 0 15px; line-height:40px;}
+.tabs-menu ul li:first-child a, .tabs-menu ul li:last-child a{border-radius:0px; }
+.admin-dashboard .board-page ul{margin:0%;}
+.admin-dashboard .board-page ul li {width:100%; margin:0% 0 10px;}
+.privilege .checkbox{display:block; width:100%;}
+.radiobox, .registation-form .radiobox{margin-bottom:4px}
+
+/*.information .form-control {
+    width: 90%;
+}
+.information-icon{right:0px;}*/
+}
+
+@media screen and (max-width:414px) {
+header {padding:5px 10px;}
+.logo{max-width:190px; vertical-align:middle;}
+header .h-rgt ul li {margin: 0px 0 0 5px}
+.dashboard-column ul {margin:0px}
+.dashboard-column ul li {width:auto; margin:0 0 10px; min-height:inherit; padding:15px;}
+.vendor-directory ul.vendor{margin:0}
+.vendor-directory ul.vendor li{width:100%; margin:0 0 10px;}
+.vendor-directory ul.vendor li:nth-child(3n+1) {margin-left:0%;}
+.calend-btn a {display: inline-block; min-width: inherit; margin-right: 2px;  padding: 0 12px; width: auto;}
+.chat-container .cnt{max-width:70%;}
+.owner-total-cunt span{border: 0px; margin:0 0 5px}
+.admin-dashboard.bulk-upload .btn {min-width: 130px;}
+}
+@media screen and (max-width:320px) {
+.chat-container .cnt{max-width:65%;}
+.modal-popup.add-request{width:280px;}
+.logo {    max-width: 173px;}
+}

@@ -1,0 +1,68 @@
+﻿@model StratasFair.BusinessEntity.Front.CommonAreaModel
+
+<script type="text/javascript">
+
+    function FnAddCommonAreaBegin() {
+        $("#btnSubmit").hide();
+        $("#dvLoader").show();
+    }
+
+    function FnAddCommonAreaSuccess(data) {
+
+        $("#btnSubmit").show();
+        $("#dvLoader").hide();
+        if (data.result == 1) {                                                                                                                                                                                                                                                              $("#Details").val('');
+
+            swal({
+                type: "success",
+                title: "Success",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            }, function () {
+                window.location = window.location;
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+</script>
+
+<div class="modal-body">
+    <h5 class="text-center">Add Resource/Common Area</h5>
+
+    @using (Ajax.BeginForm("AddCommonArea", "CommonArea", FormMethod.Post, new AjaxOptions { OnSuccess = "FnAddCommonAreaSuccess(data)", OnBegin = "FnAddCommonAreaBegin()" }, new { @class = "form-section", @id = "frmAddCommonArea" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.CommonAreaId)
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Resource/Common Area<span class="required">*</span></label>
+                    @Html.TextBoxFor(m => m.CommonAreaName, new { @class = "form-control", @maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.CommonAreaName)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input name="btnSubmit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                </div>
+            </div>
+        </div>
+    }<!-- Form End -->
+</div>

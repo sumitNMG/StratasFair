@@ -1,0 +1,290 @@
+﻿@using StratasFair.Business.Front;
+@{
+    ViewBag.Title = "Booking List";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+
+@section scripts{
+    <script src="@Url.Content("~/content/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/content/js/moment.min.js")"></script>
+    <script src="@Url.Content("~/content/js/bootstrap-datetimepicker.js")"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+
+    <script type="text/javascript">
+    function FnMoreDetail(obj) {
+        $("#" + obj.id.replace('less', 'more')).slideToggle();
+        $("#" + obj.id.replace('lessDetail_', 'spnDot_')).slideToggle();
+
+    }
+
+    function ViewSearchArea(val) {
+        $("#divSearchArea").slideToggle();
+        if (val == 2)
+            SearchBookingRequestClear();
+    }
+
+
+    $(document).ready(function () {
+        FnSearchDataBooking();
+    });
+
+    /* Booking Listing */
+    var pageNoBooking = 1;
+    function FnSearchDataBooking() {
+        pageNoBooking = 1;
+        $("#hdnNoData").val("0");
+        FnLoadBooking(pageNoBooking);
+        pageNoBooking++;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height() - 400) {
+                var totalPages = $("#hdnTotalPage").val();
+                if (pageNoBooking <= totalPages || totalPages == 0) {
+                    FnLoadBooking(pageNoBooking);
+                    pageNoBooking++;
+                }
+            }
+        });
+    }
+
+
+    function FnLoadBooking(pageNo) {
+        if ($("#hdnNoData").val() == "0") {
+            $("#divBookingLoader").show();
+
+            var caId = $("#hdnCommonAreaId").val();
+            var adStatus = $("#hdnAdminStatus").val();
+            var reqDate = $("#hdnRequestDate").val();
+            var loadUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/AdminBookingRequest/LoadBookingList";
+
+                $.ajax({
+                    url: loadUrl,
+                    type: "POST",
+                    data: { commonAreaId: caId, requestDate: reqDate, adminStatus: adStatus, pageNo: pageNo },
+                    datatype: JSON,
+                    success: function (result) {
+                        if (result.trim() != "") {
+                            $("#divBookingList").append(result);
+                        }
+                        else {
+                            $("#hdnNoData").val("1");
+                            if (pageNo == 1) {
+                                $("#divBookingList").html("");
+                                $("#divBookingList").append("<tr><td colspan=\"6\" style=\"padding: 10px;\">No records found.<td></tr>");
+                            }
+                        }
+                        $("#hdnTotalPage").val($("#hfBookingPageCount").val());
+                        $("#divBookingLoader").hide();
+                    }
+                });
+            }
+        }
+
+
+        function SearchBookingRequest() {
+
+            $("#hdnCommonAreaId").val($("#CommonAreaId").val());
+            $("#hdnRequestDate").val($("#txtRequestDate").val());
+            $("#hdnAdminStatus").val($("#AdminStatus").val());
+            $("#divBookingList").html("");
+            FnSearchDataBooking();
+        }
+
+        function SearchBookingRequestClear() {
+
+            $("#hdnCommonAreaId").val('');
+            $("#hdnRequestDate").val('');
+            $("#hdnAdminStatus").val('');
+
+            $("#CommonAreaId").val('');
+            $("#txtRequestDate").val('');
+            $("#AdminStatus").val('');
+
+            $("#divBookingList").html("");
+            FnSearchDataBooking();
+
+        }
+
+
+        function UpdateAdminStatus(type, bookingRequestId) {
+            if (type == 'A') {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to change status for this booking request!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, approve it!",
+                    cancelButtonText: "No, cancel pls!",
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true,
+                    closeOnCancel: true
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        var updateUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/AdminBookingRequest/UpdateStatus";
+
+                        $.ajax({
+                            url: updateUrl,
+                            type: "POST",
+                            data: { bookingRequestId: bookingRequestId, reason: '', adminStatus: 1 },
+                            datatype: JSON,
+                            success: function (result) {
+                                if (result.Counter == 0) {
+                                    swal({
+                                        title: result.Msg,
+                                        type: "success",
+                                        showCancelButton: false,
+                                        confirmButtonText: "Ok",
+                                        closeOnConfirm: true
+                                    },
+                                    function () {
+                                        $("#tdAdminStatus_" + bookingRequestId).html('Approved');
+                                        $("#tdAction_" + bookingRequestId).html('<strong>Done</strong>');
+                                    });
+                                }
+                                else {
+                                    swal({
+                                        type: "warning",
+                                        title: "Failed",
+                                        showConfirmButton: true,
+                                        showCancelButton: false,
+                                        confirmButtonText: "Ok",
+                                        closeOnConfirm: true,
+                                        text: "<b>" + result.Msg + "</b>",
+                                        html: true
+                                    });
+                                }
+                            }
+                        });
+                    } else {
+                       
+                        //swal("Cancelled", "Your booking request is not touched :)", "error");
+                    }
+                });
+            }
+            else {
+                $("#bookingRequestId").val(bookingRequestId);
+                $("#reason").val('');
+                $("#frmUpdateBooking").find("[data-valmsg-replace]")
+                    .removeClass("field-validation-error")
+                    .addClass("field-validation-valid")
+                    .empty();
+            }
+        }
+
+        $(function () {
+            $('#txtRequestDate').datetimepicker({
+                useCurrent: true,
+                showClear: true,
+                format: 'MM/DD/YYYY'
+
+            });
+        });
+
+    </script>
+
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/css/bootstrap-datetimepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+}
+
+<input type="hidden" id="hdnNoData" value="0" />
+<input type="hidden" id="hdnTotalPage" value="0" />
+<input type="hidden" id="hdnCommonAreaId" value="" />
+<input type="hidden" id="hdnRequestDate" value="" />
+<input type="hidden" id="hdnAdminStatus" value="" />
+
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="back-btn">
+
+        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/calendar/admincommonarea")"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+
+    </div>
+
+
+
+    <div class="row sub-heading">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 owner-total-cunt">
+
+            <div class="page-title">
+                <div class="title_left">
+                    <h1>Booking List</h1>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 text-right">
+            <a href="javascript:void(0)" class="gray-btn" id="search-owner" onclick="ViewSearchArea(1);">Search Booking</a>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+    <div class="row owner-search search-expand" style="display:none" id="divSearchArea">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-section">
+            <div class="owner-search-col">
+                <div class="form-group">
+                    @Html.DropDownList("CommonAreaId", new SelectList(ViewBag.CommonAreaList, "Value", "Text"), "Select Common Area", new { @class = "selectpicker form-control" })
+                </div>
+            </div>
+            <div class="owner-search-col">
+                <div class="form-group">
+                    @Html.DropDownList("AdminStatus", new SelectList(ViewBag.AdminStatusList, "Value", "Text"), "Select Status", new { @class = "selectpicker form-control" })
+                </div>
+            </div>
+            <div class="owner-search-col">
+                <input id="txtRequestDate" name="txtRequestDate" class="calendar-icon form-control" value="" type="text" placeholder="Request Date">
+            </div>
+            <div class="owner-search-last pull-right text-right">
+                <a href="javascript:void(0)" onclick="SearchBookingRequest()" class="submit-btn-green">Go</a>
+                <a href="javascript:void(0);" onclick="ViewSearchArea(2);" class="close_icon" id="search-owner">X</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-xs-12 table-section cale-list-table">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <td class="common-area">Common Area</td>
+                        <td class="title">Subject</td>
+                        <td class="details">Reason</td>
+                        <td class="date">Dates (From-To)</td>
+                        <td class="no-days">No. of Days</td>
+                        <td class="status">Status</td>
+                        <td class="action">Action</td>
+
+                    </tr>
+                </thead>
+                <tbody id="divBookingList">
+                </tbody>
+            </table>
+
+            <div id="divBookingLoader">
+                <img alt="re-loader" src="@Url.Content("~/content/images/loader.gif")" />
+            </div>
+
+        </div><!-- table section End -->
+    </div>
+</div><!-- page content End -->
+<!-- Modal Rejected -->
+<div class="modal fade" id="rejected" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Booking Request</h5>
+                @Html.Partial("_AdminBookingStatusUpdatePartial", new StratasFair.BusinessEntity.Front.BookingUpdateModel())
+            </div>
+        </div>
+    </div>
+</div><!-- Modal Rejected End -->

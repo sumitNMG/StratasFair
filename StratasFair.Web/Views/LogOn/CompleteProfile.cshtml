@@ -1,0 +1,220 @@
+﻿@{
+    ViewBag.Title = "Comlete Profile";
+    Layout = "~/Views/Shared/_LoggedInClientUser.cshtml";
+}
+@model StratasFair.BusinessEntity.Front.ClientLogOnModel
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            debugger;
+            var dateFormat = "mm/dd/yy",
+              from = $("#datepicker")
+                .datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+              to = $("#datepicker2").datepicker({
+                  changeMonth: true,
+                  changeYear: true
+              })
+              .on("change", function () {
+                  from.datepicker("option", "maxDate", getDate(this));
+              });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+
+        function UpdateProfileImage(input) {
+            readURL(input);
+        }
+
+        var readURL = function (input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.profile-pic').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function ValidateImageFile(obj) {
+            var val = $(obj).val().toLowerCase();
+            var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+            if (!(regex.test(val))) {
+                $(obj).val('');
+                $("#" + obj.id + "-error").remove();
+                $("#" + obj.id).addClass("input-validation-error");
+                $('span[data-valmsg-for="' + obj.id + '"]').append("<span id='" + obj.id + "-error' style='color:#ff0000'>Valid image file required.</span>");
+                return false;
+            }
+            else {
+                $('span[data-valmsg-for="' + obj.id + '"]').empty();
+            }
+            return true;
+        }
+    </script>
+
+}
+
+
+<div class="login-body registation">
+
+    <div class="container">
+        <div class="login-box registation-form">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>
+                        Complete your Profile
+                        <div>
+                            <input type="file" name="file1" class="inputprofile" accept="image/*" />
+                        </div>
+                    </h1>
+                </div>
+            </div>
+
+
+            <form action="@Url.Action("LogOn", "CompleteProfile")" id="form" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                @{
+                    if (@TempData["CommonMessage"] != null)
+                    {
+                        <script type="text/javascript">
+                            alert(@TempData["CommonMessage"]);
+                            // handle refreshing the view, or redirect to another View (window.location.href = "")
+                        </script>
+                    }
+                }
+                @Html.HiddenFor(m => m.OldProfilePicture)
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <figure class="profile-image">
+                            @if (!string.IsNullOrEmpty(@Model.ProfilePicture))
+                        {
+                                <img class="profile-pic" src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/strataboard/@Model.StratasBoardId/profileimages/@Model.ProfilePicture" onchange="return ValidateImageFile(this);">
+                        }
+                        else
+                        {
+                                <img class="profile-pic" src="~/Content/images/profile-image.png">
+                        }
+
+
+                            <div class="camera-icon">
+                                <div class="inputfile-box ">
+                                    <input type="file" id="file" name="file" class="inputfile" accept="image/*" onchange="UpdateProfileImage(this);" />
+                                    <label for="file">
+                                        <span class="choose-btn"></span>
+                                        <span class="file-button">
+                                            <img src="~/Content/images/camera-icon.png">
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>First Name<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Last Name<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Email Address<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @readonly = "readonly", @maxlength = "100" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control", @maxlength = "15" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Purchase/Lease Commenced Date</label>
+                            @Html.TextBoxFor(m => m.LeaseCommenceDate, new { @id = "datepicker", @class = "calendar-icon form-control", @maxlength = "10" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Lease End Date</label>
+                            @Html.TextBoxFor(m => m.LeaseEndDate, new { @id = "datepicker2", @class = "calendar-icon form-control", @maxlength = "10" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Stratas Name</label>
+                            @Html.TextBoxFor(m => m.StrataBoardName, new { @class = "form-control", @readonly = "readonly" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group unit-no">
+                            <label>Unit Number<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.UnitNumber, new { @class = "form-control", @maxlength="10" })
+                            @Html.ValidationMessageFor(m => m.UnitNumber)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 premise-type">
+                        <div class="form-group">
+                            <p>Premise Type<span class="required">*</span></p>
+                            <div class="radiobox">
+                                @Html.RadioButtonFor(m => m.PremiseType, "R", new { @id = "resident" })
+                                <label for="resident">Owner (Resident)</label>
+                            </div>
+                            <div class="radiobox">
+                                @Html.RadioButtonFor(m => m.PremiseType, "NR", new { @id = "non-resident" })
+                                <label for="non-resident">Owner (Non-Resident)</label>
+                            </div>
+                            <div class="radiobox">
+                                @Html.RadioButtonFor(m => m.PremiseType, "T", new { @id = "tenant" })
+                                <label for="tenant">Tenant</label>
+                            </div>          
+                            </div>
+                             @Html.ValidationMessageFor(m => m.PremiseType)
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="text-center col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <input name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form><!-- Form End -->
+        </div>
+    </div>
+</div><!-- login-body End -->

@@ -1,0 +1,104 @@
+﻿@model StratasFair.BusinessEntity.Front.ClientLogOnModel
+@{
+    Layout = "~/Views/Shared/_LoggedInClientUser.cshtml";
+}
+
+@section scripts{
+    <script type="text/javascript" language="javascript">
+        $(window).load(function () {
+            // For Fill up the cookie information
+            FillInfo();
+        });
+
+        function SetRememberMe(obj) {
+            if ($(obj).is(":checked")) {
+                $('#RememberchkBox').val(true);
+            }
+            else {
+                $('#RememberchkBox').val(false);
+            }
+        }
+
+        // For reading the coookie
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+
+        // For Fill up the cookie information
+        function FillInfo() {
+            var strData = readCookie("ClientLogin");
+            if (strData != null) {
+                var strInfo = strData.split('&');
+                $("#Email").val(strInfo[0].split('=')[1]);
+                $("#Password").val(strInfo[1].split('=')[1]);
+                $("#IsRemember").attr("checked", true);
+                $('#RememberchkBox').val(true);
+            }
+            else {
+                $("#IsRemember").attr("checked", false);
+                $('#RememberchkBox').val(false);
+            }
+        }
+    </script>
+}
+
+<div class="login-body">
+    <div class="container">
+        <div class="login-box">
+            <div class="login-wrapper">
+                <div class="MsgRed1" style="color: red">
+
+                </div>
+                <form action="" class="login-form" method="post">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h1>Login to StratasFair</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                @Html.Label("Email Address")
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @value = "", @type = "email" })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                            <div class="form-group information">
+                                @Html.Label("Password")
+                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
+                                @Html.ValidationMessageFor(m => m.Password)
+                                <div class="information-icon">
+                                    <a href="javascript:void(0)"><img src="@Url.Content("~/Content/images/information-icon.png")" alt="info"></a>
+                                    <div class="information-box">
+                                        Good passwords are hard to guess. Use uncommon words or inside jokes, non-standard uppercasing, creative spelllling and non-obvious numbers and symbols.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <input name="RememberchkBox" id="IsRemember" onchange="SetRememberMe(this)" type="checkbox" value="true" data-val="true" data-bind="checked: RememberMe">
+                                    <label for="IsRemember">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input name="Login" value="Log in" class="btn btn-lg btn-block btn-yellow" type="submit">
+                            </div>
+                            <div class="form-group">
+                                <a href="@Url.Content("logon/forgotpassword")" style="float:right"> Forgot Password ?</a>
+                                @Html.HiddenFor(model => model.RememberMe, new { @id = "RememberchkBox" })
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form><!-- Form End -->
+        </div>
+    </div>
+</div>
+</div><!-- login-body End -->

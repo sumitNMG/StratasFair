@@ -1,0 +1,140 @@
+﻿@model StratasFair.BusinessEntity.AdminPMBModel
+@using StratasFair.Business.Front;
+@{
+    ViewBag.Title = "Private Message Board";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewBag.PageHeading = "Private Message Board";
+}
+
+@section styles
+{
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+}
+<div class="right_col chat-section" role="main" style="min-height: 791px;">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Private Message Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 stratas-board">
+            <div class="back-btn">
+                <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/adminpmb/ownerlist")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+            </div>
+            @foreach (var item in PMBHelper.Instance.GetAdminPMB(ClientSessionData.ClientStrataBoardId, Model.CreatedFor))
+            {
+                bool SetToLeft = false;
+                if (item.CreatedByUserType.ToUpper().Contains("ADMIN") && ClientSessionData.ClientRoleName.ToUpper().Contains("ADMIN"))
+                {
+                    SetToLeft = true;
+                }
+                else if (item.CreatedByUserType == "Owner" && ClientSessionData.ClientRoleName == "Owner")
+                {
+                    SetToLeft = true;
+                }
+
+                <div class="chat-container @if(SetToLeft){@Html.Raw("text-left")} else{@Html.Raw("text-right")}">
+                    <figure class="@if (SetToLeft){ @Html.Raw("left")} else{@Html.Raw("right")}">
+                        @if (item.CreatedByUserType.ToUpper().Contains("ADMIN"))
+                        {
+                            if (!string.IsNullOrEmpty(item.AdminProfilePicture))
+                            {
+                                <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/strataboard/@item.StratasBoardId/profileimages/@item.AdminProfilePicture" alt="" title="@item.CreatedByUserType">
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/images/profile-image.png")" title="@item.CreatedByUserType" />
+                            }
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(item.OwnerProfilePicture))
+                            {
+                                <img src="@StratasFair.Common.AwsS3Bucket.AccessPath()/resources/strataboard/@item.StratasBoardId/profileimages/@item.OwnerProfilePicture" alt="" title="@item.CreatedByUserType">
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/images/profile-image.png")" title="@item.CreatedByUserType" />
+                            }
+                        }
+                    </figure>
+                    <div class="cnt">
+                        <div class="chat-cnt @if(SetToLeft){@Html.Raw("white")} else {@Html.Raw("orange")}">
+                            @item.Message
+                            @if (!string.IsNullOrEmpty(item.AttachedFileName))
+                            {
+                                <a class="pmb-attachment @if (SetToLeft){@Html.Raw("orange")}else{@Html.Raw("white")}" href="@Url.Action("download", new StratasFair.BusinessEntity.AdminPMBModel { StratasBoardId=item.StratasBoardId, AttachedFileName=item.AttachedFileName, AttachedFileActualName=item.AttachedFileActualName })">
+                                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                </a>
+                            }
+                            <br />
+                            <div class="time-left" style="margin-bottom: -12px; padding-top: 5px;">
+                                @if (ClientSessionData.ClientRoleName.ToUpper().Contains("ADMIN") && item.CreatedByUserType.ToUpper().Contains("ADMIN"))
+                                {
+                                    @Html.Raw("by: " + item.CreatedByUserName)
+                                }
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <span class="@if(SetToLeft){@Html.Raw("time-left")}else{@Html.Raw("time-right")}">@string.Format("{0:dd MMM yyyy hh:mm tt}", item.CreatedOn.Value.ToLocalTime())</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            }
+            <div class="clearfix"></div>
+            @using (Html.BeginForm("index", "adminpmb", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "frmPMB" }))
+            {
+                @Html.HiddenFor(m => m.CreatedFor)
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="chat-reply-box">
+                            <div class="reply-box-inner">
+                                <div class="inputfile-box">
+                                    @Html.TextBoxFor(m => m.Attachment, new { @type = "file", @class = "inputFile", @onchange = "validateFileType($(this),['jpg','jpeg', 'png', 'pdf', 'ppt', 'xls','xlsx', 'doc','docx','txt']); uploadFile(this);" })
+                                    <label for="Attachment">
+                                        <span class="choose-btn"></span>
+                                        <span class="file-button">
+                                            <i class="fa fa-plus-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add File"></i>
+                                        </span>
+                                        <span id="file-name" class="file-box"></span>
+                                    </label>
+                                </div>
+                                @Html.TextBoxFor(m => m.Message, new { @placeholder = "Type..." })
+                                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Submit"></i></button>
+                            </div><!-- chat-reply-box End -->
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Message)
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="file-type">
+                                ** Only .jpg, .jpeg, .png, .pdf, .ppt, .xls, .xlsx, .doc, .docx, .txt file types are allowed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/ValidateFileType.js")"></script>
+    <script>
+        $(function () {
+            $('ul.nav a[href^="@Url.Content("~/"+ClientSessionData.ClientPortalLink+"/adminpmb/ownerlist")"]').parent('li').addClass('current-page');
+            $('ul.nav a[href^="@Url.Content("~/"+ClientSessionData.ClientPortalLink+"/adminpmb?id="+Model.CreatedFor)"]').parent('li').addClass('current-page');
+        });
+    </script>
+}

@@ -1,0 +1,139 @@
+﻿@model StratasFair.BusinessEntity.Front.StrataOwnerModel
+@{
+    ViewBag.Title = "List Of Owners";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+    bool IsSearch = false;
+    if (!string.IsNullOrEmpty(Model.FirstName) || !string.IsNullOrEmpty(Model.LastName) || !string.IsNullOrEmpty(Model.Email))
+    {
+        IsSearch = true;
+    }
+}
+
+@section styles
+{
+    <link href="@Url.Content("~/Content/css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <style>
+        .show{display: block !important;}
+    </style>
+}
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Private Message Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="row sub-heading">
+        <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12 text-right">
+            <a href="javascript:void(0)" class="gray-btn" id="search-owner">Search Owner</a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="row owner-search search-expand  @if(IsSearch){@Html.Raw("show")}">
+        @using (Html.BeginForm("OwnerList", "AdminPMB", FormMethod.Post, new {@id="frmSearch" }))
+        {
+            @Html.HiddenFor(m => m.PageNo)
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-section">
+                <div class="owner-search-col">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                </div>
+                <div class="owner-search-col">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                </div>
+                <div class="owner-search-col">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email Address", @type = "email" })
+                </div>
+                <div class="owner-search-last pull-right text-right">
+                    <input type="submit" value="Go" class="submit-btn-green" />
+                    <a href="javascript:void(0)" class="close_icon" id="search-owner2">X</a>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row admin-dashboard">
+        <div class="col-md-12 col-xs-12 table-section owner-board-table">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <td class="f-name">First Name</td>
+                        <td class="l-name">Last Name</td>
+                        <td class="email-id">Email Address</td>
+                        <td class="unit-number">Unit Number</td>
+                        <td class="added-on">Added On</td>
+                        <td class="action">Action</td>
+                    </tr>
+                </thead>
+                <tbody id="tblOwnerList"></tbody>
+            </table>
+            <div id="NoRecord">No records found</div>
+            <div id="NoMoreRecord">No more records</div>
+        </div>
+        <div id="divLoader" style="display:none;">
+            <img src="~/Content/images/loader.gif" style="margin:0 auto;" />
+        </div>
+    </div><!-- admin-dashboard End -->
+</div><!-- page content End -->
+@section scripts{
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <script>
+
+        var pageNo = @Model.PageNo;
+        var hasMorePage = 0;
+        $(function () {
+            //Load poll list
+            loadOwnerList(pageNo);
+
+            $("#search-owner2").click(function(){
+                $(".search-expand").slideUp('slow').removeClass('show');
+                $("#frmSearch").find("input:text").val('');    
+                $("#tblOwnerList").html('');
+                loadOwnerList(1); 
+            });
+        });
+
+        //load data on scroll
+        $(window).scroll(function () {
+            if (hasMorePage > 0) {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    pageNo = pageNo + 1;
+                    loadOwnerList(pageNo);
+                }
+            }
+        });
+
+        function loadOwnerList(pageNo) {
+            $("#divLoader").show();
+            var url = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteRootPath"] + StratasFair.Business.Front.ClientSessionData.ClientPortalLink + "/adminpmb/getownerlist")';
+            $.ajax({
+                url: url,
+                data: { PageNo: pageNo, FirstName: $("#FirstName").val(), LastName: $("#LastName").val(), Email: $("#Email").val() },
+                contentType: 'application/html; charset=utf-8',
+                dataType: 'html',
+                type: 'get',
+                success: function (result) {
+                    setTimeout(function () {
+                        if (result.length == 0 || result == "0") {
+                            hasMorePage = 0;
+                            if (pageNo == 1)
+                                $("#NoRecord").show();
+                            else
+                                $("#NoMoreRecord").show();
+                        }
+                        else {
+                            hasMorePage = 1;
+                            $("#tblOwnerList").append(result);
+                        }
+                        $("#divLoader").hide();
+                    }, 300);
+                }
+            });
+        }
+    </script>
+
+
+
+
+}

@@ -1,0 +1,336 @@
+﻿@using StratasFair.Business.Front;
+@{
+    ViewBag.Title = "Strata Forum";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+
+@section scripts{
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+
+    <script src="@Url.Content("~/content/js/bootstrap-select.min.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/content/js/responsive-accordion.min.js")" type="text/javascript"></script>*@
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+                $('.strata-email .viewmore').hide().before('');
+                $('.strata-email ul.inbox-mail #viewall').click(function () {
+                    $('.strata-email .viewmore').slideToggle(500);
+                    return false;
+                });
+                $('.strata-email .form-section').hide().before('');
+                $('.strata-email a.reply').click(function () {
+                    $('.strata-email #reply-form').slideToggle(500);
+                    return false;
+                });
+
+            });
+        </script>*@
+
+    <script type="text/javascript">
+
+      
+
+        $(document).ready(function () {
+            FnSearchDataForum();
+        });
+
+
+
+        /* Forum Listing */
+        var pageNoForum = 1;
+        function FnSearchDataForum() {
+            pageNoForum = 1;
+            $("#hdnNoData").val("0");
+            FnLoadForumMessage(pageNoForum);
+            pageNoForum++;
+
+            /* Function for loding message on scrolling */
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() - 400) {
+                    var totalPages = $("#hdnTotalPage").val();
+                    if (pageNoForum <= totalPages || totalPages == 0) {
+                        FnLoadForumMessage(pageNoForum);
+                        pageNoForum++;
+                    }
+                }
+            });
+        }
+
+
+        /* Function for loding message */
+        function FnLoadForumMessage(pageNo) {
+            if ($("#hdnNoData").val() == "0") {
+                $("#divForumMessageLoader").show();
+
+                var keyWord = $("#hdnKeyword").val();
+                var sortBy = $("#hdnSortBy").val();
+                var loadUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/MyForum/LoadForumList";
+
+                $.ajax({
+                    url: loadUrl,
+                    type: "POST",
+                    data: { keyword: keyWord, sortby: sortBy, pageNo: pageNo, pageSize: "10" },
+                    datatype: JSON,
+                    success: function (result) {
+                        if (result.trim() != "") {
+                            $("#divForumMessageList").append(result);
+                        }
+                        else {
+                            $("#hdnNoData").val("1");
+                            if (pageNo == 1) {
+                                $("#divForumMessageList").html("");
+                                $("#divForumMessageList").append("<li><div style=\"padding: 10px;\">No records found.</div></li>");
+                            }
+                        }
+                        $("#hdnTotalPage").val($("#hfBookingPageCount").val());
+                        $("#divForumMessageLoader").hide();
+                    }
+                });
+            }
+        }
+
+
+        function FnAddNewMessage() {
+            $("#dvTopicLoader").hide();
+            $("#btnTopicSubmit").show();
+        }
+
+
+        /* Function for sorting message */
+        $("#ddlSortBy").change(function () {
+            $("#hdnSortBy").val($(this).val());
+            FilterAndSearchForum();
+        });
+
+        /* Function for search by keyword the message */
+        function SearchKeyWord() {
+            $("#hdnKeyword").val($("#txtKeyword").val());
+            FilterAndSearchForum();
+        }
+
+        /* Function for search/sorting message */
+        function FilterAndSearchForum() {
+            $("#divForumMessageList").html("");
+            $("#hdnNoData").val(0);
+            pageNoForum = 2;
+            FnLoadForumMessage(1);
+        }
+
+        /* Function for toggling the comment */
+        function FnViewReply(obj) {
+            $('#' + obj.id.replace('viewForum_', 'viewForumReply_')).slideToggle(500);
+            var tId = obj.id.replace('viewForum_', '');
+
+            var loadReadMessageUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/MyForum/ReadMessage";
+
+            $.ajax({
+                url: loadReadMessageUrl,
+                type: "POST",
+                data: { topicId: tId },
+                datatype: JSON,
+                success: function (result) {
+                    if (result.counter > 0) {
+                        $("#divNewMessageCount").show();
+                        $("#divNewMessageCount").html(result.counter + " New Messages");
+                    }
+                    else {
+                        $("#divNewMessageCount").hide();
+                    }
+                }
+            });
+        }
+
+        /* Function for toggling the reply section */
+        function FnViewReplyForm(obj) {
+            $('#' + obj.id.replace('ancReply_', 'ancReplyForm_').replace('btnCancel_', 'ancReplyForm_')).slideToggle(500);
+        }
+
+
+        /* Function for Reply on comments */
+        function FnAddTopicReplyBegin(topicId) {
+            $("#dvReplySubmit_" + topicId).hide();
+            $("#dvReplyLoader_" + topicId).show();
+        }
+
+        function FnAddTopicReplySuccess(data) {
+            $("#dvReplySubmit_" + data.topicId).show();
+            $("#dvReplyLoader_" + data.topicId).hide();
+            $("#frmAddTopicReply_" + data.topicId).find("#Message").val('');
+            if (data.counter == 0) {
+                swal({
+                    title: data.msg,
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                    closeOnConfirm: true
+                }, function () {
+                    /* Load the replies after adding a new reply */
+                    var loadFormReplyUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/MyForum/LoadForumReplyList";
+
+                    $.ajax({
+                        url: loadFormReplyUrl,
+                        type: "POST",
+                        data: { topicId: data.topicId },
+                        datatype: JSON,
+                        success: function (result) {
+                            if (result.trim() != "") {
+                                $("#ancReply_" + data.topicId).hide();
+                                $("#divReplyBox_" + data.topicId).html("");
+                                $("#divReplyBox_" + data.topicId).append(result);
+                            }
+                        }
+                    });
+
+                });
+            }
+            else {
+                swal({
+                    type: "warning",
+                    title: "Failed",
+                    showConfirmButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                    closeOnConfirm: true,
+                    text: "<b>" + data.msg + "</b>",
+                    html: true
+                });
+            }
+        }
+
+        /* END: Function for Reply on comments */
+
+        function SetValueForFlag(id, type) {
+            $("#frmAddFlagTopic").find("[data-valmsg-replace]")
+                 .removeClass("field-validation-error")
+                 .addClass("field-validation-valid")
+                 .empty();
+
+            $("#AutoId").val(id);
+            $("#ForumMessageType").val(type);
+        }
+
+
+        function SetValueForFlagView(id, type) {
+            $("#AutoIdView").val(id);
+            $("#ForumMessageTypeView").val(type);
+
+            var loadFormFlagMessageUrl = "@System.Web.Configuration.WebConfigurationManager.AppSettings["WebsiteRootPath"]" + "@ClientSessionData.ClientPortalLink" + "/MyForum/LoadFlaggedMessage";
+
+            $.ajax({
+                url: loadFormFlagMessageUrl,
+                type: "POST",
+                data: { autoId: id, forumMessageType:type },
+                datatype: JSON,
+                success: function (result) {
+                    if (result.trim() != "") {
+                        $("#divViewFlaggedMessage").html("");
+                        $("#divViewFlaggedMessage").append(result);
+                    }
+                }
+            });
+
+        }
+    </script>
+
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/content/css/responsive-accordion.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/css/bootstrap-select.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+}
+
+<input type="hidden" id="hdnNoData" value="0" />
+<input type="hidden" id="hdnTotalPage" value="0" />
+<input type="hidden" id="hdnKeyword" value="" />
+<input type="hidden" id="hdnSortBy" value="" />
+
+
+@{
+    var newMessageCount = @StratasFair.Business.CommonHelper.CommonData.FetchDataCounters("new-forum-message", ClientSessionData.UserClientId, ClientSessionData.ClientStrataBoardId);
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <div class="">
+                <h1>Strata Forum</h1>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row short-by-row">
+        <div class="col-md-4 col-sm-5 col-xs-12">
+            <div class="general-search">
+                <input value="" id="txtKeyword" name="txtKeyword" placeholder="Keyword" type="text" onkeydown="if (event.keyCode == 13) SearchKeyWord();">
+                <button type="submit" class="btn btn-default" onclick="SearchKeyWord();">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-7 col-xs-12 pull-right">
+            <div class="short-by">
+                <label>Sort By</label>
+                <div class="form-group select-box">
+                    <select class="selectpicker form-control" data-max-options="1" id="ddlSortBy" name="ddlSortBy">
+                        <option value="date desc" selected="selected">Date Desc</option>
+                        <option value="date asc">Date Asc</option>
+                        <option value="title desc">Title Desc</option>
+                        <option value="title asc">Title Asc</option>
+                    </select>
+                </div>
+            </div>
+            <div class="add-btn pull-right">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#add-message" onclick="FnAddNewMessage();">Add Message</a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 strata-email">
+        @if (newMessageCount > 0)
+        {
+            <div class="unread-cont" id="divNewMessageCount">@newMessageCount New Messages</div>
+        }
+           
+            <ul class="inbox-mail" id="divForumMessageList"></ul>
+            <div id="divForumMessageLoader">
+                <img alt="re-loader" src="@Url.Content("~/content/images/loader.gif")" />
+            </div>
+        </div><!-- strata-forum End -->
+    </div>
+</div><!-- page content End -->
+
+
+
+<!-- Modal  Add Request -->
+<div class="modal fade" id="add-message" role="dialog">
+    <div class="modal-dialog">
+        @Html.Partial("_AddNewStrataForumMessage", new StratasFair.BusinessEntity.ForumModel())
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="flag-popup" role="dialog">
+    <div class="modal-dialog">
+        @Html.Partial("_AddNewFlagForumMessage", new StratasFair.BusinessEntity.ForumFlaggedModel())
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="red-flag-popup" role="dialog">
+    <div class="modal-dialog" id="divViewFlaggedMessage">
+        @*@Html.Partial("_ViewFlagForumMessage", new StratasFair.BusinessEntity.ForumFlaggedModelView())*@
+    </div>
+</div>

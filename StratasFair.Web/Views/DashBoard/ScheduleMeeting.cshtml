@@ -1,0 +1,63 @@
+﻿@model IEnumerable<StratasFair.BusinessEntity.Front.ScheduleMeetingModel>
+
+@{
+    ViewBag.Title = "List Meeting Schedule";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front
+
+@section styles{
+    <link href="@Url.Content("~/Content/css/responsive-accordion.css")" rel="stylesheet" />
+}
+
+@section scripts{
+
+    <script src="@Url.Content("~/Content/js/responsive-accordion.min.js")"></script>
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="back-btn">
+        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/dashboard/OwnerDashboard")"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+    <div class="page-title">
+        <div class="title_left">
+            <h1>Meeting Schedule</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 dashboard-list">
+            <ul class="responsive-accordion responsive-accordion-default bm-larger">
+                @{
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="responsive-accordion-head">
+                                <i></i>
+                                <span class="title">@item.Subject</span>
+                                <span class="date">@item.CreatedOn.Replace(",", "")</span>
+                            </div>
+                            <div class="responsive-accordion-panel" style="display: none;">
+                                <div class="event-row">
+                                    <span class="event-date">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        @item.MeetingDate.Replace(",", "").Substring(0, 11)
+                                    </span>
+                                    <span class="event-time">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        @item.MeetingTime
+                                    </span>
+                                </div>
+                                <p>
+                                    @item.Message
+                                </p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div><!-- page content End -->

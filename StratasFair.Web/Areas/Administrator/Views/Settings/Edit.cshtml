@@ -1,0 +1,82 @@
+﻿@model StratasFair.BusinessEntity.Admin.SettingsModel
+@{
+    ViewBag.Title = "Edit Setting";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Manage Settings
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage Settings</li>
+    </ol>
+    <div class="top-buttons-container ">
+        <a href="@Url.Content("~/securehost/rootlogin/settings")" class="btn btn-info">Back</a>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Edit Settings
+                </h3>
+
+            </div>
+            <div class="row"></div>
+            <div style="clear:both"></div>
+            @using (@Html.BeginForm())
+            {
+                @Html.HiddenFor(m => m.DataType)
+                <div class="box-body fix-width">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Setting Name")
+                            <span class="asterisk">*</span>
+                            @Html.HiddenFor(m => m.SettingId)
+                            @Html.TextBoxFor(m => m.SettingName, new { @class = "form-control", @readonly = "readonly", @placeholder = "Enter name" })
+                            @Html.ValidationMessageFor(m => m.SettingName)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.Label("Setting Value")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.SettingValue, new { @class = "form-control", @placeholder = "Enter setting value", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.SettingValue)
+                        </div>
+                    </div>
+                    @*<div class="row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.Status)<br />
+                                @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.Status, "Value", "Text"), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Status)
+                            </div>
+                        </div>*@
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <a href='@Url.Content("~/securehost/rootlogin/settings")' class="btn btn-warning">
+                        Cancel
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            var roleId = $('#hidRoleId').val(); if (roleId == 1) {
+                $("#drpIsActive").attr('disabled', 'disabled');
+            }
+        });
+    </script>
+}

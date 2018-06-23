@@ -1,0 +1,301 @@
+﻿@{
+    ViewBag.Title = "Latest Alerts";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+@using StratasFair.Business.Front;
+@using StratasFair.BusinessEntity.Front;
+@model StratasFair.BusinessEntity.Front.NoticeBoardModel
+@section scripts{
+
+    <script src="~/Content/js/bootstrap-multiselect.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+    <script src="@Url.Content("~/Scripts/sweetalert.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery-ui.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        debugger;
+        var BlockNumber = 2;  //Infinate Scroll starts from second block
+        var NoMoreData = false;
+        var inProgress = false;
+
+
+        var InformationCount = $("#hdnAlertAndNotification").val();
+        if (InformationCount > 9) {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() -
+                $(window).height() && !NoMoreData && !inProgress) {
+
+                    inProgress = true;
+                    $("#dvLoaderIndex").show();
+                    $.post("@Url.Action("LatestAlertInfinateScroll", "NoticeBoard")",
+                            { "BlockNumber": BlockNumber },
+                            function (data) {
+                                BlockNumber = BlockNumber + 1;
+                                NoMoreData = data.NoMoreData;
+                                $("#ListAlertAndNotificationbody").append(data.HTMLString);
+                                $("#dvLoaderIndex").hide();
+                                inProgress = false;
+                            });
+                }
+            });
+        }
+
+    })
+
+    function DeleteAlertAndNotificationDetails(AlertAndNotificationId) {
+
+        var checkstr = confirm('Are you sure you want to delete this Alert ?');
+        if (checkstr == true) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/DeleteAlertAndNotification")',
+                dataType: 'json',
+                data: { AlertAndNotificationId: AlertAndNotificationId },
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        }
+    }
+
+    function EditAlertAndNotificationDetails(AlertAndNotificationId) {
+
+        $('#EditAlertAndNotificationDiv').html('');
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/EditAlertAndNotification")',
+            dataType: 'html',
+            data: { AlertAndNotificationId: AlertAndNotificationId },
+            success: function (result) {
+                $('#EditAlertAndNotificationDiv').html(result);
+                $.validator.unobtrusive.parse('#frmEditAlertAndNotification');         /////////////// For apply validation on Edit Modal pop up
+            }
+        });
+
+    }
+
+    function ViewAlertAndNotificationDetails(AlertAndNotificationId) {
+
+        $('#ViewAlertAndNotificationDiv').html('');
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/ViewAlertAndNotification")',
+            dataType: 'html',
+            data: { AlertAndNotificationId: AlertAndNotificationId },
+            success: function (result) {
+                $('#ViewAlertAndNotificationDiv').html(result);
+            }
+        });
+
+    }
+
+    function ResendAlertAndNotification(AlertAndNotificationId) {
+        $("#dvLoaderIndex").show();
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/NoticeBoard/ResendAlertAndNotification")',
+            dataType: 'json',
+            data: { AlertAndNotificationId: AlertAndNotificationId },
+            success: function (data) {
+                if (data.result == 1) {
+
+                    swal({
+                        type: "success",
+                        title: "Success",
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: "OK",
+                        closeOnConfirm: true,
+                        text: "<b>" + data.Msg + "</b>",
+                        html: true
+                    }, function () {
+                        window.location = window.location;
+                    });
+                }
+                else {
+                    swal({
+                        type: "warning",
+                        title: "Failed",
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: "OK",
+                        closeOnConfirm: true,
+                        text: "<b>" + data.Msg + "</b>",
+                        html: true
+                    });
+                }
+                $("#dvLoaderIndex").hide();
+            },
+            error: function (e) {
+                alert(e);
+            }
+        });
+    }
+
+
+</script>
+
+
+
+}
+
+@section styles{
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-multiselect.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert.css")" rel="stylesheet" />
+    <style>
+        .checkbox input[type="checkbox"] {
+            display: block;
+        }
+    </style>
+
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="page-title">
+        @if (TempData["CommonMessage"] != null)
+        {
+            @Html.Raw(TempData["CommonMessage"])
+        }
+        <div class="title_left">
+            <h1>Notice Board</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 tab-menu">
+            <div class="tabs-menu">
+                <ul>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard")" class="showSingle" target="1" id="first-anchor">Latest Alerts</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MeetingSchedule")" class="showSingle">Meeting Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/MaintenanceSchedule")" class="showSingle">Maintenance Schedule</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/" + ClientSessionData.ClientPortalLink + "/noticeboard/GeneralInformation")" class="showSingle">General Information</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row admin-dashboard">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="div1" class="targetDiv table-section admin-notice-alert">
+                <div class="row sub-heading">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <h2>Latest Alerts</h2>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-6 pull-right text-right">
+                        <div class="add-btn pull-right">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#add-alert">Add Alert</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <td class="type">Type</td>
+                            <td class="title">Title</td>
+                            <td class="message">Message</td>
+                            <td class="added-on">Added On</td>
+                            <td class="action">Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id="ListAlertAndNotificationbody">
+                        @if (Model.AlertAndNotificationModelList != null)
+                        {
+                            if (Model.AlertAndNotificationModelList.Count() > 0)
+                            {
+                                { Html.RenderAction("ListAlertAndNotification", "NoticeBoard", new { Model = Model.AlertAndNotificationModelList }); }
+                                <input id="hdnAlertAndNotification" value=@Model.AlertAndNotificationModelList.Count() type="hidden" />
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                        <span class="text-orange">No Record Found</span>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td style="text-align:center" data-title="First Name" colspan="9" class="f-name">
+                                    <span class="text-orange">No Record Found</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div><!-- Latest Alerts End -->
+            <div id="dvLoaderIndex" style="display:none; text-align:center">
+                <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- page content End -->
+<!-- Modal add-alert -->
+<div class="modal fade" id="add-alert" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            @{
+                NoticeBoardHelper noticeBoardHelper = new NoticeBoardHelper();
+                AlertAndNotificationModel alertAndNotificationModel = new AlertAndNotificationModel();
+            }
+            <div id="AddAlertAndNotificationDiv">
+                @{Html.RenderPartial("AddAlertAndNotification", alertAndNotificationModel);}
+            </div>
+        </div>
+    </div>
+</div><!-- add-alert End -->
+
+<!-- Modal edit-alert -->
+<div class="modal fade" id="edit-alert" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="EditAlertAndNotificationDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- edit-alert End -->
+
+<!-- Modal view-alert -->
+<div class="modal fade" id="view-alert" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-popup add-request">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+            <div id="ViewAlertAndNotificationDiv">
+
+            </div>
+        </div>
+    </div>
+</div><!-- view-alert End -->

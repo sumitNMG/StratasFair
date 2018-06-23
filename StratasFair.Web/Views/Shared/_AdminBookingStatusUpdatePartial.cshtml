@@ -1,0 +1,84 @@
+﻿@model StratasFair.BusinessEntity.Front.BookingUpdateModel
+
+<script src="@Url.Content("~/content/js/jquery.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+@using (Ajax.BeginForm("UpdateStatus", "AdminBookingRequest", FormMethod.Post, new AjaxOptions { OnSuccess = "FrmUpdateBookingSuccess(data)", OnBegin = "FrmUpdateBookingBegin()" }, new { @class = "form-section", @id = "frmUpdateBooking" }))
+{
+
+    <input type="hidden" id="bookingRequestId" name="bookingRequestId" value="0" />
+    <input type="hidden" id="adminStatus" name="adminStatus" value="2" />
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center request-box">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            <span>Rejected</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Reason</label>
+                @Html.TextAreaFor(m => m.reason, new { @maxlength="500" })
+                @Html.ValidationMessageFor(x => x.reason, null, new { @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="form-group">
+                <input id="btnStatusSubmit" name="submit" value="Submit" class="btn btn-sm btn-block btn-yellow" type="submit" />
+                <div id="dvStatusLoader" style="display:none; text-align:center">
+                    <img src="@Url.Content("~/content/images/loader.gif")" alt="loader" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function FrmUpdateBookingBegin() {
+            $("#dvStatusLoader").show();
+            $("#btnStatusSubmit").hide();
+    }
+
+
+    function FrmUpdateBookingSuccess(data) {
+        $("#dvStatusLoader").hide();
+        $("#btnStatusSubmit").show();
+        $("#reason").val('');
+        var bookingRequestId = $("#bookingRequestId").val();
+        if (data.Counter == 0) {
+            swal({
+                title: data.Msg,
+                type: "success",
+                showCancelButton: false,
+                confirmButtonText: "Ok",
+                closeOnConfirm: true
+            }, function () {
+                $("#tdAdminStatus_" + bookingRequestId).html('Rejected');
+                $("#tdAction_" + bookingRequestId).html('<strong>Done</strong>');
+                $(".close").click();
+            });
+        }
+        else {
+            swal({
+                type: "warning",
+                title: "Failed",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: "Ok",
+                closeOnConfirm: true,
+                text: "<b>" + data.Msg + "</b>",
+                html: true
+            });
+        }
+    }
+   
+
+    </script>
+
+}

@@ -1,0 +1,71 @@
+﻿@model StratasFair.BusinessEntity.Front.BookingRequestModelView
+
+@if (Model.ListBooking.Count != 0)
+{
+
+    foreach (var item in Model.ListBooking)
+    {
+        <tr>
+            <td data-title="Common Area" class="common-area">@Html.Raw(@String.IsNullOrEmpty(item.CommonAreaName) ? "N/A" : item.CommonAreaName)</td>
+            <td data-title="Title" class="title">@item.Subject</td>
+            <td data-title="Details" class="details">
+                <a id="lessDetail_@item.BookingRequestId" onclick="FnMoreDetail(this);" href="javascript:void(0)">@Html.Raw(@StratasFair.Business.CommonHelper.AppLogic.FixDescriptionPrefix(@item.Reason, 35, @item.BookingRequestId))</a>
+                <div id="moreDetail_@item.BookingRequestId" style="display:none">
+                    @Html.Raw(@StratasFair.Business.CommonHelper.AppLogic.EndDescriptionSuffix(@item.Reason, 35))
+                </div>
+            </td>
+
+            <td data-title="Dates (From-To)" class="date">
+
+                @if (item.RequestType == "bookingrequest")
+                {
+                    @*@Html.Raw(String.Format("{0:d MMM yyyy hh:mm }", @item.FromDate) + " to " + String.Format("{0:d MMM yyyy hh:mm }", @item.ToDate))*@
+                    @Html.Raw(DateTime.Parse(@item.FromDate).ToString("dd MMM yyyy hh:mm tt") + " to " + DateTime.Parse(@item.ToDate).ToString("dd MMM yyyy hh:mm tt"))
+                }
+                else
+                {
+                    if (DateTime.Parse(@item.FromDate).Year == 1900 && DateTime.Parse(@item.ToDate).Year == 1900)
+                    {
+                        @Html.Raw("N/A")
+                    }
+                    else if (DateTime.Parse(@item.FromDate).Year == 1900)
+                    {
+                        @Html.Raw(DateTime.Parse(@item.ToDate).ToString("dd MMM yyyy hh:mm tt"))
+                    }
+                    else if (DateTime.Parse(@item.ToDate).Year == 1900)
+                    {
+                        @Html.Raw(DateTime.Parse(@item.FromDate).ToString("dd MMM yyyy hh:mm tt"))
+                    }
+                    else
+                    {
+                        @Html.Raw(DateTime.Parse(@item.FromDate).ToString("dd MMM yyyy hh:mm tt") + " to " + DateTime.Parse(@item.ToDate).ToString("dd MMM yyyy hh:mm tt"))
+                    }
+                }
+
+            </td>
+            <td data-title="No. of Days" class="no-days">@item.NoOfDay
+                <input type="hidden" value="@Model.TotalPages" id="hfBookingPageCount" name="hfBookingPageCount" />
+            </td>
+            <td data-title="Status" class="status" id="tdAdminStatus_@item.BookingRequestId">
+                @item.AdminStatusText
+            </td>
+            <td data-title="Action" class="action" id="tdAction_@item.BookingRequestId">
+                                @if (item.AdminStatusText == "Pending")
+                                {
+                                    <a href="javascript:void(0)" onclick="UpdateAdminStatus('A',@item.BookingRequestId)"><span class="approved">Approved</span></a><strong>/</strong>
+    <a href="javascript:void(0)" data-toggle="modal" data-target="#rejected" onclick="UpdateAdminStatus('R',@item.BookingRequestId)">
+        <span class="rejected">Rejected</span>
+    </a>
+                                }
+                                else
+                                {
+                    <strong>Done</strong>
+                }
+            </td>
+        </tr>
+    }
+}
+
+
+
+

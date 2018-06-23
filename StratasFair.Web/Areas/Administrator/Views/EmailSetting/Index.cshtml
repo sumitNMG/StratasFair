@@ -1,0 +1,137 @@
+﻿@model StratasFair.BusinessEntity.Admin.EmailServerModel
+
+@{
+    ViewBag.Title = "Email Settings";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<section class="content-header">
+    <h1>
+        Manage Email Settings
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/securehost/rootlogin/dashBoard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manage Email Settings</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">
+                    Set Email Settings
+                </h3>
+            </div>
+            <div style="clear:both"></div>
+            <div class="col-md-6">
+                @using (@Html.BeginForm())
+                {
+
+
+                    <div class="box-body fix-width">
+                        @Html.HiddenFor(m => m.Id)
+                        <div class="form-group">
+                            @Html.Label("SMTP server")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.EmailServer, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.EmailServer)
+
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Sender display name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.SenderDisplayName, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.SenderDisplayName)
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("From name")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.FromEmail)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Network user ID")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.NetworkUserId, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.NetworkUserId)
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Network user password")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.NetworkUserPassword, new { @class = "form-control", @maxlength = "100" })
+                            @Html.ValidationMessageFor(m => m.NetworkUserPassword)
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Port")
+                            <span class="asterisk">*</span>
+                            @Html.TextBoxFor(m => m.Port, new { @class = "form-control", @maxlength = "5" })
+                            @Html.ValidationMessageFor(m => m.Port)
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+
+                }
+            </div>
+            <div style="clear:both"></div>
+
+
+            @if (@Model.Id > 0)
+            {
+                <div class="col-md-6" style="border:solid #72AFD2 1px">
+                    @using (@Html.BeginForm("Check", "EmailSetting"))
+                    {
+                        <div class="box-body fix-width">
+                            @Html.HiddenFor(m => m.Id)
+                            @Html.HiddenFor(m => m.SenderDisplayName)
+                            @Html.HiddenFor(m => m.FromEmail)
+                            @Html.HiddenFor(m => m.EmailServer)
+                            @Html.HiddenFor(m => m.NetworkUserId)
+                            @Html.HiddenFor(m => m.NetworkUserPassword)
+                            <div class="form-group">
+                                @Html.Label("Email ID")
+                                <span class="asterisk">*</span>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email)
+
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">
+                                Test Email Credentials
+                            </button>
+                        </div>
+                    }
+                </div>
+                <div style="clear:both"></div>
+            }
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+}
+
+
+
+
